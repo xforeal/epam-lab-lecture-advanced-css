@@ -16,415 +16,15 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/epam.css" id="theme">
+		<link rel="stylesheet" href="css/main.css">
 
-		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!--[if lt IE 9]>
 			<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 
-		<!-- COLOR PALLET
-		WHITE: #ffffff
-		GREY: #ccc
-		DARK GREY: #464547
-
-		BLUE: #39c2d7
-		DARK BLUE: #1a9cb0
-
-		GREEN: #a3c644
-		DARK GREEN: #7f993a
-
-		RED: #b22746
-		DARK RED: #8e244d
-		-->
 		<style>
-			@keyframes translated {
-				from{
-					transform: none;
-				}
-				to{
-					transform: translate(150%,200px);
-				}
-			}
-
-			@keyframes scaled {
-				from{
-					transform: scale(0, 0);
-				}
-				to{
-					transform: scale(2, 1.5);
-				}
-			}
-
-			@keyframes skewedX {
-				from{
-					transform: none;
-				}
-				to{
-					transform: skewX(15deg);
-				}
-			}
-
-			@keyframes skewedY {
-				from{
-					transform: none;
-				}
-				to{
-					transform: skewY(20deg);
-				}
-			}
-
-			@keyframes rotated {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotate(180deg);
-				}
-			}
-
-			@keyframes rotatedX {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotateX(180deg);
-				}
-			}
-			@keyframes rotatedY {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotateY(180deg);
-				}
-			}
-
-			@keyframes matrixed {
-				from{
-					transform: none;
-				}
-				to{
-					transform: matrix(2, 10, 10, 2, 300, -150);
-				}
-			}
-
-			@keyframes fulcrum {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotate(-45deg);
-				}
-			}
-
-			@keyframes transform-style-parent {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotateY(60deg);
-				}
-			}
-
-			@keyframes transform-style-child {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotateY(-60deg);
-				}
-			}
-
-			@keyframes perspective {
-				from {
-					perspective: 300px;
-				}
-
-				to{
-					perspective: 1300px;
-				}
-			}
-
-			@keyframes move-origin {
-				from {
-					perspective-origin: 100% 100%;
-				}
-				25% {
-					perspective-origin: 0% 100%;
-				}
-				50% {
-					perspective-origin: 0% 0%;
-				}
-				75% {
-					perspective-origin: 100% 0%;
-				}
-				to {
-					perspective-origin: 100% 100%;
-				}
-			}
-
-			@keyframes perspective-parent {
-				from{
-					perspective: 200px;
-				}
-				to{
-					perspective: 600px;
-				}
-			}
-
-			@keyframes perspective-child {
-				from{
-					transform: perspective(200px) rotateY(60deg);
-				}
-				to{
-					transform: perspective(600px) rotateY(60deg);
-				}
-			}
-
-			@keyframes translated3D {
-				from{
-					transform: none;
-				}
-				33%{
-					transform: translate3D(75%,100px,0);
-				}
-				66%{
-					transform: translate3D(75%,100px,200px);
-				}
-				to{
-					transform: translate3D(75%,100px,-200px);
-				}
-			}
-
-			@keyframes scaled3D {
-				from{
-					transform: scale3D(1,1,1) rotateY(60deg);
-				}
-				50%{
-					transform: scale3D(2,0.5,1) rotateY(60deg);
-				}
-				to{
-					transform: scale3D(2,0.5,3) rotateY(60deg);
-				}
-			}
-
-			@keyframes rotated3D {
-				from{
-					transform: translateZ(3px);
-				}
-				to{
-					transform: rotate3D(3.5, 2, -1.5, 135deg) translateZ(3px);
-				}
-			}
-
-			@keyframes rotated3DnZ {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotate3D(0, 0, -1, 180deg);
-				}
-			}
-
-			@keyframes rotated3DpZ {
-				from{
-					transform: none;
-				}
-				to{
-					transform: rotate3D(0, 0, 1, 180deg);
-				}
-			}
-
-			@keyframes matrixed3D {
-				from{
-					transform: none;
-				}
-				50%{
-					transform: matrix3D(2, 0.5, -0.9, 0, 0.5, 1.5, -0.5, 0, -0.9, -0.5, 2, 0, 300, -150, 200, 1);
-				}
-				to{
-					transform: matrix3D(2, -0.5, 0.9, 0, -0.5, 1.5, 0.5, 0, 0.9, 0.5, 2, 0, 300, -150, -200, 1);
-				}
-			}
-
-			@keyframes animation-direction {
-				from {
-					left: 0;
-				}
-				to {
-					left: 60%;
-				}
-			}
-
-			@keyframes colorChange {
-				from {
-					background: #a3c644;
-					color: #464547;
-				}
-				25% {
-					background: #7f993a;
-				}
-				50% {
-					color: #7f993a;
-				}
-				75% {
-					background: #464547;
-					color: #a3c644;
-				}
-				to {
-					background: #464547;
-					color: #a3c644;
-				}
-			}
-
-			@keyframes animation-fill-mode {
-				from {
-					left: 0;
-				}
-				to {
-					left: 60%;
-				}
-			}
-
-			@keyframes animation-play-state-scale {
-				0% {
-					transform: scale(1.2,1.2);
-				}
-				25% {
-					transform: scale(1.25,1.25);
-				}
-				50% {
-					transform: scale(1.3,1.3);
-				}
-				75% {
-					transform: scale(1.25,1.25);
-				}
-				100% {
-					transform: scale(1.2,1.2);
-				}
-			}
-			
-			@keyframes animation-play-state-color {
-				0% {
-					background-color: #a3c644;
-				}
-				17% {
-					background-color: #1a9cb0;
-				}
-				34%{
-					background-color: #b22746;
-				}
-				50% {
-					background-color: #7f993a;
-				}
-				66% {
-					background-color: #39c2d7;
-				}
-				83%{
-					background-color: #8e244d;
-				}
-				100% {
-					background-color: #a3c644;
-				}
-			}
-
-			@keyframes animation-play-state-shake {
-				0% {
-					top: 0;
-					left: 0;
-				}
-				7% {
-					top: 0;
-					left: 24px;
-				}
-				14% {
-					top: 0;
-					left: -24px;
-				}
-				21% {
-					top: -8px;
-					left: 16px;
-				}
-				28% {
-					top: 8px;
-					left: -16px;
-				}
-				35% {
-					top: -16px;
-					left: 8px;
-				}
-				42% {
-					top: 16px;
-					left: -8px;
-				}
-				50% {
-					top: -24px;
-					left: 0;
-				}
-				57% {
-					top: 24px;
-					left: 0;
-				}
-				64% {
-					top: -16px;
-					left: -8px;
-				}
-				71% {
-					top: 16px;
-					left: 8px;
-				}
-				78% {
-					top: -8px;
-					left: -16px;
-				}
-				85% {
-					top: 8px;
-					left: 16px;
-				}
-				92% {
-					top: 0;
-					left: -24px;
-				}
-				100% {
-					top: 0;
-					left: 0;
-				}
-			}
-
-			@keyframes animation-play-state-rotate {
-				0% {
-					transform: rotate(0);
-				}
-				100% {
-					transform: rotate(360deg);
-				}
-			}
-
-			@keyframes animation-play-state-run {
-				0% {
-					left: -20%;
-					transform: rotateY(180deg);
-				}
-				49% {
-					transform: rotateY(180deg);
-				}
-				50%{
-					left: 100%;
-				}
-				51%{
-					transform: rotateY(0);
-				}
-				99%{
-					transform: rotateY(0);
-				}
-				100% {
-					left: -20%;
-					transform: rotateY(180deg);
-				}
-			}
-
 			.circle {
 				position: relative;
 				display: inline-block;
@@ -455,7 +55,7 @@
 				width: 200px;
 				height: 200px;
 				margin: 100px auto 0!important;
-				border: 10px solid #464547 !important;
+				border: 10px solid $darkGray !important;
 				border-radius: 50%;
 				background: #a3c644 url(img/animation-play-state-paused.png) 20px 120% no-repeat;
 				background-size: contain;
@@ -523,11 +123,6 @@
 				transform: rotateY(0deg) translateZ(0em);
 			}
 
-			.blur:hover{
-				color: transparent !important;
-				text-shadow: 0 0 20px #39C2D7 !important;
-			}
-
 			.transition:before {
 				content: '';
 				display: inline-block;
@@ -536,7 +131,7 @@
 				width: 0;
 			}
 			.transition:hover {
-				background-color: #464547 !important;
+				background-color: $darkGray !important;
 				color: #a3c644 !important;
 			}
 
@@ -545,7 +140,7 @@
 			}
 
 			.animation-fill-mode:hover span {
-				animation-play-state: running !important;
+				animation: animation-fill-mode 3s 1s ease-in-out;
 			}
 			
 			p.fragment.visible:not(.current-fragment) code.lined {
@@ -645,7 +240,7 @@
 				background: white;
 				margin: 5px 10px;
 				padding: 5px 10px;
-				border: 1px solid #464547;
+				border: 1px solid $darkGray;
 			}
 
 			.flex div:first-child {
@@ -653,10 +248,10 @@
 			}
 
 			.flex div:last-child {
-				background: #39c2d7;
+				background: $blue;
 			}
 
-			.wrapper {
+			.wrapper-flex {
 				display: flex;
 				margin: 0 auto !important;
 				width: 100%;
@@ -666,7 +261,7 @@
 				transition: width 0.3s linear;
 			}
 
-			.wrapper > * {
+			.wrapper-flex > * {
 				padding: 10px;
 				flex: 1 100%;
 			}
@@ -678,7 +273,7 @@
 
 			.footer {
 				color: white;
-				background: #464547;
+				background: $darkGray;
 				order: 1;
 				font-size: 0.7em !important;
 			}
@@ -730,48 +325,48 @@
 				background: #b22746;
 			}
 			
-			.wrapper.middle .aside, .wrapper.large .aside {
+			.wrapper-flex.middle .aside, .wrapper-flex.large .aside {
 				flex: 1 auto;
 			}
 
-			.wrapper.middle .navigation, .wrapper.large .navigation {
+			.wrapper-flex.middle .navigation, .wrapper-flex.large .navigation {
 				flex-flow: row wrap;
 				justify-content: space-around;
 			}
 
-			.wrapper.middle .navigation a, .wrapper.large .navigation a {
+			.wrapper-flex.middle .navigation a, .wrapper-flex.large .navigation a {
 				border: none !important;
 			}
 
-			.wrapper.middle .header, .wrapper.large .header {
+			.wrapper-flex.middle .header, .wrapper-flex.large .header {
 				order: -1;
 			}
 
-			.wrapper.large .main {
+			.wrapper-flex.large .main {
 				flex: 3 0px;
 			}
 
-			.wrapper.large .aside-1 {
+			.wrapper-flex.large .aside-1 {
 				order: 1;
 			}
 
-			.wrapper.large .main {
+			.wrapper-flex.large .main {
 				order: 2;
 			}
 
-			.wrapper.large .aside-2 {
+			.wrapper-flex.large .aside-2 {
 				order: 3;
 			}
 
-			.wrapper.large .footer {
+			.wrapper-flex.large .footer {
 				order: 4;
 			}
 
-			.wrapper.large .navigation {
+			.wrapper-flex.large .navigation {
 				justify-content: flex-end;
 			}
 
-			.wrapper.large .navigation li:before {
+			.wrapper-flex.large .navigation li:before {
 				display: none !important;
 			}
 		</style>
@@ -783,7 +378,7 @@
 			<div class="slides">
 
 				<!-- TITLE -->
-				<section data-background="#39C2D7" class="has-dark-background-custom">
+				<section data-background="#39c2d7" class="has-dark-background-custom">
 					<h1>ADVANCED CSS</h1>
 					<p>
 						<small>Created by Vladyslav Riaboshapka</small>
@@ -935,7 +530,7 @@ E! > F</code></pre>
 					<!-- /LEVEL 4 -->
 
 					<!-- VARIABLES -->
-					<section class="stack">
+					<section class="stack variables">
 						<section>
 							<h2>CSS Variables</h2>
 						</section>
@@ -949,7 +544,7 @@ rule: var(--variable-name);
 
 /* Doesn't matter where you declare, before/after using, it all the same works */</code></small></pre>
 						</section>
-						<section style="--color: #39c2d7;">
+						<section class="root">
 							<h2>Variable usage</h2>
 							<pre><code class="hljs css">:root {
 	--color: #39c2d7;
@@ -958,21 +553,19 @@ rule: var(--variable-name);
 div {
 	background-color: var(--color);
 }</code></pre>
-							<div style="width: 80%; height: 200px; margin: 0 auto; background-color: var(--color);">
-								
-							</div>
+							<div></div>
 						</section>
-						<section>
+						<section class="scope">
 							<h2>Variable scope</h2>
 							<div>
-								<pre style="display: inline-block; vertical-align: top; width: 40%; margin-right: 10%;"><code class="hljs css">&lt;div class="one"&gt;
+								<pre><code class="hljs css">&lt;div class="one"&gt;
   &lt;div class="two"&gt;
     &lt;div class="three"&gt; &lt;/div&gt;
 
     &lt;div class="four"&gt; &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-								<pre style="display: inline-block; vertical-align: top; width: 40%;"><code class="hljs css">.two {
+								<pre><code class="hljs css">.two {
     --color: #a3c644; /* green */
 }
 
@@ -982,10 +575,10 @@ div {
 							</div>
 							<p>.one, .three <small>and</small> .four <small>divs have "background-color: --color;"</small> rule</p>
 							<p>what backgrounds will we have in result?</p>
-							<div class="fragment" style="border: 2px solid #464547; padding: 20px; background-color: var(--color);">
-								<div style="border: 2px solid #464547; padding: 20px; --color: #a3c644;">
-									<div style="display: inline-block; border: 2px solid #464547; vertical-align: top; width: 40%; height: 120px; margin-right: 10%; background-color: var(--color); --color: #b22746; line-height: 120px;">3</div>
-									<div style="display: inline-block; border: 2px solid #464547; vertical-align: top; width: 40%; height: 120px; background-color: var(--color); line-height: 120px;">4</div>
+							<div class="fragment one">
+								<div class="two">
+									<div class="three">3</div>
+									<div class="four">4</div>
 								<div>
 							</div>
 						</section>
@@ -993,7 +586,7 @@ div {
 					<!-- /VARIABLES -->
 
 					<!-- UNITS -->
-					<section class="stack">
+					<section class="stack units">
 						<section>
 							<h2>CSS Units</h2>
 						</section>
@@ -1018,77 +611,75 @@ px	/* pixels (1px = 1/96th of 1in) */
 pt	/* points (1pt = 1/72 of 1in) */
 pc	/* picas (1pc = 12 pt) */</code></pre>
 						</section>
-						<section>
-							<p><span style="font-size: 10vh;">10vh</span> and <span style="font-size: 10vmin;">10vmin</span></p>
-							<p><span style="font-size: 96px;">96px</span> and <span style="font-size: 1in;">1in</span></p>
-							<p><span style="font-size: 2em;">2em</span> and <span style="font-size: 4.75rem;">4.75rem</span> and <span style="font-size: 200%;">200%</span></p>
-							<p><span style="font-size: 4pc;">4pc</span> and <span style="font-size: 48pt;">48pt</span></p>
+						<section class="example">
+							<p class="vh-vmin"><span>10vh</span> and <span>10vmin</span></p>
+							<p class="px-in"><span>96px</span> and <span>1in</span></p>
+							<p class="em-rem-per"><span>2em</span> and <span>4.75rem</span> and <span>200%</span></p>
+							<p class="pc-pt"><span>4pc</span> and <span>48pt</span></p>
 						</section>
 					</section>
 					<!-- /UNITS -->
 				<!-- /SECTION 1 -->
 
 				<!-- SECTION 2 -->
-				<section data-background="#39C2D7" class="has-dark-background-custom blue">
+				<section data-background="#39c2d7" class="has-dark-background-custom blue">
 					<h1>Block Styling</h1>
 				</section>
 					<!-- ROUND BORDERS -->
-					<section class="stack">
+					<section class="stack border-radius">
 						<section class="blue">
 							<h2>Round Borders</h2>
 						</section>
-						<section class="blue fade-out">
+						<section class="blue rule">
 							<h4>border-radius – let the corners be round!</h4>
 							<pre><code class="hljs css">border-radius: all; 
 border-radius: tl&br tr&bl;
 border-radius: tl tr&bl br;
 border-radius: tl tr bl br;</code></pre>
-							<div style="background-color: #39C2D7; border-radius: 15px; width: 50%; height: 200px; margin: 0 auto; position: relative;">
-								<span style="position: absolute; top: 10px; left: 20px;">tl</span>
-								<span style="position: absolute; top: 10px; right: 20px;">tr</span>
-								<span style="position: absolute; bottom: 10px; right: 20px;">br</span>
-								<span style="position: absolute; bottom: 10px; left: 20px;">bl</span>
-								<span style="line-height: 200px;">border-radius: 15px;</span>
+							<div>
+								<span>tl</span>
+								<span>tr</span>
+								<span>br</span>
+								<span>bl</span>
+								<span>border-radius: 15px;</span>
 							</div>
 						</section>
-						<section class="blue">
-							<div style="margin-bottom: 50px;">
-								<div style="display: inline-block; width: 45%;">
+						<section class="blue example">
+							<div class="row">
+								<div class="element">
 									<pre><code class="hljs css">border-radius: 50px;</code></pre>
-									<div style="background-color: #39C2D7; border-radius: 50%; width: 80%; height: 200px; margin: 0 auto;">
-									</div>
+									<div></div>
 								</div>
-								<div style="display: inline-block; width: 45%;">
+								<div class="element">
 									<pre><code class="hljs css">border-radius: 100% 0;</code></pre>
-									<div style="background-color: #39C2D7; border-radius: 100% 0; width: 80%; height: 200px; margin: 0 auto;">
-									</div>
+									<div></div>
 								</div>
 							</div>
-							<div style="display: inline-block; width: 45%;">
-								<pre><code class="hljs css">border-radius: 30% 20px 100%;</code></pre>
-								<div style="background-color: #39C2D7; border-radius: 30% 20px 100%; width: 80%; height: 200px; margin: 0 auto;">
+							<div class="row">
+								<div class="element">
+									<pre><code class="hljs css">border-radius: 30% 20px 100%;</code></pre>
+									<div></div>
 								</div>
-							</div>
-							<div style="display: inline-block; width: 45%;">
-								<pre><code class="hljs css">border-radius: 10% 20% 30% 40%;</code></pre>
-								<div style="background-color: #39C2D7; border-radius: 10% 20% 30% 40%; width: 80%; height: 200px; margin: 0 auto;">
+								<div class="element">
+									<pre><code class="hljs css">border-radius: 10% 20% 30% 40%;</code></pre>
+									<div></div>
 								</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue single">
 							<pre><code class="hljs css">border-top-left-radius: x y;
 border-top-right-radius: x y;
 border-bottom-left-radius: x y;
 border-bottom-left-radius: x y;</code></pre>
-							<div style="background-color: #39C2D7; border-top-left-radius: 70% 40%; width: 50%; height: 200px; margin: 0 auto; position: relative;">
-								<span style="line-height: 200px; font-size: 0.8em;">border-top-left-radius: 70% 40%;</span>
+							<div>
+								<span>border-top-left-radius: 70% 40%;</span>
 							</div>
 						</section>
 					</section>
 					<!-- /ROUND BORDERS -->
 
 					<!-- BACKGROUND GRADIENTS -->
-					<section class="stack">
+					<section class="stack background">
 						<section class="blue">
 							<h2>Background attributes</h2>
 						</section>
@@ -1103,59 +694,71 @@ border-bottom-left-radius: x y;</code></pre>
 	    background-origin
 	    background-size</code></pre>
 						</section>
-						<section class="blue">
+						<section class="blue attachment">
 							<h4>background-attachment</h4>
 							<pre><code class="hljs css">background-attachment: fixed | scroll | local;</code></pre>
-							<div style="height: 500px; width: 90%; overflow-y: scroll; margin: 0 auto;">
-							<div style="display: flex;">
-								<div style="display: inline-block; vertical-align: top; width: 30%; margin-right: 4%; background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) fixed;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">f i x e d</span></div>
-								<div style="display: inline-block; vertical-align: top; width: 30%; margin-right: 4%; background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) scroll;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">s c r o l l</span></div>
-								<div style="display: inline-block; vertical-align: top; width: 30%;background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) local;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">l o c a l</span></div>
-							</div>
+							<div class="wrapper">
+								<div>
+									<div>
+										<span>f i x e d</span>
+									</div>
+									<div>
+										<span>s c r o l l</span>
+									</div>
+									<div>
+										<span>l o c a l</span>
+									</div>
+								</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue attachment local">
 							<h4>background-attachment</h4>
 							<pre><code class="hljs css">background-attachment: fixed | scroll | local;</code></pre>
-							<div style="height: 500px; width: 90%; overflow-y: hidden; margin: 0 auto;">
-								<div style="height: 500px; display: inline-block; vertical-align: top; width: 30%; margin-right: 4%; overflow-y: scroll; background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) fixed;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">f i x e d</span></div>
-								<div style="height: 500px; display: inline-block; vertical-align: top; width: 30%; margin-right: 4%; overflow-y: scroll; background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) scroll;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">s c r o l l</span></div>
-								<div style="height: 500px; display: inline-block; vertical-align: top; width: 30%; overflow-y: scroll; background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, #464547 20px, #464547 40px) local;"><span style="color: #39C2D7; text-align: center; display: inline-block; width: 0.5em; font-size: 5em;">l o c a l</span></div>
+							<div class="wrapper">
+								<div>
+									<span>f i x e d</span>
+								</div>
+								<div>
+									<span>s c r o l l</span>
+								</div>
+								<div>
+									<span>l o c a l</span>
+								</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue clip">
 							<h4>background-clip</h4>
 							<pre><code class="hljs css">background-clip: padding-box | border-box | content-box;</code></pre>
-							<div style="width: 90%; margin: 0 auto;">
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; margin-right: 5%; padding: 5%; background: #39C2D7; background-clip: padding-box; text-align: center; font-size: 0.6em;">padding-box</div>
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; margin-right: 5%; padding: 5%; background: #39C2D7; background-clip: border-box; text-align: center; font-size: 0.6em;">border-box</div>
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; padding: 5%; background: #39C2D7; background-clip: content-box; text-align: center; font-size: 0.6em;">content-box</div>
+							<div>
+								<div>padding-box</div>
+								<div>border-box</div>
+								<div>content-box</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue origin">
 							<h4>background-origin</h4>
 							<pre><code class="hljs css">background-origin: padding-box | border-box | content-box;</code></pre>
 							<div style="width: 90%; margin: 0 auto;">
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; margin-right: 5%; padding: 5%; background: url('img/epam_logo_gray.png') no-repeat; background-size: 200px auto; background-origin: padding-box; text-align: center; font-size: 0.6em;">padding-box</div>
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; margin-right: 5%; padding: 5%; background: url('img/epam_logo_gray.png') no-repeat; background-size: 200px auto; background-origin: border-box; text-align: center; font-size: 0.6em;">border-box</div>
-								<div style="display: inline-block; width: 17%; border: 10px dashed #464547; height: 200px; line-height: 200px; padding: 5%; background: url('img/epam_logo_gray.png') no-repeat; background-size: 200px auto; background-origin: content-box; text-align: center; font-size: 0.6em;">content-box</div>
+								<div>padding-box</div>
+								<div>border-box</div>
+								<div>content-box</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue size">
 							<h4>background-size</h4>
 							<pre><code class="hljs css">background-size: px | % | auto | contain | cover;</code></pre>
-							<div style="width: 90%; margin: 0 auto;">
-								<div style="display: inline-block; vertical-align: top; width: 30%; margin-right: 4%;">
-									<div style="height: 200px; background: #39C2D7 url('img/epam_logo_gray.png') 50% no-repeat; background-size: 3em 10px;"></div>
-									<pre style="margin: 20px 0; width: 100%; font-size: 0.45em;"><code class="hljs css">background-size: 3em 10px;</code></pre>
+							<div>
+								<div>
+									<div></div>
+									<pre><code class="hljs css">background-size: 3em 10px;</code></pre>
 								</div>
-								<div style="display: inline-block; vertical-align: top; width: 30%; margin-right: 4%;">
-									<div style="height: 200px; background: #39C2D7 url('img/epam_logo_gray.png') 50% no-repeat; background-size: contain;"></div>
-									<pre style="margin: 20px 0 0; width: 100%; font-size: 0.45em;"><code class="hljs css">background-size: contain;</code></pre>
+								<div>
+									<div></div>
+									<pre><code class="hljs css">background-size: contain;</code></pre>
 								</div>
-								<div style="display: inline-block; vertical-align: top; width: 30%;">
-									<div style="height: 200px; background: #39C2D7 url('img/epam_logo_gray.png') 50% no-repeat; background-size: cover;"></div>
-									<pre style="margin: 20px 0 0; width: 100%; font-size: 0.45em;"><code class="hljs css">background-size: cover;</code></pre>
+								<div>
+									<div></div>
+									<pre><code class="hljs css">background-size: cover;</code></pre>
 								</div>
 							</div>
 						</section>
@@ -1163,120 +766,154 @@ border-bottom-left-radius: x y;</code></pre>
 					<!-- /BACKGROUND GRADIENT -->
 
 					<!-- SHADOWS AND GRADIENTS -->
-					<section class="stack">
+					<section class="stack shadows-gradients">
 						<section class="blue">
 							<h2>Shadows and Gradients</h2>
 						</section>
-						<section class="blue">
+						<section class="blue box-shadow">
 							<h4>Box shadow</h4>
 							<pre><code class="hljs css">box-shadow: x y blur spread color inset;</code></pre>
-							<div style="position: relative;">
-								<div style="display: inline-block; vertical-align: top; width: 30%; margin: 0 10% 0 -5%; height: 300px; border: 10px solid #464547; background-color: #39c2d7; border-radius: 60px 0; box-shadow: 10px 10px 0px 8px #999 inset; line-height: 300px;">w/ inset</div>
-								<div style="display: inline-block; vertical-align: top; width: 30%; height: 300px; border: 10px solid #464547; background-color: #39c2d7; border-radius: 60px 0; box-shadow: 64px 64px 12px 40px #999; line-height: 300px;">w/o inset</div>
-								<div class="fragment" style="position: absolute; top: 0; bottom: -115px; left: 10%; right: 4%; background: url(img/box_shadow.png) 0% 0% no-repeat; background-size: contain; color: white; font-size: 0.5em;">
-									<span style="position: absolute; top: 18px; left: 24px; transform: rotate(-40deg); font-size: 0.5em;">(x; y)</span>
-									<span style="position: absolute; top: 21px; left: 103px; color: #464547">Padding-box shape</span>
-									<span style="position: absolute; top: 254px; left: 24px;">Spread distance</span>
-									<span style="position: absolute; top: 344px; left: 560px; color: #464547">Border-box shape</span>
-									<span style="position: absolute; top: 385px; left: 550px;">Spread distance</span>
-									<span style="position: absolute; top: 410px; left: 661px; color: #464547">Blur applied</span>
+							<div>
+								<div>w/ inset</div>
+								<div>w/o inset</div>
+								<div class="fragment">
+									<span class="alt">(x; y)</span>
+									<span>Padding-box shape</span>
+									<span class="alt">Spread distance</span>
+									<span>Border-box shape</span>
+									<span class="alt">Spread distance</span>
+									<span>Blur applied</span>
 								</div>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue box-example">
 							<pre><code class="hljs css">box-shadow: 0 -50px 5px 0 rgba(255,0,0,0.5),
 	    25px -40px 5px 0 rgba(255,127,0,0.5),
 	    40px -25px 5px 0 rgba(255,255,0,0.5),
 		... another 8 shadows ...
 	    -40px -25px 5px 0 rgba(255,0,255,0.5),
 	    -25px -40px 5px 0 rgba(255,0,127,0.5);</code></pre>
-							<div style="width: 200px; height: 200px; margin: 100px auto 0; border: 10px solid #464547; border-radius: 50%; background-color: #39c2d7; box-shadow: 0 -50px 5px 0 rgba(255,0,0,0.5), 25px -40px 5px 0 rgba(255,127,0,0.5), 40px -25px 5px 0 rgba(255,255,0,0.5), 50px 0 5px 0 rgba(125,255,0,0.5), 40px 25px 5px 0 rgba(0,255,0,0.5), 25px 40px 5px 0 rgba(0,255,127,0.5), 0 50px 5px 0 rgba(0,255,255,0.5), -25px 40px 5px 0 rgba(0,127,255,0.5), -40px 25px 5px 0 rgba(0,0,255,0.5), -50px 0 5px 0 rgba(127,0,255,0.5), -40px -25px 5px 0 rgba(255,0,255,0.5), -25px -40px 5px 0 rgba(255,0,127,0.5);"></div>
+							<div></div>
 						</section>
-						<section class="blue">
+						<section class="blue text-shadow">
 							<h4>Text shadow</h4>
 							<pre><code class="hljs css">text-shadow: x y blur color;</code></pre>
-							<div style="width: 70%; margin: 0 auto;">
-								<h1 style="color: #39C2D7; text-shadow: 0 0 1px #464547, 5px 5px 10px #1a9cb0;">Lorem ipsum</h1>
-								<pre class="fragment"><code class="hljs css">text-shadow: 0 0 1px #464547, 5px 5px 10px #1a9cb0;</code></pre>
+							<div>
+								<h1>Lorem ipsum</h1>
+								<pre><code class="hljs css">text-shadow: 0 0 1px #464547, 5px 5px 10px #1a9cb0;</code></pre>
 							</div>
 						</section>
-						<section class="blue">
+						<section class="blue text-hover">
 							<h4>Blur your text!</h4>
-							<pre class="fragment" style="width: 70%; margin: 0 auto;"><code class="hljs css">/* default font */
+							<pre class="fragment"><code class="hljs css">/* default font */
 color: #39c2d7;
 
 /* on hover */
 color: transparent;
 text-shadow: 0 0 20px #39c2d7;</code></pre>
-							<h1 class="blur" style="color: #39C2D7; transition: text-shadow 0.2s linear, color 0.2s linear;">HOVER ME!</h1>
+							<h1>HOVER ME!</h1>
 						</section>
 						<section class="blue">
 							<h4>Gradients</h4>
 							<p>you can use linear or radial...</p>
 							<p>...and repeat it if you need</p>
 						</section>
-						<section class="blue">
+						<section class="blue linear">
 							<h4>Linear</h4>
 							<pre><code class="hljs css">background-image: linear-gradient(dir, stop-color1, stop-color2, ...);</code></pre>
-							<div style="width: 80%; height: 300px; margin: 0 auto; background: linear-gradient(#39c2d7, #464547);"></div>
+							<div></div>
 						</section>
-						<section class="blue">
+						<section class="blue direction">
 							<h4>direction</h4>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-bottom: 50px; margin-right: 5%; background: linear-gradient(to left, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">to left</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-bottom: 50px; background: linear-gradient(to bottom right, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">to bottom right</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-right: 5%; background: linear-gradient(60deg, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">60deg</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; background: linear-gradient(-135deg, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">-135deg</span></div>
+							<div class="row">
+								<div>
+									<span>to left</span>
+								</div>
+								<div>
+									<span>to bottom right</span>
+								</div>
+							</div>
+							<div class="row">
+								<div>
+									<span>60deg</span>
+								</div>
+								<div>
+									<span>-135deg</span>
+								</div>
+							</div>
 						</section>
-						<section class="blue">
+						<section class="blue colors">
 							<h4>colors</h4>
-							<div style="width: 80%; height: 200px; margin: 0 auto 50px; background: linear-gradient(to right, rgb(255,0,0),rgb(255,127,0),rgb(255,255,0),rgb(125,255,0),rgb(0,255,0),rgb(0,255,127),rgb(0,255,255),rgb(0,127,255),rgb(0,0,255),rgb(127,0,255),rgb(255,0,255),rgb(255,0,127));"><span style="line-height: 200px;">Multi-color</span></div>
-							<div style="width: 80%; height: 200px; margin: 0 auto; background: linear-gradient(to right, transparent, rgba(255,0,0,1));"><span style="line-height: 200px;">Transparency</span></div>
+							<div class="multi">
+								<span>Multi-color</span>
+							</div>
+							<div class="transparent">
+								<span>Transparency</span>
+							</div>
 						</section>
-						<section class="blue">
+						<section class="blue position">
 							<h4>color position</h4>
-							<pre style="font-size: 0.47em"><code class="hljs css">linear-gradient(to right, #39c2d7 10%, transparent 40%, transparent 40%, #b22746 90%);</code></pre>
-							<div style="width: 80%; height: 200px; margin: 0 auto; background: linear-gradient(to right, #39c2d7 10%, transparent 40%, transparent 60%, #b22746 90%);"></div>
+							<pre><code class="hljs css">linear-gradient(to right, #39c2d7 10%, transparent 40%, transparent 40%, #b22746 90%);</code></pre>
+							<div></div>
 						</section>
-						<section class="blue">
+						<section class="blue radial">
 							<h4>Radial</h4>
 							<pre><code class="hljs css">background: radial-gradient(shape size at position, colors as in linear);</code></pre>
-							<div style="width: 80%; height: 300px; margin: 0 auto; background: radial-gradient(#1a9cb0, #39c2d7, transparent);"></div>
+							<div></div>
 						</section>
-						<section class="blue">
-							<h4>shape</h4>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-right: 5%; background: radial-gradient(ellipse, #39c2d7, #464547 70%);"><span style="line-height: 200px; color: white;">ellipse(default)</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; background: radial-gradient(circle, #39c2d7, #464547 70%);"><span style="line-height: 200px; color: white;">circle</span></div>
+						<section class="blue shape">
+							<h4>Shape</h4>
+							<div>
+								<div>
+									<span>ellipse(default)</span>
+								</div>
+								<div>
+									<span>circle</span>
+								</div>
+							</div>
 						</section>
-						<section class="blue">
-							<h4>size</h4>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-bottom: 50px; margin-right: 5%; background: radial-gradient(circle closest-side at 60% 60%, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">closest-side</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-bottom: 50px; background: radial-gradient(circle farthest-side at 60% 60%, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">farthest-side</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; margin-right: 5%; background: radial-gradient(circle closest-corner at 60% 60%, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">closest-corner</span></div>
-							<div style="display: inline-block; width: 30%; height: 200px; background: radial-gradient(circle farthest-corner at 60% 60%, #39c2d7, #464547);"><span style="line-height: 200px; color: white;">farthest-corner</span></div>
+						<section class="blue size">
+							<h4>Size</h4>
+							<div class="row">
+								<div>
+									<span>closest-side</span>
+								</div>
+								<div>
+									<span>farthest-side</span>
+								</div>
+							</div>
+							<div class="row">
+								<div>
+									<span>closest-corner</span>
+								</div>
+								<div>
+									<span>farthest-corner</span>
+								</div>
+							</div>
 						</section>
-						<section class="blue">
-							<h4>repeating gradients</h4>
-							<pre style="font-size: 0.47em;"><code class="hljs css">repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);</code></pre>
-							<div style="width: 80%; height: 200px; margin: 0 auto 50px; background: repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);"></div>
-							<pre style="font-size: 0.47em;"><code class="hljs css">repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);</code></pre>
-							<div style="width: 80%; height: 200px; margin: 0 auto 50px; background: repeating-radial-gradient(#464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);"></div>
+						<section class="blue repeat">
+							<h4>Repeating gradients</h4>
+							<pre><code class="hljs css">repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);</code></pre>
+							<div></div>
+							<pre><code class="hljs css">repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%);</code></pre>
+							<div></div>
 						</section>
-						<section class="blue">
-							<h4>patterns</h4>
-							<pre style="font-size: 0.4em;"><code class="hljs css">background: #464547 no-repeat;
-	    background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%);
+						<section class="blue pattern">
+							<h4>Patterns</h4>
+							<pre><code class="hljs css">background: $darkGray no-repeat;
+	    background-image: linear-gradient(to right, transparent 50%, $blue 50%);
 	    background-size: 5% 100%;</code></pre>
-							<div style="width: 80%; height: 100px; margin: 0 auto 50px; background: #464547 no-repeat; background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%); background-size: 5% 100%;"></div>
-							<pre style="font-size: 0.4em;"><code class="hljs css">background: #464547;
-	    background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%);
+							<div></div>
+							<pre><code class="hljs css">background: $darkGray;
+	    background-image: linear-gradient(to right, transparent 50%, $blue 50%);
 	    background-size: 5% 100%;</code></pre>
-							<div style="width: 80%; height: 100px; margin: 0 auto 50px; background: #464547; background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%); background-size: 5% 100%;"></div>
+							<div></div>
 						</section>
 					</section>
 					<!-- /SHADOWS AND GRADIENTS -->
 
 					<!-- CSS FILTERS -->
-					<section class="stack">
+					<section class="stack filters">
 						<section class="blue">
 							<h2>CSS Filters</h2>
 						</section>
@@ -1438,7 +1075,7 @@ color;			luminosity;</code></pre>
 							<h2>Translate</h2>
 							<pre><code class="hljs css">transform: translate(X,Y); /* or traslateX(X) | translateY(Y) */</code></pre>
 							<div style="height: 400px; position: relative;">
-								<div style="width: 40%; background: #999; line-height: 200px;">origin</div>
+								<div style="width: 40%; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: translated 2s ease-in-out infinite alternate; line-height: 200px;">translated</div>
 							</div>
 						</section>
@@ -1446,7 +1083,7 @@ color;			luminosity;</code></pre>
 							<h2>Scale</h2>
 							<pre><code class="hljs css">transform: scale(sX,sY); /* or scaleX(sx) | scaleY(sy) */</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: scaled 2s ease-in-out infinite alternate; line-height: 200px;">scaled</div>
 							</div>
 						</section>
@@ -1454,10 +1091,10 @@ color;			luminosity;</code></pre>
 							<h2>Skew</h2>
 							<pre><code class="hljs css">transform: skew(Xdeg,Ydeg); /* or skewX(x) | skewY(y) */</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: skewedX 2s ease-in-out infinite alternate; line-height: 200px;">skewedX</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: skewedY 2s ease-in-out infinite alternate; line-height: 200px;">skewedY</div>
 							</div>
 						</section>
@@ -1465,13 +1102,13 @@ color;			luminosity;</code></pre>
 							<h2>Rotate</h2>
 							<pre><code class="hljs css">transform: rotate(deg); /* or rotateX(deg) | rotateY(deg) */</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 10%; right: 0; width: 20%; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 10%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 10%; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: rotated 2s ease-in-out infinite alternate; line-height: 200px;">rotate</div>
 
-								<div style="position: absolute; top: 0; left: 40%; right: 0; width: 20%; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 40%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 40%; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: rotatedX 2s ease-in-out infinite alternate; line-height: 200px;">rotateX</div>
 
-								<div style="position: absolute; top: 0; left: 70%; right: 0; width: 20%; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 70%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 70%; right: 0; width: 20%;background: #a3c644; opacity: 0.7; animation: rotatedY 2s ease-in-out infinite alternate; line-height: 200px;">rotateY</div>
 							</div>
 						</section>
@@ -1485,7 +1122,7 @@ color;			luminosity;</code></pre>
 
   /* only numerals, scale in ratio | skew in rads | translate in px */</code></pre>
 							<div style="margin: 50px auto 0; position: relative;">
-								<div style="width: 20%; background: #999; line-height: 100px;">origin</div>
+								<div style="width: 20%; background: $lightGray; line-height: 100px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: matrixed 2s ease-in-out infinite alternate; line-height: 100px;">MATRIX</div>
 							</div>
 						</section>
@@ -1496,10 +1133,10 @@ color;			luminosity;</code></pre>
 		/* y as [top | center | bottom]*/
 		/* z as [length]*/</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: fulcrum 1s ease-in-out infinite alternate; line-height: 200px;">default</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; transform-origin: left top; animation: fulcrum 1s ease-in-out infinite alternate; line-height: 200px;">left top</div>
 							</div>
 						</section>
@@ -1511,12 +1148,12 @@ color;			luminosity;</code></pre>
 							<h2>Transform plane</h2>
 							<pre><code class="hljs css">transform-style: flat(default) | preserve3D</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: transform-style-parent 1s ease-in-out infinite alternate; transform-style: flat;">
 									<div style="background: #7f993a; width: 80%; margin: 0 auto; animation: transform-style-child 1s ease-in-out infinite alternate; line-height: 200px;">flat</div>
 								</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: transform-style-parent 1s ease-in-out infinite alternate; transform-style: preserve-3d;">
 									<div style="background: #7f993a; width: 80%; margin: 0 auto; animation: transform-style-child 1s ease-in-out infinite alternate; line-height: 200px;">preserve-3D</div>
 								</div>
@@ -1538,12 +1175,23 @@ color;			luminosity;</code></pre>
 						<section class="green perspective">
 							<h2>Perspective</h2>
 							<div style="display: inline-block; width: 40%; margin-right: 10%; margin-top: 40px; animation: perspective-parent 1s linear infinite alternate;">
-								<pre style="width: 100%;"><code class="hljs css">perspective: 600px; /* on parent */</code></pre>
+								<pre style="width: 100%;"><code class="hljs css">/* on parent */
+perspective: 600px;
+
+/* on child */
+transform: rotateY(60deg);
+
+</code></pre>
 								<span style="display: inline-block; width: 40%; margin-right: 10%; height: 100px; background: #a3c644; transform: rotateY(60deg);"></span>
 								<span style="display: inline-block; width: 40%; height: 100px; background: #a3c644; transform: rotateY(60deg);"></span>
 							</div>
 							<div style="display: inline-block; width: 40%; margin-top: 40px;">
-								<pre style="width: 100%;"><code class="hljs css">perspective: 600px; /* on childs */</code></pre>
+								<pre style="width: 100%;"><code class="hljs css">/* on parent */
+/* nothing */
+
+/* on child */
+transform: perspective(600px)
+	   rotateY(60deg);</code></pre>
 								<span style="display: inline-block; width: 40%; margin-right: 10%; height: 100px; background: #a3c644; animation: perspective-child 1s linear infinite alternate;"></span>
 								<span style="display: inline-block; width: 40%; height: 100px; background: #a3c644; animation: perspective-child 1s linear infinite alternate;"></span>
 							</div>
@@ -1576,7 +1224,7 @@ color;			luminosity;</code></pre>
 							<h2>Translate3D</h2>
 							<pre><code class="hljs css">transform: translate3D(X,Y,Z); /* also can use only translateZ(Z) for Z-axis */</code></pre>
 							<div style="height: 400px; position: relative; transform-style: preserve-3d;">
-								<div style="width: 40%; background: #999; line-height: 200px;">origin</div>
+								<div style="width: 40%; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; height: 200px; width: 40%; background: #a3c644; opacity: 0.7; animation: translated3D 3s ease-in-out infinite alternate; line-height: 200px;">translated</div>
 							</div>
 						</section>
@@ -1584,7 +1232,7 @@ color;			luminosity;</code></pre>
 							<h2>Scale3D</h2>
 							<pre><code class="hljs css">transform: scale3D(sX,sY,sZ); /* scaleZ(Z) */</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">
-								<div style="width: 40%; margin: 0 auto; background: #999; line-height: 200px;">origin</div>
+								<div style="width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; height: 200px; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: scaled3D 2s ease-in-out infinite alternate; line-height: 200px;">scaled</div>
 							</div>
 						</section>
@@ -1592,16 +1240,16 @@ color;			luminosity;</code></pre>
 							<h2>Rotate3D</h2>
 							<pre><code class="hljs css">transform: rotate3D(X,Y,Z,angle);</code></pre>
 							<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">	
-								<div style="width: 60%; margin: 0 auto; background: #999; line-height: 300px;">origin</div>
+								<div style="width: 60%; margin: 0 auto; background: $lightGray; line-height: 300px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0; width: 60%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: rotated3D 2s ease-in-out infinite alternate; line-height: 300px;">rotate</div>
 							</div>
 						</section>
 						<section class="green">
 							<div>
 								<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">
-									<div style="position: absolute; top: 0; left: 5%; right: 0; width: 40%; background: #999; line-height: 300px;">origin</div>
+									<div style="position: absolute; top: 0; left: 5%; right: 0; width: 40%; background: $lightGray; line-height: 300px;">origin</div>
 									<div style="position: absolute; top: 0; left: 5%; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: rotated3DnZ 2s ease-in-out infinite alternate; line-height: 300px;"	>( 0, 0, -1, 180deg)</div>
-									<div style="position: absolute; top: 0; left: 55%; right: 0; width: 40%; background: #999; line-height: 300px;">origin</div>
+									<div style="position: absolute; top: 0; left: 55%; right: 0; width: 40%; background: $lightGray; line-height: 300px;">origin</div>
 									<div style="position: absolute; top: 0; left: 55%; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: rotated3DpZ 2s ease-in-out infinite alternate; line-height: 300px;">( 0, 0, 1, 180deg)</div>
 								</div>
 							</div>
@@ -1615,7 +1263,7 @@ color;			luminosity;</code></pre>
 	a4, b4, c4, d4					| tx ty tz 1 |
 );</code></pre>
 							<div style="margin: 50px auto 0; position: relative; transform-style: preserve-3d;">
-								<div style="width: 20%; background: #999; line-height: 100px;">origin</div>
+								<div style="width: 20%; background: $lightGray; line-height: 100px;">origin</div>
 								<div style="position: absolute; top: 0; left: 0; right: 0;width: 20%; background: #a3c644; opacity: 0.7; animation: matrixed3D 2s ease-in-out infinite alternate; line-height: 100px;">MATRIX</div>
 							</div>
 						</section>
@@ -1645,17 +1293,17 @@ color;			luminosity;</code></pre>
 			    step-start /* steps(1, start) */
 			    step-end /* steps(1, end) */
 			    cubic-bezier(x1,y1,x2,y2) /* X must be in [0, 1] */</code></pre>
-							<div class="timing-function" style="width: 90%; margin: 0 auto; border: 2px solid #464547;">
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s linear;">linear</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease;">ease</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in;">ease-in</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-out;">ease-out</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in-out;">ease-in-out</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,start);">steps(4,start)</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,end);">steps(4,end)</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-start;">step-start</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-end;">step-end</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid #464547; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s cubic-bezier(1,0,0,1);">cubic-bezier(1,0,0,1)</span>
+							<div class="timing-function" style="width: 90%; margin: 0 auto; border: 2px solid $darkGray;">
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s linear;">linear</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease;">ease</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in;">ease-in</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-out;">ease-out</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in-out;">ease-in-out</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,start);">steps(4,start)</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,end);">steps(4,end)</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-start;">step-start</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-end;">step-end</span>
+								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s cubic-bezier(1,0,0,1);">cubic-bezier(1,0,0,1)</span>
 								<span style="display: block; width: 40%; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s cubic-bezier(1,-1,0.3,2);">cubic-bezier(1,-1,0.3,2)</span>
 							</div>
 						</section>
@@ -1710,10 +1358,10 @@ color;			luminosity;</code></pre>
 						<section class="green">
 							<h4>@keyframes rule</h4>
 							<pre><code class="hljs css">@keyframes colorChange {
-	from { background: #a3c644; color: #464547; }
+	from { background: #a3c644; color: $darkGray; }
 	33% { background: #7f993a; }
 	66% { color: #7f993a; }
-	to { background: #464547; color: #a3c644; }
+	to { background: $darkGray; color: #a3c644; }
 }
 
 div {
@@ -1726,20 +1374,20 @@ div {
 							<h4>Animation direction</h4>
 							<pre><code class="hljs css">animation-direction: normal | reverse | alternate | alternate-reverse;</code></pre>
 							<div style="margin-top: 100px;">
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid #464547; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite;">normal</span>
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid #464547; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite reverse;">reverse</span>
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid #464547; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate;">alternate</span>
-								<span style="display: block; position: relative; width: 40%; border: 1px solid #464547; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate-reverse;">alternate-reverse</span>
+								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite;">normal</span>
+								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite reverse;">reverse</span>
+								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate;">alternate</span>
+								<span style="display: block; position: relative; width: 40%; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate-reverse;">alternate-reverse</span>
 							</div>
 						</section>
 						<section class="green">
 							<h4>Animation fill mode</h4>
 							<pre><code class="hljs css">animation-fill-mode: none | forwards | backwards | both;</code></pre>
-							<div class="fragment animation-fill-mode" style="width: 90%; margin: 100px auto 0; border: 2px solid #464547;">
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation: animation-fill-mode 3s 1s ease-in-out paused;">none</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation: animation-fill-mode 3s 1s ease-in-out paused forwards;">forwards</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation: animation-fill-mode 3s 1s ease-in-out paused backwards;">backwards</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; height: 50px; background: #a3c644; animation: animation-fill-mode 3s 1s ease-in-out paused both;">both</span>
+							<div class="animation-fill-mode" style="width: 90%; margin: 100px auto 0; border: 2px solid $darkGray;">
+								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644;">none</span>
+								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation-fill-mode: forwards;">forwards</span>
+								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation-fill-mode: backwards;">backwards</span>
+								<span style="display: block; position: relative; left: 20%; width: 40%; height: 50px; background: #a3c644; animation-fill-mode: both;">both</span>
 							</div>
 						</section>
 						<section class="green">
@@ -1772,11 +1420,11 @@ div {
 						</section>
 						<section class="red">
 							<h4>flex vs inline-flex</h4>
-							<div class="flex" style="display: flex; border: 2px solid #464547; background: #b22746; margin-bottom: 50px; padding: 10px 0;">
+							<div class="flex" style="display: flex; border: 2px solid $darkGray; background: #b22746; margin-bottom: 50px; padding: 10px 0;">
 								<div>Lorem</div><div>ipsum</div><div>dolor</div><div>sit amet,</div>
 								<div>nec ei</div><div>probo</div><div>sanctus</div><div>interesset</div>
 							</div>
-							<div class="flex" style="display: inline-flex; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+							<div class="flex" style="display: inline-flex; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 								<div>Lorem</div><div>ipsum</div><div>dolor</div><div>sit amet,</div>
 								<div>nec ei</div><div>probo</div><div>sanctus</div><div>interesset</div>	
 							</div>
@@ -1805,19 +1453,19 @@ flex-direction: column;			/* top-to-bottom */
 flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<div style="display: inline-block; width: 40%; vertical-align: top; margin-right: 10%;">
 								<p>horizontal main axis</p>
-								<div class="flex" style="display: inline-flex; border: 2px solid #464547; background: #b22746; margin-bottom: 38px; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; border: 2px solid $darkGray; background: #b22746; margin-bottom: 38px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
 								</div>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: row-reverse; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: row-reverse; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%;">
 								<p>vertical main axis</p>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column; border: 2px solid #464547; background: #b22746; margin-right: 50px; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column; border: 2px solid $darkGray; background: #b22746; margin-right: 50px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column-reverse; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column-reverse; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
@@ -1827,19 +1475,19 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<pre><code class="hljs css">flex-wrap: nowrap(default) | wrap | wrap-reverse</code></pre>
 							<div style="width: 40%; margin: 0 auto;">
 								<small>default, w/0 wrapping</small>
-								<div class="flex" style="display: inline-flex; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%; margin-right: 10%;">
 								<small>standart wrappping ttb</small>
-								<div class="flex" style="display: inline-flex; flex-wrap: wrap; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; flex-wrap: wrap; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%;">
 								<small>reverse wrappping btt</small>
-								<div class="flex" style="display: inline-flex; flex-wrap: wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; flex-wrap: wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
@@ -1849,7 +1497,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<pre><code class="hljs css">flex-flow: flex-direction flex-wrap;</code></pre>
 							<div style="width: 40%; margin: 0 auto;">
 								<small>row-reverse wrap-reverse</small>
-								<div class="flex" style="display: inline-flex; flex-flow: row-reverse wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex" style="display: inline-flex; flex-flow: row-reverse wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
@@ -1863,31 +1511,31 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 		 space-around;</code></pre>
 							<div style="display: inline-block; width: 40%; margin-right: 10%;">
 								<small>flex-start(default)</small>
-								<div class="flex" style="display: flex; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%;">
 								<small>flex-end</small>
-								<div class="flex" style="display: flex; justify-content: flex-end; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; justify-content: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
 							<div style="width: 40%; margin: 0 auto;">
 								<small>center</small>
-								<div class="flex" style="display: flex; justify-content: center; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%; margin-right: 10%;">
 								<small>space-between</small>
-								<div class="flex" style="display: flex; justify-content: space-between; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; justify-content: space-between; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
 							<div style="display: inline-block; width: 40%;">
 								<small>space-around</small>
-								<div class="flex" style="display: flex; justify-content: space-around; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; justify-content: space-around; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
@@ -1901,31 +1549,31 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 	     stretch(default);</code></pre>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-start; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-start; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div style="line-height: 3;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-end; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div style="line-height: 3;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>center</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: center; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div style="line-height: 3;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>baseline</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: baseline; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: baseline; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div style="line-height: 3;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: stretch; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: stretch; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div style="line-height: 3;">2</div>
 								</div>
 							</div>
@@ -1943,37 +1591,37 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 						<section class="red">
 							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
 								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-start; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-start; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
 								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-end; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 25%;">
 								<small>center</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: center; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
 								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: stretch; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: stretch; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
 								<small>space-between</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-between; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-between; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 25%;">
 								<small>space-around</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-around; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-around; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
@@ -1986,13 +1634,13 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<pre style="width: 40%; margin: 0 auto;"><code class="hljs css">order: number;</code></pre>
 							<div style="display: inline-block; vertical-align: top; width: 40%; margin-right: 10%;">
 								<small>normal ordered</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top; width: 40%;">
 								<small>custom ordered</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="order: 3">1</div><div style="order: -1">2</div><div style="order: -1">3</div><div style="order: 3">4</div><div style="order: -2">5</div><div style="order: 2">6</div>
 								</div>
 							</div>
@@ -2007,31 +1655,31 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 	     stretch;</code></pre>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="align-self: flex-start;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="align-self: flex-end;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>center</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid #464547; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
 									<div style="align-self: center;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>baseline</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="align-self: baseline;">1</div><div style="line-height: 3; align-self: baseline;">2</div>
 								</div>
 							</div>
 							<div style="display: inline-block; vertical-align: top;">
 								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="align-self: stretch;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
 								</div>
 							</div>
@@ -2040,19 +1688,19 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<h4>basis and grow/shrink</h4>
 							<div class="fragment">
 								<pre><code class="hljs css">flex-basis: length;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="flex-basis: 200px">200px</div><div style="flex-basis: 20px">20px</div><div style="flex-basis: 150px">150px</div>
 								</div>
 							</div>
 							<div class="fragment">
 								<pre><code class="hljs css">flex-grow: n;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="flex-grow: 2">2</div><div style="flex-grow: 1">1</div><div style="flex-grow: 3">3</div>
 								</div>
 							</div>
 							<div class="fragment">
 								<pre><code class="hljs css">flex-shrink: n;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 									<div style="flex-shrink: 2; flex-basis: 1000px;">2</div><div style="flex-shrink: 1; flex-basis: 1000px;">1</div><div style="flex-shrink: 3; flex-basis: 1000px;">3</div>
 								</div>
 							</div>
@@ -2060,10 +1708,10 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 						<section class="red">
 							<h4>shorthand rule for grow,shrink and basis</h4>
 							<pre><code class="hljs css">flex: flex-grow flex-shrink flex-basis; /* default - flex: 0 0 auto; */</code></pre>
-							<div class="flex" style="display: flex; height: 70px; border: 2px solid #464547; background: #b22746; padding: 10px 0; margin-bottom: 20px;">
+							<div class="flex" style="display: flex; height: 70px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0; margin-bottom: 20px;">
 								<div style="flex: 2 1 100px">2 | 1 | 100px</div><div style="flex: 1 2 300px">1 | 2 | 300px</div><div style="flex: 2 1 100px">2 | 1 | 100px</div>
 							</div>
-							<div class="flex" style="display: flex; height: 70px; border: 2px solid #464547; background: #b22746; padding: 10px 0;">
+							<div class="flex" style="display: flex; height: 70px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
 								<div style="flex: 2 1 500px">2 | 1 | 500px</div><div style="flex: 1 2 400px">1 | 2 | 400px</div><div style="flex: 2 1 300px">2 | 1 | 300px</div>
 							</div>
 							<div class="fragment">
@@ -2075,7 +1723,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 									<div style="margin: 0 0 20px; font-size: 0.5em;">
 										<b>grow-proportion:</b>
 										<div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
-											<span style="display: block; border-bottom: 2px solid #464547; text-align: center;">flex-grow</span>
+											<span style="display: block; border-bottom: 2px solid $darkGray; text-align: center;">flex-grow</span>
 											<span style="display: block;">&sum; flex-grow</span>
 										</div>
 									</div>
@@ -2092,7 +1740,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 									<div style="margin: 0 0 20px; font-size: 0.5em;">
 										<b>shrink-proportion:</b>
 										<div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
-											<span style="display: block; border-bottom: 2px solid #464547; text-align: center;">flex-shrink*flex-basis</span>
+											<span style="display: block; border-bottom: 2px solid $darkGray; text-align: center;">flex-shrink*flex-basis</span>
 											<span style="display: block;">&sum; flex-shrink*flex-basis</span>
 										</div>
 									</div>
@@ -2122,7 +1770,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 											var width = target.dataset.width;
 											var size = target.dataset.size;
 
-											if (wrapper.className == 'wrapper' && size == 'large') {
+											if (wrapper.className == 'wrapper-flex' && size == 'large') {
 												wrapper.style.width = '640px';
 												setTimeout(function() {
 													wrapper.classList.add('middle');
@@ -2133,7 +1781,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 													}, 150);
 												}, 150);
 											} else {
-												if (wrapper.className == 'wrapper large' && size == 'small') {
+												if (wrapper.className == 'wrapper-flex large' && size == 'small') {
 													wrapper.style.width = '640px';
 													setTimeout(function() {
 														wrapper.classList.remove('large');
@@ -2157,7 +1805,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 									})
 								</script>
 							</div>
-							<div class="wrapper large" id="wrapper">
+							<div class="wrapper-flex large" id="wrapper">
 								<header class="header">
 									<nav>
 										<ul class="navigation">
@@ -2208,8 +1856,8 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<h4>Columns separator</h4>
 							<pre><code class="hljs css">column-rule: column-rule-width column-rule-style column-rule-color;</code></pre>
 							<div style="width: 80%; margin: 0 auto;">
-								<pre style="width: 50%; margin: 0 auto 20px;"><code class="hljs css">column-rule: 4px solid #464547;</code></pre>
-								<small style="text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid #464547; -moz-column-gap: 100px; -moz-column-rule: 4px solid #464547; column-gap: 100px; column-rule: 4px solid #464547;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
+								<pre style="width: 50%; margin: 0 auto 20px;"><code class="hljs css">column-rule: 4px solid $darkGray;</code></pre>
+								<small style="text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid $darkGray; -moz-column-gap: 100px; -moz-column-rule: 4px solid $darkGray; column-gap: 100px; column-rule: 4px solid $darkGray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
 							</div>
 						</section>
 						<section class="red">
@@ -2219,7 +1867,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 								<pre style="width: 40%; margin: 0 auto 20px;"><code class="hljs css">h4 {
     column-span: all;
 }</code></pre>
-								<div style="padding: 5px; text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid #464547; -moz-column-gap: 100px; -moz-column-rule: 4px solid #464547; column-gap: 100px; column-rule: 4px solid #464547; font-size: 0.5em;">
+								<div style="padding: 5px; text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid $darkGray; -moz-column-gap: 100px; -moz-column-rule: 4px solid $darkGray; column-gap: 100px; column-rule: 4px solid $darkGray; font-size: 0.5em;">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.
 									<h4 style="padding: 10px; margin: 0; text-align: center; -webkit-column-span: all; -moz-column-span: all; column-span: all;">yeah ... dat borin' lorem ipsum agn ... nafin' new</h4>
 									Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.
@@ -2236,7 +1884,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							<div class="fragment">
 								<pre><code class="hljs css">break-insde: auto | avoid | avoid-page | avoid-column;</code></pre>
 								<div style="width: 80%; margin: 0 auto;">
-									<ul style="padding: 10px; margin-bottom: 20px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: #999; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+									<ul style="padding: 10px; margin-bottom: 20px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: $lightGray; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
 											<li style="background: white; margin-bottom: 10px; padding: 20px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
 											<li style="background: white; margin-bottom: 10px; padding: 20px;">Mauris eu risus.</li>
 											<li style="background: white; margin-bottom: 10px; padding: 20px;">Vestibulum auctor dapibus neque.</li>
@@ -2248,7 +1896,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 											<li style="background: white; margin-bottom: 10px; padding: 20px;">Vestibulum auctor dapibus neque.</li>
 									</ul>
 
-									<ul style="padding: 10px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: #999; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+									<ul style="padding: 10px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: $lightGray; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
 											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
 											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Mauris eu risus.</li>
 											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Vestibulum auctor dapibus neque.</li>
@@ -2283,7 +1931,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 				<!-- /SECTION 4 -->
 				<section>
 					<h1>THE END</h1>
-					<h2 style="color: #999; font-size: 1.65em;">thank you!</h2>
+					<h2 style="color: $lightGray; font-size: 1.65em;">thank you!</h2>
 					<h4 style="color: #7F993A; font-size: 0.8em">...and your questions start here <span style="font-size: 2em">&#9786;</span></h4>
 				</section>
 			<!-- /SLIDES -->
