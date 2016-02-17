@@ -378,12 +378,14 @@
 			<div class="slides">
 
 				<!-- TITLE -->
-				<section data-background="#39c2d7" class="has-dark-background-custom">
+				<section data-background="#39c2d7" class="has-dark-background-custom title">
 					<h1>ADVANCED CSS</h1>
 					<p>
 						<small>Created by Vladyslav Riaboshapka</small>
 					</p>
-					<img width="288" height="108" class="plain" style="margin-bottom:-118px;" data-src="img/epam_logo_white.png" alt="EPAM">
+					<div>
+						<img class="plain" src="img/epam_logo_white.png" alt="EPAM">
+					</div>
 				</section>
 
 				<section>
@@ -738,7 +740,7 @@ border-bottom-left-radius: x y;</code></pre>
 						<section class="blue origin">
 							<h4>background-origin</h4>
 							<pre><code class="hljs css">background-origin: padding-box | border-box | content-box;</code></pre>
-							<div style="width: 90%; margin: 0 auto;">
+							<div>
 								<div>padding-box</div>
 								<div>border-box</div>
 								<div>content-box</div>
@@ -900,13 +902,13 @@ text-shadow: 0 0 20px #39c2d7;</code></pre>
 						</section>
 						<section class="blue pattern">
 							<h4>Patterns</h4>
-							<pre><code class="hljs css">background: $darkGray no-repeat;
-	    background-image: linear-gradient(to right, transparent 50%, $blue 50%);
-	    background-size: 5% 100%;</code></pre>
+							<pre><code class="hljs css">background-color: #464547 no-repeat;
+background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%);
+background-size: 5% 100%;</code></pre>
 							<div></div>
-							<pre><code class="hljs css">background: $darkGray;
-	    background-image: linear-gradient(to right, transparent 50%, $blue 50%);
-	    background-size: 5% 100%;</code></pre>
+							<pre><code class="hljs css">background-color: #464547;
+background-image: linear-gradient(to right, transparent 50%, #39c2d7 50%);
+background-size: 5% 100%;</code></pre>
 							<div></div>
 						</section>
 					</section>
@@ -932,48 +934,52 @@ text-shadow: 0 0 20px #39c2d7;</code></pre>
 	sepia(%)
 	url(svg-url#id);</code></pre>
 						</section>
-						<section class="blue">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%"><code class="hljs css">filter: blur(5px);</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: blur(5px)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%"><code class="hljs css">filter: brightness(0.3);</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: brightness(0.3)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%"><code class="hljs css">filter: grayscale(1);</code></pre>
-								<div style="height: 200px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: grayscale(1)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%"><code class="hljs css">filter: contrast(2.3);</code></pre>
-								<div style="height: 200px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: contrast(2.3)"></div>
+						<section class="blue filter">
+							<div>
+								<div>
+									<pre><code class="hljs css">filter: blur(5px);</code></pre>
+									<div class="blur"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: brightness(0.3);</code></pre>
+									<div class="brightness"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: grayscale(1);</code></pre>
+									<div class="grayscale"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: contrast(2.3);</code></pre>
+									<div class="contrast"></div>
+								</div>
 							</div>
 						</section>
-						<section class="blue">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%"><code class="hljs css">filter: hue-rotate(180deg);</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: hue-rotate(180deg)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%"><code class="hljs css">filter: invert(0.7);</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: invert(0.7)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%"><code class="hljs css">filter: saturate(0.3);</code></pre>
-								<div style="height: 200px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: saturate(0.3)"></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%"><code class="hljs css">filter: sepia(1);</code></pre>
-								<div style="height: 200px; background: url(img/cat.jpg) no-repeat; background-size: cover; -webkit-filter: sepia(1)"></div>
+						<section class="blue filter">
+							<div>
+								<div>
+									<pre><code class="hljs css">filter: hue-rotate(180deg);</code></pre>
+									<div class="hue-rotate"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: invert(0.7);</code></pre>
+									<div class="invert"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: saturate(0.3);</code></pre>
+									<div class="saturate"></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">filter: sepia(1);</code></pre>
+									<div class="sepia"></div>
+								</div>
 							</div>
 						</section>
 						<section class="blue">
 							<h2>Blend Mode</h2>
 						</section>
-						<section class="blue">
+						<section class="blue blend-mode-rule">
 							<h4>mix blend mode values</h4>
-							<pre style="width: 50%;"><code class="hljs css">normal;			multiply;
+							<pre><code class="hljs css">normal;			multiply;
 screen;			overlay;
 darken;			lighten;
 color-dodge;		color-burn;
@@ -982,76 +988,92 @@ difference;		exclusion;
 hue;			saturation;
 color;			luminosity;</code></pre>
 						</section>
-						<section class="blue mix">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: normal;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: normal;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: multiply;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: multiply;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: screen;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: screen;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: overlay;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: overlay;">LOREM</span></div>
-							</div>
-						</section>
-						<section class="blue mix">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: darken;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: darken;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: lighten;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: lighten;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: color-dodge;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: color-dodge;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: color-burn;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: color-burn;">LOREM</span></div>
+						<section class="blue blend-mode">
+							<div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: normal;</code></pre>
+									<div>
+										<span class="mix-normal">LOREM</span>
+									</div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: multiply;</code></pre>
+									<div>
+										<span class="mix-multiply">LOREM</span>
+									</div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: screen;</code></pre>
+									<div>
+										<span class="mix-screen">LOREM</span>
+									</div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: overlay;</code></pre>
+									<div>
+										<span class="mix-overlay">LOREM</span>
+									</div>
+								</div>
 							</div>
 						</section>
-						<section class="blue mix">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: hard-light;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: hard-light;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: soft-light;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: soft-light;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: difference;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: difference;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: exclusion;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: exclusion;">LOREM</span></div>
+						<section class="blue blend-mode">
+							<div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: darken;</code></pre>
+									<div><span class="mix-darken">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: lighten;</code></pre>
+									<div><span class="mix-lighten">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: color-dodge;</code></pre>
+									<div><span class="mix-color-dodge">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: color-burn;</code></pre>
+									<div><span class="mix-color-burn">LOREM</span></div>
+								</div>
 							</div>
 						</section>
-						<section class="blue mix">
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: hue;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: hue;">LOREM</span></div>
+						<section class="blue blend-mode">
+							<div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: hard-light;</code></pre>
+									<div><span class="mix-hard-light">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: soft-light;</code></pre>
+									<div><span class="mix-soft-light">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: difference;</code></pre>
+									<div><span class="mix-difference">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: exclusion;</code></pre>
+									<div><span class="mix-exclusion">LOREM</span></div>
+								</div>
 							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: saturation;</code></pre>
-								<div style="height: 200px; margin-bottom: 50px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: saturation;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: color;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: color;">LOREM</span></div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">mix-blend-mode: luminosity;</code></pre>
-								<div style="height: 200px; background: url(img/fishes.jpg) no-repeat; background-size: cover;"><span style="display: inline-block; width: 100%; height: 100px; margin-top: 40px; background: #8e244d; border: 10px solid #a3c644; border-left: none; border-right: none; font-weight: bold; font-size: 2em; letter-spacing: 20px; mix-blend-mode: luminosity;">LOREM</span></div>
+						</section>
+						<section class="blue blend-mode">
+							<div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: hue;</code></pre>
+									<div><span class="mix-hue">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: saturation;</code></pre>
+									<div><span class="mix-saturation">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: color;</code></pre>
+									<div><span class="mix-color">LOREM</span></div>
+								</div>
+								<div>
+									<pre><code class="hljs css">mix-blend-mode: luminosity;</code></pre>
+									<div><span class="mix-luminosity">LOREM</span></div>
+								</div>
 							</div>
 						</section>
 					</section>
