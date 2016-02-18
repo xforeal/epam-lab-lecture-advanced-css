@@ -1,0 +1,180 @@
+.animations {
+	.rule {
+		div {
+			width: 90%;
+			margin: 0 auto;
+			height: 100px;
+			margin-bottom: 20px;
+			animation-name: colorChange;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+			line-height: 100px;
+
+			&:nth-of-type(1) {
+				animation-timing-function: linear;
+			}
+
+			&:nth-of-type(2) {
+				animation-timing-function: step-end;
+			}
+		}
+	}
+
+	.direction {
+		.wrapper {
+			margin-top: 100px;
+			padding: 50px;
+			border: 2px solid $darkGray;
+
+			div {
+				position: relative;
+				width: 40%;
+				height: 50px;
+				margin-bottom: 20px;
+				background: $green;
+				border: 1px solid $darkGray;
+				line-height: 50px;
+				animation: animation-direction 3s ease-in-out infinite;
+
+				&:nth-of-type(2) {
+					animation-direction: reverse;
+				}
+
+				&:nth-of-type(3) {
+					animation-direction: alternate;
+				}
+
+				&:nth-of-type(4) {
+					margin-bottom: 0;
+					animation-direction: alternate-reverse;
+				}
+			}
+		}
+	}
+
+	.fill-mode {
+		.wrapper {
+			margin-top: 100px;
+			padding: 50px;
+			border: 2px solid $darkGray;
+
+			div {
+				position: relative;
+				left: 20%;
+				width: 40%;
+				height: 50px;
+				margin-bottom: 20px;
+				background: $green;
+				border: 1px solid $darkGray;
+				line-height: 50px;
+				animation-duration: 3s;
+				animation-delay: 1s;
+				animation-timing-function: ease-in-out;
+
+				&:nth-of-type(2) {
+					animation-fill-mode: forwards;
+				}
+
+				&:nth-of-type(3) {
+					animation-fill-mode: backwards;
+				}
+
+				&:nth-of-type(4) {
+					margin-bottom: 0;
+					animation-fill-mode: both;
+				}
+			}
+
+			&:hover div {
+				animation-name: animation-fill-mode;
+			}
+		}
+	}
+
+	.play-state {
+		& > div {
+			position: relative;
+
+			.circle {
+				position: relative;
+				display: inline-block;
+				margin-top: 100px;
+				width: 220px;
+				height: 220px;
+				border-radius: 50%;
+				box-shadow: 0 -50px 5px 0 rgba(255,0,0,0.5),
+							25px -40px 5px 0 rgba(255,127,0,0.5),
+							40px -25px 5px 0 rgba(255,255,0,0.5),
+							50px 0 5px 0 rgba(125,255,0,0.5),
+							40px 25px 5px 0 rgba(0,255,0,0.5),
+							25px 40px 5px 0 rgba(0,255,127,0.5),
+							0 50px 5px 0 rgba(0,255,255,0.5),
+							-25px 40px 5px 0 rgba(0,127,255,0.5),
+							-40px 25px 5px 0 rgba(0,0,255,0.5),
+							-50px 0 5px 0 rgba(127,0,255,0.5),
+							-40px -25px 5px 0 rgba(255,0,255,0.5),
+							-25px -40px 5px 0 rgba(255,0,127,0.5);
+				animation: animation-play-state-rotate 2s linear infinite paused;
+			}
+
+			.circle-text {
+				z-index: 10;
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 200px;
+				height: 200px;
+				margin: 100px auto 0;
+				border: 10px solid $darkGray;
+				border-radius: 50%;
+				background: $green url(../img/animation-play-state-paused.png) 20px 120% no-repeat;
+				background-size: contain;
+				animation-name: animation-play-state-scale, animation-play-state-shake, animation-play-state-color;
+				animation-duration: 0.5s, 0.3s, 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-play-state: paused;
+
+				&:before {
+					content: 'hover me!';
+					display: block;
+					margin-top: 50px;
+					mix-blend-mode: color-dodge;
+					text-transform: uppercase;
+				}
+
+				&:hover, &:hover + .circle {	
+					animation-play-state: running;
+					background-image: none;
+				}
+				
+				&:hover {
+					& ~ .running-guy {
+						opacity: 1;
+						animation-play-state: running;
+					}
+
+					&:before {
+						content: 'please stop!';
+						mix-blend-mode: color-burn;
+						margin-top: 60px;
+					}
+				}
+			}
+
+			.running-guy {
+				opacity: 0;
+				position: fixed;
+				z-index: 20;
+				bottom: -35%;
+				left: 0;
+				right: 0;
+				width: 20%;
+				height: 100px;
+				background: transparent url(../img/animation-play-state-running.png) 50% 100% no-repeat;
+				background-size: contain;
+				animation: animation-play-state-run 2s linear infinite paused;
+			}
+		}
+	}
+}

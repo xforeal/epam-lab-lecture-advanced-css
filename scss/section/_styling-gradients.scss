@@ -1,0 +1,217 @@
+.gradients {
+	.linear {
+		div {
+			width: 80%;
+			height: 300px;
+			margin: 0 auto;
+			background: linear-gradient($blue, $darkGray);
+		}
+	}
+
+	.direction {
+		.row {
+			display: flex;
+			justify-content: space-between;
+
+			&:not(:last-child) {
+				margin-bottom: 50px;
+			}
+
+			div {
+				width: 45%;
+				height: 200px;
+
+				span {
+					line-height: 200px;
+					color: $white;
+				}
+			}
+
+			&:nth-of-type(1) {
+				div {
+					&:nth-of-type(1) {
+						background: linear-gradient(to left, $blue, $darkGray);
+					}
+
+					&:nth-of-type(2) {
+						background: linear-gradient(to bottom right, $blue, $darkGray);
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				div {
+					&:nth-of-type(1) {
+						background: linear-gradient(60deg, $blue, $darkGray);
+					}
+
+					&:nth-of-type(2) {
+						background: linear-gradient(-135deg, $blue, $darkGray);
+					}
+				}
+			}
+		}
+	}
+
+	.colors {
+		div {
+			width: 80%;
+			height: 200px;
+			margin: 0 auto;
+
+			span {
+				line-height: 200px;
+			}
+		}
+
+		.multi {
+			margin-bottom: 50px;
+			background: linear-gradient(to right, $red, rgb(255,127,0),
+												  rgb(255,255,0), rgb(125,255,0),
+												  $green, rgb(0,255,127),
+												  rgb(0,255,255), rgb(0,127,255),
+												  $blue, rgb(127,0,255),
+												  rgb(255,0,255), rgb(255,0,127));
+		}
+
+		.transparent {
+			background: linear-gradient(to right, transparent, $red);
+		}
+	}
+
+	.position {
+		pre {
+			font-size: 0.47em;
+		}
+
+		div {
+			width: 80%;
+			height: 200px;
+			margin: 0 auto;
+			background: linear-gradient(to right, $blue 10%, transparent 40%, transparent 60%, $red 90%);
+		}
+	}
+
+	.radial {
+		div {
+			width: 80%;
+			height: 300px;
+			margin: 0 auto;
+			background: radial-gradient($darkGray, $darkBlue, $blue, transparent);
+		}
+	}
+
+	.shape {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				width: 45%;
+				height: 200px;
+
+				span {
+					line-height: 200px;
+					color: $white;
+				}
+
+				&:nth-of-type(1) {
+					background: radial-gradient(ellipse, $blue, $darkGray 70%);
+				}
+
+				&:nth-of-type(2) {
+					background: radial-gradient(circle, $blue, $darkGray 70%);
+				}
+			}
+		}
+	}
+
+	.size {
+		.row {
+			display: flex;
+			justify-content: space-between;
+
+			&:not(:last-child) {
+				margin-bottom: 50px;
+			}
+
+			div {
+				width: 45%;
+				height: 200px;
+
+				span {
+					line-height: 200px;
+					color: $white;
+				}
+			}
+
+			&:nth-of-type(1) {
+				div {
+					&:nth-of-type(1) {
+						background: radial-gradient(circle closest-side at 60% 60%, $blue, $darkGray);
+					}
+
+					&:nth-of-type(2) {
+						background: radial-gradient(circle farthest-side at 60% 60%, $blue, $darkGray);
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				div {
+					&:nth-of-type(1) {
+						background: radial-gradient(circle closest-corner at 60% 60%, $blue, $darkGray);
+					}
+
+					&:nth-of-type(2) {
+						background: radial-gradient(circle farthest-corner at 60% 60%, $blue, $darkGray);
+					}
+				}
+			}
+		}
+	}
+
+	.repeat {
+		pre {
+			font-size: 0.47em;
+		}
+
+		div {
+			width: 80%;
+			height: 200px;
+			margin: 0 auto;
+
+			&:nth-of-type(1) {
+				margin-bottom: 50px;
+				background: repeating-linear-gradient(to right, $darkGray, $darkGray 5%, $darkBlue 15%, $blue 20%);
+			}
+
+			&:nth-of-type(2) {
+				background: repeating-radial-gradient($darkGray, $darkGray 5%, $darkBlue 15%, $blue 20%);
+			}
+		}
+	}
+
+	.pattern {
+		pre {
+			font-size: 0.47em;
+		}
+
+		div {
+			width: 80%;
+			height: 100px;
+			margin: 0 auto;
+
+			&:nth-of-type(1) {
+				margin-bottom: 50px;
+				background: $darkGray linear-gradient(to right, transparent 50%, $blue 50%) no-repeat;
+				background-size: 5% 100%;
+			}
+
+			&:nth-of-type(2) {
+				background: $darkGray linear-gradient(to right, transparent 50%, $blue 50%);
+				background-size: 5% 100%;
+			}
+		}
+	}
+}

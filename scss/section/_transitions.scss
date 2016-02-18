@@ -1,0 +1,124 @@
+.transitions {
+	.timing-functions {
+		.wrapper {
+			border: 2px solid $darkGray;
+
+			div {
+				width: 50%;
+				height: 50px;
+				background: $green;
+				border-bottom: 1px solid $darkGray;
+				font-size: 0.75em;
+				line-height: 50px;
+				transition-property: width;
+				transition-duration: 5s;
+
+				&:nth-of-type(1) {
+					transition-timing-function: linear;
+				}
+
+				&:nth-of-type(2) {
+					transition-timing-function: ease;
+				}
+
+				&:nth-of-type(3) {
+					transition-timing-function: ease-in;
+				}
+
+				&:nth-of-type(4) {
+					transition-timing-function: ease-out;
+				}
+
+				&:nth-of-type(5) {
+					transition-timing-function: ease-in-out;
+				}
+
+				&:nth-of-type(6) {
+					transition-timing-function: steps(4,start);
+				}
+
+				&:nth-of-type(7) {
+					transition-timing-function: steps(4,end);
+				}
+
+				&:nth-of-type(8) {
+					transition-timing-function: step-start;
+				}
+
+				&:nth-of-type(9) {
+					transition-timing-function: step-end;
+				}
+
+				&:nth-of-type(10) {
+					transition-timing-function: cubic-bezier(1,0,0,1);
+				}
+					
+				&:last-child {
+					border: none;
+					transition-timing-function: cubic-bezier(1,-1,0.3,2);
+				}
+			}
+
+			&:hover div {
+				width: 100%;
+			}
+		}
+	}
+
+	.example {
+		& > div {
+			display: flex;
+			height: 500px;
+			justify-content: space-between;
+			align-content: space-between;
+			flex-wrap: wrap;
+			
+			& > div {
+				width: 45%;
+				height: 200px;
+				background-color: $green; 
+
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					max-width: 99%;
+				}
+
+				&:nth-of-type(1) {
+					transition: background-color 3s ease-in-out;
+				}
+
+				&:nth-of-type(2) {
+					transition-property: color, background-color;
+					transition-duration: 2s;
+					transition-timing-function: ease-in-out;
+				}
+
+				&:nth-of-type(3) {
+					transition-property: color, background-color;
+					transition-duration: 2s;
+					transition-timing-function: cubic-bezier(0.3, -5, 0.7, 5);
+				}
+
+				&:nth-of-type(4) {
+					transition-property: color, background-color;
+					transition-duration: 2s;
+					transition-timing-function: cubic-bezier(0, 1, 1, 0);
+				}
+
+				&:before {
+					content: '';
+					display: inline-block;
+					vertical-align: middle;
+					height: 100%;
+					width: 0;
+				}
+
+				&:hover {
+					background-color: $darkGray;
+					color: $green;
+				}
+			}
+		}
+	}
+}

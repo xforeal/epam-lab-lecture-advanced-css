@@ -1,0 +1,135 @@
+.shadows {
+	.box-shadow {
+		& > div {
+			position: relative;
+
+			div {
+				&:nth-of-type(1), &:nth-of-type(2) {
+					display: inline-block;
+					vertical-align: top;
+					width: 30%;
+					height: 300px;
+					border: 10px solid $darkGray;
+					background-color: $blue;
+					border-radius: 60px 0;
+					line-height: 300px;
+				}
+
+				&:nth-of-type(1) {
+					margin: 0 10% 0 -5%;
+					box-shadow: 10px 10px 0px 8px $lightGray inset;
+				}
+
+				&:nth-of-type(2) {
+					box-shadow: 64px 64px 12px 40px $lightGray;
+				}
+
+				&:nth-of-type(3) {
+					position: absolute;
+					top: 0;
+					bottom: -115px;
+					left: 10%;
+					right: 4%;
+					background: url(../img/box_shadow.png) 0% 0% no-repeat;
+					background-size: contain;
+					font-size: 0.5em;
+
+					span {
+						position: absolute;
+
+						&.alt {
+							color: $white;
+						}
+
+						&:nth-of-type(1) {
+							top: 18px;
+							left: 24px;
+							transform: rotate(-40deg);
+							font-size: 0.5em;
+						}
+
+						&:nth-of-type(2) {
+							top: 21px;
+							left: 103px;
+						}
+
+						&:nth-of-type(3) {
+							top: 254px;
+							left: 24px;
+						}
+
+						&:nth-of-type(4) {
+							top: 344px;
+							left: 560px;
+						}
+
+						&:nth-of-type(5) {
+							top: 385px;
+							left: 550px;
+						}
+
+						&:nth-of-type(6) {
+							top: 410px;
+							left: 661px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.box-example {
+		div {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto 0;
+			border: 10px solid $darkGray;
+			border-radius: 50%;
+			background-color: $blue;
+			box-shadow: 0 -50px 5px 0 rgba(255,0,0,0.5),
+						25px -40px 5px 0 rgba(255,127,0,0.5),
+						40px -25px 5px 0 rgba(255,255,0,0.5),
+						50px 0 5px 0 rgba(125,255,0,0.5),
+						40px 25px 5px 0 rgba(0,255,0,0.5),
+						25px 40px 5px 0 rgba(0,255,127,0.5),
+						0 50px 5px 0 rgba(0,255,255,0.5),
+						-25px 40px 5px 0 rgba(0,127,255,0.5),
+						-40px 25px 5px 0 rgba(0,0,255,0.5),
+						-50px 0 5px 0 rgba(127,0,255,0.5),
+						-40px -25px 5px 0 rgba(255,0,255,0.5),
+						-25px -40px 5px 0 rgba(255,0,127,0.5);
+		}
+	}
+
+	.text-shadow {
+		div {
+			width: 70%;
+			margin: 0 auto;
+
+			h1 {
+				color: $blue;
+				text-shadow: 0 0 1px $darkGray,
+							 5px 5px 10px $blue;
+			}
+		}
+	}
+
+	.text-hover {
+		pre {
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		h1 {
+			display: inline-block;
+			color: $blue;
+			transition: text-shadow 0.2s linear,
+						color 0.2s linear;
+
+			&:hover{
+				color: transparent;
+				text-shadow: 0 0 20px $blue;
+			}
+		}
+	}
+}

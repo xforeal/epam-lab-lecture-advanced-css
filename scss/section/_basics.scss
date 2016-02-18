@@ -1,0 +1,105 @@
+.variables {
+	.root {
+		--color: $blue;
+
+		div {
+			width: 80%;
+			height: 200px;
+			margin: 0 auto;
+			border: 2px solid $darkGray;
+			background-color: var(--color);
+		}
+	}
+
+	.scope {
+		& > div:nth-of-type(1) {
+			display: flex;
+			justify-content: space-between;
+
+			pre {
+				width: 45%;
+			}
+		}
+
+		& > div:nth-of-type(2), div div {
+			padding: 20px;
+			border: 2px solid $darkGray;
+		}
+		.one {
+			background-color: var(--color);
+		}
+
+		.two {
+			--color: $green;
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				width: 40%;
+				height: 120px;
+				background-color: var(--color);
+				line-height: 120px;
+			}
+		}
+
+		.three {
+			--color: $red;
+		}
+	}
+}
+
+.units {
+	.example {
+		.vh-vmin {
+			span {
+				&:nth-child(1) {
+					font-size: 10vh;
+				}
+
+				&:nth-child(2) {
+					font-size: 10vmin;
+				}
+			}
+		}
+
+		.px-in {
+			span {
+				&:nth-child(1) {
+					font-size: 96px;
+				}
+
+				&:nth-child(2) {
+					font-size: 1in;
+				}
+			}
+		}
+
+		.em-rem-per {
+			span {
+				&:nth-child(1) {
+					font-size: 2em;
+				}
+
+				&:nth-child(2) {
+					font-size: 4.75rem;
+				}
+
+				&:nth-child(4) {
+					font-size: 200%;
+				}
+			}
+		}
+
+		.pc-pt {
+			span {
+				&:nth-child(1) {
+					font-size: 4pc;
+				}
+
+				&:nth-child(2) {
+					font-size: 48pt;
+				}
+			}
+		}
+	}
+}

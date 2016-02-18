@@ -1,0 +1,168 @@
+.background {
+	.attachment {
+		.wrapper {
+			width: 90%;
+			height: 500px;
+			overflow-y: scroll;
+			margin: 0 auto;
+
+			span {
+				display: inline-block;
+				width: 0.5em;
+				text-align: center;
+				font-size: 5em;
+				color: $blue;
+			}
+		}
+		
+		&.local .wrapper {
+			overflow: hidden;
+
+			div {
+				display: inline-block;
+				vertical-align: top;
+				width: 30%;
+				height: 500px;
+				overflow-y: scroll;
+				background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, $darkGray 20px, $darkGray 40px);
+
+				&:nth-of-type(1) {
+					margin-right: 4%;
+					background-attachment: fixed;
+				}
+
+				&:nth-of-type(2) {
+					margin-right: 4%;
+					background-attachment: scroll;
+				}
+
+				&:nth-of-type(3) {
+					background-attachment: local;
+				}
+			}
+		}
+
+		&:not(.local) .wrapper > div {
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				width: 30%;
+				background: repeating-linear-gradient(15deg, transparent 0, transparent 20px, $darkGray 20px, $darkGray 40px);
+
+				&:nth-of-type(1) {
+					background-attachment: fixed;
+				}
+
+				&:nth-of-type(2) {
+					background-attachment: scroll;
+				}
+
+				&:nth-of-type(3) {
+					background-attachment: local;
+				}
+			}
+		}
+	}
+
+	.clip {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			width: 90%;
+			margin: 0 auto;
+
+			div {
+				width: 17%;
+				height: 200px;
+				padding: 5%;
+				border: 10px dashed $darkGray;
+				text-align: center;
+				font-size: 0.6em;
+				line-height: 200px;
+				background: $blue;
+
+				&:nth-of-type(1) {
+					background-clip: padding-box;
+				}
+
+				&:nth-of-type(2) {
+					background-clip: border-box;
+				}
+
+				&:nth-of-type(3) {
+					background-clip: content-box;
+				}
+			}
+		}
+	}
+
+	.origin {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			width: 90%;
+			margin: 0 auto;
+
+			div {
+				width: 17%;
+				height: 200px;
+				padding: 5%;
+				border: 10px dashed $darkGray;
+				text-align: center;
+				font-size: 0.6em;
+				line-height: 200px;
+				background: url('../img/epam_logo_gray.png') no-repeat;
+				background-size: 200px;
+
+				&:nth-of-type(1) {
+					background-origin: padding-box;
+				}
+
+				&:nth-of-type(2) {
+					background-origin: border-box;
+				}
+
+				&:nth-of-type(3) {
+					background-origin: content-box;
+				}
+			}
+		}
+	}
+
+	.size {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			width: 90%;
+			margin: 0 auto;
+
+			& > div {
+				width: 30%;
+
+				div {
+					height: 200px;
+					background: $blue url('../img/epam_logo_gray.png') 50% no-repeat;
+				}
+
+				pre {
+					width: 100%;
+					margin: 20px 0;
+					font-size: 0.45em;
+				}
+
+				&:nth-of-type(1) div {
+					background-size: 3em 10px;
+				}
+
+				&:nth-of-type(2) div {
+					background-size: contain;
+				}
+
+				&:nth-of-type(3) div {
+					background-size: cover;
+				}
+			}
+		}
+	}
+}

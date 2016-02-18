@@ -1,0 +1,526 @@
+.transforms {
+	.translate {
+		& > div {
+			position: relative;
+			height: 400px;
+
+			div {
+				width: 40%;
+				line-height: 200px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: translated 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.scale {
+		& > div {
+			position: relative;
+			height: 300px;
+			margin-top: 100px;
+
+			div {
+				width: 40%;
+				margin: 0 auto;
+				line-height: 200px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: scaled 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.skew {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			height: 300px;
+			margin-top: 100px;
+
+			& > div {
+				position: relative;
+				width: 45%;
+
+				div {
+					line-height: 200px;
+
+					&:nth-of-type(1) {
+						background: $lightGray;
+					}
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						background: $green;
+						opacity: 0.7;
+					}
+				}
+
+				&:nth-of-type(1) div {
+					&:nth-of-type(2) {
+						animation: skewedX 2s ease-in-out infinite alternate;
+					}
+				}
+
+				&:nth-of-type(2) div {
+					&:nth-of-type(2) {
+						animation: skewedY 2s ease-in-out infinite alternate;
+					}
+				}
+			}
+		}
+	}
+
+	.rotate {
+		& > div {
+			display: flex;
+			justify-content: space-around;
+			height: 300px;
+			margin-top: 100px;
+
+			& > div {
+				position: relative;
+				width: 20%;
+
+				div {
+					line-height: 200px;
+
+					&:nth-of-type(1) {
+						background: $lightGray;
+					}
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						background: $green;
+						opacity: 0.7;
+					}
+				}
+
+				&:nth-of-type(1) div {
+					&:nth-of-type(2) {
+						animation: rotated 2s ease-in-out infinite alternate;
+					}
+				}
+
+				&:nth-of-type(2) div {
+					&:nth-of-type(2) {
+						animation: rotatedX 2s ease-in-out infinite alternate;
+					}
+				}
+
+				&:nth-of-type(3) div {
+					&:nth-of-type(2) {
+						animation: rotatedY 2s ease-in-out infinite alternate;
+					}
+				}
+			}
+		}
+	}
+
+	.matrix {
+		& > div {
+			position: relative;
+			margin: 50px auto 0;
+
+			div {
+				width: 20%;
+				line-height: 100px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: matrixed 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.fulcrum {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			height: 300px;
+			margin-top: 100px;
+
+			& > div {
+				position: relative;
+				width: 45%;
+
+				div {
+					line-height: 200px;
+					&:nth-of-type(1) {
+						background: $lightGray;
+					}
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						background: $green;
+						opacity: 0.7;
+						animation: fulcrum 2s ease-in-out infinite alternate;
+					}
+				}
+
+				&:nth-of-type(2) {
+					div:nth-of-type(2) {
+						transform-origin: left top;
+					}
+				}
+			}
+		}
+	}
+
+	.plane {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			height: 300px;
+			margin-top: 100px;
+
+			& > div {
+				position: relative;
+				width: 45%;
+
+				div {
+					line-height: 200px;
+
+					&:nth-of-type(1) {
+						background: $lightGray;
+					}
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						background: $green;
+						opacity: 0.7;
+						animation: transform-style-parent 1s ease-in-out infinite alternate;
+
+						div {
+							width: 80%;
+							margin: 0 auto;
+							background: $darkGreen;
+							animation: transform-style-child 1s ease-in-out infinite alternate;
+							line-height: 200px;
+						}
+					}
+				}
+
+				&:nth-of-type(2) {
+					div:nth-of-type(2) {
+						transform-style: preserve-3d;
+					}
+				}
+			}			
+		}
+	}
+
+	.perspective {
+		.cube {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto 0;
+			transform-style: preserve-3d;
+			perspective-origin: 55% 80%;
+			perspective: 600px;
+			animation: perspective 1s cubic-bezier(0.9, 0.1, 0.75, 0.25) infinite alternate;
+
+			div {
+				position: absolute;
+				width: 200px;
+				opacity: 0.7;
+				font-size: 2.87em;
+				background: $green;
+				border: 10px solid $darkGreen;
+				color: $white;
+				text-align: center;
+				line-height: 200px;
+
+				&.front {
+					transform: translateZ(2em);
+				}
+
+				&.top {
+					transform: rotateX( 90deg) translateY(1em) translateZ(1em);
+				}
+
+				&.right {
+					transform: rotateY( 90deg) translateX(-1em) translateZ(1em);
+				}
+
+				&.left {
+					transform: rotateY(-90deg) translateX(1em) translateZ(1em);
+				}
+
+				&.bottom {
+					transform: rotateX(-90deg) translateY(-1em) translateZ(1em);
+				}
+
+				&.back {
+					transform: translateZ(0em);
+				}
+			}
+		}
+
+		&.origin {
+			.cube {
+				animation: move-origin 2s linear infinite;
+			}
+		}
+	}
+
+	.parent-child {
+		perspective: none;
+
+		& > div {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			pre {
+				width: 45%;
+			}
+
+			& > div {
+				display: flex;
+				justify-content: space-between;
+				width: 45%;
+				padding: 25px;
+
+				div {
+					width: 45%;
+					height: 100px;
+					background: $green;
+					transform: rotateY(60deg);
+				}
+
+				&:nth-of-type(1) {
+					animation: perspective-parent 1s linear infinite alternate;
+				}
+
+				&:nth-of-type(2) {
+					div {
+						animation: perspective-child 1s linear infinite alternate;
+					}
+				}
+			}
+		}
+	}
+
+	.backface {
+		& > div {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			pre {
+				width: 100%;
+			}
+
+			& > div {
+				width: 45%;
+				line-height: 200px;
+				background: $green;
+				animation: rotatedY 1s linear infinite alternate;
+
+				&:nth-of-type(2) {
+					backface-visibility: hidden;
+				}
+			}
+		}
+	}
+
+	.translate-3d {
+		& > div {
+			position: relative;
+			height: 400px;
+			transform-style: preserve-3d;
+
+			div {
+				width: 40%;
+				line-height: 200px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: translated3D 3s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.scale-3d {
+		& > div {
+			position: relative;
+			height: 300px;
+			margin-top: 100px;
+			transform-style: preserve-3d;
+
+			div {
+				width: 40%;
+				margin: 0 auto;
+				line-height: 200px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: scaled3D 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.rotate-3d {
+		& > div {
+			position: relative;
+			height: 300px;
+			margin-top: 100px;
+			transform-style: preserve-3d;
+
+			div {
+				width: 60%;
+				margin: 0 auto;
+				line-height: 300px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: rotated3D 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+
+	.rotate-3d-negative {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			height: 300px;
+			transform-style: preserve-3d;
+
+			& > div {
+				width: 45%;
+				position: relative;
+
+				div {
+					line-height: 300px;
+
+					&:nth-of-type(1) {
+						background: $lightGray;
+					}
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						background: $green;
+						opacity: 0.7;
+					}
+				}
+
+				&:nth-of-type(1) {
+					div:nth-of-type(2) {
+						animation: rotated3DnZ 2s ease-in-out infinite alternate;
+					}
+				}
+
+				&:nth-of-type(2) {
+					div:nth-of-type(2) {
+						animation: rotated3DpZ 2s ease-in-out infinite alternate;
+					}
+				}
+			}
+		}
+	}
+
+	.matrix-3d {
+		& > div {
+			position: relative;
+			margin: 50px auto 0;
+			transform-style: preserve-3d;
+
+			div {
+				width: 20%;
+				line-height: 100px;
+
+				&:nth-of-type(1) {
+					background: $lightGray;
+				}
+
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background: $green;
+					opacity: 0.7;
+					animation: matrixed3D 2s ease-in-out infinite alternate;
+				}
+			}
+		}
+	}
+}

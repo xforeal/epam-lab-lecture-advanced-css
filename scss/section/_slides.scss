@@ -1,0 +1,26 @@
+.title {
+	div {
+		max-width: 210px;
+		margin: 0 auto -118px;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.end {
+	h2 {
+		color: $lightGray;
+		font-size: 1.65em;
+	}
+
+	h4 {
+		color: $darkGreen;
+		font-size: 0.8em;
+
+		span {
+			font-size: 2em;
+		}
+	}
+}
