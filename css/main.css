@@ -166,7 +166,7 @@
     left: 60%; } }
 
 @keyframes animation-play-state-scale {
-  0% {
+  from {
     transform: scale(1.2, 1.2); }
   25% {
     transform: scale(1.25, 1.25); }
@@ -174,11 +174,11 @@
     transform: scale(1.3, 1.3); }
   75% {
     transform: scale(1.25, 1.25); }
-  100% {
+  to {
     transform: scale(1.2, 1.2); } }
 
 @keyframes animation-play-state-color {
-  0% {
+  from {
     background-color: #a3c644; }
   17% {
     background-color: #1a9cb0; }
@@ -190,11 +190,11 @@
     background-color: #39c2d7; }
   83% {
     background-color: #8e244d; }
-  100% {
+  to {
     background-color: #a3c644; } }
 
 @keyframes animation-play-state-shake {
-  0% {
+  from {
     top: 0;
     left: 0; }
   7% {
@@ -236,18 +236,18 @@
   92% {
     top: 0;
     left: -24px; }
-  100% {
+  to {
     top: 0;
     left: 0; } }
 
 @keyframes animation-play-state-rotate {
-  0% {
+  from {
     transform: rotate(0); }
-  100% {
+  to {
     transform: rotate(360deg); } }
 
 @keyframes animation-play-state-run {
-  0% {
+  from {
     left: -20%;
     transform: rotateY(180deg); }
   49% {
@@ -258,7 +258,7 @@
     transform: rotateY(0); }
   99% {
     transform: rotateY(0); }
-  100% {
+  to {
     left: -20%;
     transform: rotateY(180deg); } }
 
@@ -274,44 +274,34 @@
     width: 80%;
     height: 200px;
     margin: 0 auto;
+    border: 2px solid #464547;
     background-color: var(--color); }
 
-.variables .scope pre {
-  display: inline-block;
-  vertical-align: top;
-  width: 40%; }
-  .variables .scope pre:first-child {
-    margin-right: 10%; }
+.variables .scope > div:nth-of-type(1) {
+  display: flex;
+  justify-content: space-between; }
+  .variables .scope > div:nth-of-type(1) pre {
+    width: 45%; }
+
+.variables .scope > div:nth-of-type(2), .variables .scope div div {
+  padding: 20px;
+  border: 2px solid #464547; }
 
 .variables .scope .one {
-  background-color: var(--color);
-  border: 2px solid #464547;
-  padding: 20px; }
+  background-color: var(--color); }
 
 .variables .scope .two {
   --color: #a3c644;
-  border: 2px solid #464547;
-  padding: 20px; }
+  display: flex;
+  justify-content: space-between; }
+  .variables .scope .two div {
+    width: 40%;
+    height: 120px;
+    background-color: var(--color);
+    line-height: 120px; }
 
 .variables .scope .three {
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
-  height: 120px;
-  margin-right: 10%;
-  border: 2px solid #464547;
-  --color: #b22746;
-  background-color: var(--color);
-  line-height: 120px; }
-
-.variables .scope .four {
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
-  height: 120px;
-  border: 2px solid #464547;
-  background-color: var(--color);
-  line-height: 120px; }
+  --color: #b22746; }
 
 .units .example .vh-vmin span:nth-child(1) {
   font-size: 10vh; }
@@ -505,9 +495,9 @@
     .background .size > div > div:nth-of-type(3) div {
       background-size: cover; }
 
-.shadows-gradients .box-shadow > div {
+.shadows .box-shadow > div {
   position: relative; }
-  .shadows-gradients .box-shadow > div div:nth-of-type(1), .shadows-gradients .box-shadow > div div:nth-of-type(2) {
+  .shadows .box-shadow > div div:nth-of-type(1), .shadows .box-shadow > div div:nth-of-type(2) {
     display: inline-block;
     vertical-align: top;
     width: 30%;
@@ -516,12 +506,12 @@
     background-color: #39c2d7;
     border-radius: 60px 0;
     line-height: 300px; }
-  .shadows-gradients .box-shadow > div div:nth-of-type(1) {
+  .shadows .box-shadow > div div:nth-of-type(1) {
     margin: 0 10% 0 -5%;
     box-shadow: 10px 10px 0px 8px #999 inset; }
-  .shadows-gradients .box-shadow > div div:nth-of-type(2) {
+  .shadows .box-shadow > div div:nth-of-type(2) {
     box-shadow: 64px 64px 12px 40px #999; }
-  .shadows-gradients .box-shadow > div div:nth-of-type(3) {
+  .shadows .box-shadow > div div:nth-of-type(3) {
     position: absolute;
     top: 0;
     bottom: -115px;
@@ -530,32 +520,32 @@
     background: url(../img/box_shadow.png) 0% 0% no-repeat;
     background-size: contain;
     font-size: 0.5em; }
-    .shadows-gradients .box-shadow > div div:nth-of-type(3) span {
+    .shadows .box-shadow > div div:nth-of-type(3) span {
       position: absolute; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span.alt {
+      .shadows .box-shadow > div div:nth-of-type(3) span.alt {
         color: #fff; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(1) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(1) {
         top: 18px;
         left: 24px;
         transform: rotate(-40deg);
         font-size: 0.5em; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(2) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(2) {
         top: 21px;
         left: 103px; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(3) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(3) {
         top: 254px;
         left: 24px; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(4) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(4) {
         top: 344px;
         left: 560px; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(5) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(5) {
         top: 385px;
         left: 550px; }
-      .shadows-gradients .box-shadow > div div:nth-of-type(3) span:nth-of-type(6) {
+      .shadows .box-shadow > div div:nth-of-type(3) span:nth-of-type(6) {
         top: 410px;
         left: 661px; }
 
-.shadows-gradients .box-example div {
+.shadows .box-example div {
   width: 200px;
   height: 200px;
   margin: 100px auto 0;
@@ -564,198 +554,198 @@
   background-color: #39c2d7;
   box-shadow: 0 -50px 5px 0 rgba(255, 0, 0, 0.5), 25px -40px 5px 0 rgba(255, 127, 0, 0.5), 40px -25px 5px 0 rgba(255, 255, 0, 0.5), 50px 0 5px 0 rgba(125, 255, 0, 0.5), 40px 25px 5px 0 rgba(0, 255, 0, 0.5), 25px 40px 5px 0 rgba(0, 255, 127, 0.5), 0 50px 5px 0 rgba(0, 255, 255, 0.5), -25px 40px 5px 0 rgba(0, 127, 255, 0.5), -40px 25px 5px 0 rgba(0, 0, 255, 0.5), -50px 0 5px 0 rgba(127, 0, 255, 0.5), -40px -25px 5px 0 rgba(255, 0, 255, 0.5), -25px -40px 5px 0 rgba(255, 0, 127, 0.5); }
 
-.shadows-gradients .text-shadow div {
+.shadows .text-shadow div {
   width: 70%;
   margin: 0 auto; }
-  .shadows-gradients .text-shadow div h1 {
+  .shadows .text-shadow div h1 {
     color: #39c2d7;
     text-shadow: 0 0 1px #464547, 5px 5px 10px #1a9cb0; }
 
-.shadows-gradients .text-hover pre {
+.shadows .text-hover pre {
   width: 70%;
   margin: 0 auto; }
 
-.shadows-gradients .text-hover h1 {
+.shadows .text-hover h1 {
   display: inline-block;
   color: #39c2d7;
   transition: text-shadow 0.2s linear, color 0.2s linear; }
-  .shadows-gradients .text-hover h1:hover {
+  .shadows .text-hover h1:hover {
     color: transparent;
     text-shadow: 0 0 20px #39c2d7; }
 
-.shadows-gradients .linear div {
+.gradients .linear div {
   width: 80%;
   height: 300px;
   margin: 0 auto;
   background: linear-gradient(#39c2d7, #464547); }
 
-.shadows-gradients .direction .row {
+.gradients .direction .row {
   display: flex;
   justify-content: space-between; }
-  .shadows-gradients .direction .row:not(:last-child) {
+  .gradients .direction .row:not(:last-child) {
     margin-bottom: 50px; }
-  .shadows-gradients .direction .row div {
+  .gradients .direction .row div {
     width: 45%;
     height: 200px; }
-    .shadows-gradients .direction .row div span {
+    .gradients .direction .row div span {
       line-height: 200px;
       color: #fff; }
-  .shadows-gradients .direction .row:nth-of-type(1) div:nth-of-type(1) {
+  .gradients .direction .row:nth-of-type(1) div:nth-of-type(1) {
     background: linear-gradient(to left, #39c2d7, #464547); }
-  .shadows-gradients .direction .row:nth-of-type(1) div:nth-of-type(2) {
+  .gradients .direction .row:nth-of-type(1) div:nth-of-type(2) {
     background: linear-gradient(to bottom right, #39c2d7, #464547); }
-  .shadows-gradients .direction .row:nth-of-type(2) div:nth-of-type(1) {
+  .gradients .direction .row:nth-of-type(2) div:nth-of-type(1) {
     background: linear-gradient(60deg, #39c2d7, #464547); }
-  .shadows-gradients .direction .row:nth-of-type(2) div:nth-of-type(2) {
+  .gradients .direction .row:nth-of-type(2) div:nth-of-type(2) {
     background: linear-gradient(-135deg, #39c2d7, #464547); }
 
-.shadows-gradients .colors div {
+.gradients .colors div {
   width: 80%;
   height: 200px;
   margin: 0 auto; }
-  .shadows-gradients .colors div span {
+  .gradients .colors div span {
     line-height: 200px; }
 
-.shadows-gradients .colors .multi {
+.gradients .colors .multi {
   margin-bottom: 50px;
   background: linear-gradient(to right, #b22746, #ff7f00, yellow, #7dff00, #a3c644, springgreen, cyan, #007fff, #39c2d7, #7f00ff, magenta, #ff007f); }
 
-.shadows-gradients .colors .transparent {
+.gradients .colors .transparent {
   background: linear-gradient(to right, transparent, #b22746); }
 
-.shadows-gradients .position pre {
+.gradients .position pre {
   font-size: 0.47em; }
 
-.shadows-gradients .position div {
+.gradients .position div {
   width: 80%;
   height: 200px;
   margin: 0 auto;
   background: linear-gradient(to right, #39c2d7 10%, transparent 40%, transparent 60%, #b22746 90%); }
 
-.shadows-gradients .radial div {
+.gradients .radial div {
   width: 80%;
   height: 300px;
   margin: 0 auto;
   background: radial-gradient(#464547, #1a9cb0, #39c2d7, transparent); }
 
-.shadows-gradients .shape > div {
+.gradients .shape > div {
   display: flex;
   justify-content: space-between; }
-  .shadows-gradients .shape > div div {
+  .gradients .shape > div div {
     width: 45%;
     height: 200px; }
-    .shadows-gradients .shape > div div span {
+    .gradients .shape > div div span {
       line-height: 200px;
       color: #fff; }
-    .shadows-gradients .shape > div div:nth-of-type(1) {
+    .gradients .shape > div div:nth-of-type(1) {
       background: radial-gradient(ellipse, #39c2d7, #464547 70%); }
-    .shadows-gradients .shape > div div:nth-of-type(2) {
+    .gradients .shape > div div:nth-of-type(2) {
       background: radial-gradient(circle, #39c2d7, #464547 70%); }
 
-.shadows-gradients .size .row {
+.gradients .size .row {
   display: flex;
   justify-content: space-between; }
-  .shadows-gradients .size .row:not(:last-child) {
+  .gradients .size .row:not(:last-child) {
     margin-bottom: 50px; }
-  .shadows-gradients .size .row div {
+  .gradients .size .row div {
     width: 45%;
     height: 200px; }
-    .shadows-gradients .size .row div span {
+    .gradients .size .row div span {
       line-height: 200px;
       color: #fff; }
-  .shadows-gradients .size .row:nth-of-type(1) div:nth-of-type(1) {
+  .gradients .size .row:nth-of-type(1) div:nth-of-type(1) {
     background: radial-gradient(circle closest-side at 60% 60%, #39c2d7, #464547); }
-  .shadows-gradients .size .row:nth-of-type(1) div:nth-of-type(2) {
+  .gradients .size .row:nth-of-type(1) div:nth-of-type(2) {
     background: radial-gradient(circle farthest-side at 60% 60%, #39c2d7, #464547); }
-  .shadows-gradients .size .row:nth-of-type(2) div:nth-of-type(1) {
+  .gradients .size .row:nth-of-type(2) div:nth-of-type(1) {
     background: radial-gradient(circle closest-corner at 60% 60%, #39c2d7, #464547); }
-  .shadows-gradients .size .row:nth-of-type(2) div:nth-of-type(2) {
+  .gradients .size .row:nth-of-type(2) div:nth-of-type(2) {
     background: radial-gradient(circle farthest-corner at 60% 60%, #39c2d7, #464547); }
 
-.shadows-gradients .repeat pre {
+.gradients .repeat pre {
   font-size: 0.47em; }
 
-.shadows-gradients .repeat div {
+.gradients .repeat div {
   width: 80%;
   height: 200px;
   margin: 0 auto; }
-  .shadows-gradients .repeat div:nth-of-type(1) {
+  .gradients .repeat div:nth-of-type(1) {
     margin-bottom: 50px;
     background: repeating-linear-gradient(to right, #464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%); }
-  .shadows-gradients .repeat div:nth-of-type(2) {
+  .gradients .repeat div:nth-of-type(2) {
     background: repeating-radial-gradient(#464547, #464547 5%, #1a9cb0 15%, #39c2d7 20%); }
 
-.shadows-gradients .pattern pre {
+.gradients .pattern pre {
   font-size: 0.47em; }
 
-.shadows-gradients .pattern div {
+.gradients .pattern div {
   width: 80%;
   height: 100px;
   margin: 0 auto; }
-  .shadows-gradients .pattern div:nth-of-type(1) {
+  .gradients .pattern div:nth-of-type(1) {
     margin-bottom: 50px;
     background: #464547 linear-gradient(to right, transparent 50%, #39c2d7 50%) no-repeat;
     background-size: 5% 100%; }
-  .shadows-gradients .pattern div:nth-of-type(2) {
+  .gradients .pattern div:nth-of-type(2) {
     background: #464547 linear-gradient(to right, transparent 50%, #39c2d7 50%);
     background-size: 5% 100%; }
 
-.filters .filter > div {
+.filters section > div {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap; }
-  .filters .filter > div > div {
+  .filters section > div > div {
     width: 45%; }
-    .filters .filter > div > div pre {
+    .filters section > div > div pre {
       width: 100%; }
-    .filters .filter > div > div div {
+    .filters section > div > div div {
       height: 250px;
       background: url(../img/cat.jpg) no-repeat;
       background-size: cover; }
-      .filters .filter > div > div div.blur {
+      .filters section > div > div div.blur {
         -webkit-filter: blur(5px);
         filter: blur(5px); }
-      .filters .filter > div > div div.brightness {
+      .filters section > div > div div.brightness {
         -webkit-filter: brightness(0.3);
         filter: brightness(0.3); }
-      .filters .filter > div > div div.grayscale {
+      .filters section > div > div div.grayscale {
         -webkit-filter: grayscale(1);
         filter: grayscale(1); }
-      .filters .filter > div > div div.contrast {
+      .filters section > div > div div.contrast {
         -webkit-filter: contrast(2.3);
         filter: contrast(2.3); }
-      .filters .filter > div > div div.hue-rotate {
+      .filters section > div > div div.hue-rotate {
         -webkit-filter: hue-rotate(180deg);
         filter: hue-rotate(180deg); }
-      .filters .filter > div > div div.invert {
+      .filters section > div > div div.invert {
         -webkit-filter: invert(0.7);
         filter: invert(0.7); }
-      .filters .filter > div > div div.saturate {
+      .filters section > div > div div.saturate {
         -webkit-filter: saturate(0.3);
         filter: saturate(0.3); }
-      .filters .filter > div > div div.sepia {
+      .filters section > div > div div.sepia {
         -webkit-filter: sepia(1);
         filter: sepia(1); }
 
-.filters .blend-mode-rule pre {
+.blend-mode .rule pre {
   width: 50%; }
 
-.filters .blend-mode > div {
+.blend-mode .example > div {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap; }
-  .filters .blend-mode > div > div {
+  .blend-mode .example > div > div {
     width: 45%; }
-    .filters .blend-mode > div > div pre {
+    .blend-mode .example > div > div pre {
       width: 100%; }
-    .filters .blend-mode > div > div div {
+    .blend-mode .example > div > div div {
       height: 120px;
       padding: 40px 0;
       background: url(../img/fishes.jpg) no-repeat;
       background-size: cover; }
-      .filters .blend-mode > div > div div span {
+      .blend-mode .example > div > div div span {
         display: block;
         height: 100px;
         background: #b22746;
@@ -765,35 +755,554 @@
         font-weight: bold;
         font-size: 2em;
         letter-spacing: 20px; }
-        .filters .blend-mode > div > div div span.mix-normal {
+        .blend-mode .example > div > div div span.mix-normal {
           mix-blend-mode: normal; }
-        .filters .blend-mode > div > div div span.mix-multiply {
+        .blend-mode .example > div > div div span.mix-multiply {
           mix-blend-mode: multiply; }
-        .filters .blend-mode > div > div div span.mix-screen {
+        .blend-mode .example > div > div div span.mix-screen {
           mix-blend-mode: screen; }
-        .filters .blend-mode > div > div div span.mix-overlay {
+        .blend-mode .example > div > div div span.mix-overlay {
           mix-blend-mode: overlay; }
-        .filters .blend-mode > div > div div span.mix-darken {
+        .blend-mode .example > div > div div span.mix-darken {
           mix-blend-mode: darken; }
-        .filters .blend-mode > div > div div span.mix-lighten {
+        .blend-mode .example > div > div div span.mix-lighten {
           mix-blend-mode: lighten; }
-        .filters .blend-mode > div > div div span.mix-color-dodge {
+        .blend-mode .example > div > div div span.mix-color-dodge {
           mix-blend-mode: color-dodge; }
-        .filters .blend-mode > div > div div span.mix-color-burn {
+        .blend-mode .example > div > div div span.mix-color-burn {
           mix-blend-mode: color-burn; }
-        .filters .blend-mode > div > div div span.mix-hard-light {
+        .blend-mode .example > div > div div span.mix-hard-light {
           mix-blend-mode: hard-light; }
-        .filters .blend-mode > div > div div span.mix-soft-light {
+        .blend-mode .example > div > div div span.mix-soft-light {
           mix-blend-mode: soft-light; }
-        .filters .blend-mode > div > div div span.mix-difference {
+        .blend-mode .example > div > div div span.mix-difference {
           mix-blend-mode: difference; }
-        .filters .blend-mode > div > div div span.mix-exclusion {
+        .blend-mode .example > div > div div span.mix-exclusion {
           mix-blend-mode: exclusion; }
-        .filters .blend-mode > div > div div span.mix-hue {
+        .blend-mode .example > div > div div span.mix-hue {
           mix-blend-mode: hue; }
-        .filters .blend-mode > div > div div span.mix-saturation {
+        .blend-mode .example > div > div div span.mix-saturation {
           mix-blend-mode: saturation; }
-        .filters .blend-mode > div > div div span.mix-color {
+        .blend-mode .example > div > div div span.mix-color {
           mix-blend-mode: color; }
-        .filters .blend-mode > div > div div span.mix-luminosity {
+        .blend-mode .example > div > div div span.mix-luminosity {
           mix-blend-mode: luminosity; }
+
+.transforms .translate > div {
+  position: relative;
+  height: 400px; }
+  .transforms .translate > div div {
+    width: 40%;
+    line-height: 200px; }
+    .transforms .translate > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .translate > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: translated 2s ease-in-out infinite alternate; }
+
+.transforms .scale > div {
+  position: relative;
+  height: 300px;
+  margin-top: 100px; }
+  .transforms .scale > div div {
+    width: 40%;
+    margin: 0 auto;
+    line-height: 200px; }
+    .transforms .scale > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .scale > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: scaled 2s ease-in-out infinite alternate; }
+
+.transforms .skew > div {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 100px; }
+  .transforms .skew > div > div {
+    position: relative;
+    width: 45%; }
+    .transforms .skew > div > div div {
+      line-height: 200px; }
+      .transforms .skew > div > div div:nth-of-type(1) {
+        background: #999; }
+      .transforms .skew > div > div div:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #a3c644;
+        opacity: 0.7; }
+    .transforms .skew > div > div:nth-of-type(1) div:nth-of-type(2) {
+      animation: skewedX 2s ease-in-out infinite alternate; }
+    .transforms .skew > div > div:nth-of-type(2) div:nth-of-type(2) {
+      animation: skewedY 2s ease-in-out infinite alternate; }
+
+.transforms .rotate > div {
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+  margin-top: 100px; }
+  .transforms .rotate > div > div {
+    position: relative;
+    width: 20%; }
+    .transforms .rotate > div > div div {
+      line-height: 200px; }
+      .transforms .rotate > div > div div:nth-of-type(1) {
+        background: #999; }
+      .transforms .rotate > div > div div:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #a3c644;
+        opacity: 0.7; }
+    .transforms .rotate > div > div:nth-of-type(1) div:nth-of-type(2) {
+      animation: rotated 2s ease-in-out infinite alternate; }
+    .transforms .rotate > div > div:nth-of-type(2) div:nth-of-type(2) {
+      animation: rotatedX 2s ease-in-out infinite alternate; }
+    .transforms .rotate > div > div:nth-of-type(3) div:nth-of-type(2) {
+      animation: rotatedY 2s ease-in-out infinite alternate; }
+
+.transforms .matrix > div {
+  position: relative;
+  margin: 50px auto 0; }
+  .transforms .matrix > div div {
+    width: 20%;
+    line-height: 100px; }
+    .transforms .matrix > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .matrix > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: matrixed 2s ease-in-out infinite alternate; }
+
+.transforms .fulcrum > div {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 100px; }
+  .transforms .fulcrum > div > div {
+    position: relative;
+    width: 45%; }
+    .transforms .fulcrum > div > div div {
+      line-height: 200px; }
+      .transforms .fulcrum > div > div div:nth-of-type(1) {
+        background: #999; }
+      .transforms .fulcrum > div > div div:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #a3c644;
+        opacity: 0.7;
+        animation: fulcrum 2s ease-in-out infinite alternate; }
+    .transforms .fulcrum > div > div:nth-of-type(2) div:nth-of-type(2) {
+      transform-origin: left top; }
+
+.transforms .plane > div {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 100px; }
+  .transforms .plane > div > div {
+    position: relative;
+    width: 45%; }
+    .transforms .plane > div > div div {
+      line-height: 200px; }
+      .transforms .plane > div > div div:nth-of-type(1) {
+        background: #999; }
+      .transforms .plane > div > div div:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #a3c644;
+        opacity: 0.7;
+        animation: transform-style-parent 1s ease-in-out infinite alternate; }
+        .transforms .plane > div > div div:nth-of-type(2) div {
+          width: 80%;
+          margin: 0 auto;
+          background: #7f993a;
+          animation: transform-style-child 1s ease-in-out infinite alternate;
+          line-height: 200px; }
+    .transforms .plane > div > div:nth-of-type(2) div:nth-of-type(2) {
+      transform-style: preserve-3d; }
+
+.transforms .perspective .cube {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto 0;
+  transform-style: preserve-3d;
+  perspective-origin: 55% 80%;
+  perspective: 600px;
+  animation: perspective 1s cubic-bezier(0.9, 0.1, 0.75, 0.25) infinite alternate; }
+  .transforms .perspective .cube div {
+    position: absolute;
+    width: 200px;
+    opacity: 0.7;
+    font-size: 2.87em;
+    background: #a3c644;
+    border: 10px solid #7f993a;
+    color: #fff;
+    text-align: center;
+    line-height: 200px; }
+    .transforms .perspective .cube div.front {
+      transform: translateZ(2em); }
+    .transforms .perspective .cube div.top {
+      transform: rotateX(90deg) translateY(1em) translateZ(1em); }
+    .transforms .perspective .cube div.right {
+      transform: rotateY(90deg) translateX(-1em) translateZ(1em); }
+    .transforms .perspective .cube div.left {
+      transform: rotateY(-90deg) translateX(1em) translateZ(1em); }
+    .transforms .perspective .cube div.bottom {
+      transform: rotateX(-90deg) translateY(-1em) translateZ(1em); }
+    .transforms .perspective .cube div.back {
+      transform: translateZ(0em); }
+
+.transforms .perspective.origin .cube {
+  animation: move-origin 2s linear infinite; }
+
+.transforms .parent-child {
+  perspective: none; }
+  .transforms .parent-child > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .transforms .parent-child > div pre {
+      width: 45%; }
+    .transforms .parent-child > div > div {
+      display: flex;
+      justify-content: space-between;
+      width: 45%;
+      padding: 25px; }
+      .transforms .parent-child > div > div div {
+        width: 45%;
+        height: 100px;
+        background: #a3c644;
+        transform: rotateY(60deg); }
+      .transforms .parent-child > div > div:nth-of-type(1) {
+        animation: perspective-parent 1s linear infinite alternate; }
+      .transforms .parent-child > div > div:nth-of-type(2) div {
+        animation: perspective-child 1s linear infinite alternate; }
+
+.transforms .backface > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+  .transforms .backface > div pre {
+    width: 100%; }
+  .transforms .backface > div > div {
+    width: 45%;
+    line-height: 200px;
+    background: #a3c644;
+    animation: rotatedY 1s linear infinite alternate; }
+    .transforms .backface > div > div:nth-of-type(2) {
+      backface-visibility: hidden; }
+
+.transforms .translate-3d > div {
+  position: relative;
+  height: 400px;
+  transform-style: preserve-3d; }
+  .transforms .translate-3d > div div {
+    width: 40%;
+    line-height: 200px; }
+    .transforms .translate-3d > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .translate-3d > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: translated3D 3s ease-in-out infinite alternate; }
+
+.transforms .scale-3d > div {
+  position: relative;
+  height: 300px;
+  margin-top: 100px;
+  transform-style: preserve-3d; }
+  .transforms .scale-3d > div div {
+    width: 40%;
+    margin: 0 auto;
+    line-height: 200px; }
+    .transforms .scale-3d > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .scale-3d > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: scaled3D 2s ease-in-out infinite alternate; }
+
+.transforms .rotate-3d > div {
+  position: relative;
+  height: 300px;
+  margin-top: 100px;
+  transform-style: preserve-3d; }
+  .transforms .rotate-3d > div div {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 300px; }
+    .transforms .rotate-3d > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .rotate-3d > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: rotated3D 2s ease-in-out infinite alternate; }
+
+.transforms .rotate-3d-negative > div {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  transform-style: preserve-3d; }
+  .transforms .rotate-3d-negative > div > div {
+    width: 45%;
+    position: relative; }
+    .transforms .rotate-3d-negative > div > div div {
+      line-height: 300px; }
+      .transforms .rotate-3d-negative > div > div div:nth-of-type(1) {
+        background: #999; }
+      .transforms .rotate-3d-negative > div > div div:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #a3c644;
+        opacity: 0.7; }
+    .transforms .rotate-3d-negative > div > div:nth-of-type(1) div:nth-of-type(2) {
+      animation: rotated3DnZ 2s ease-in-out infinite alternate; }
+    .transforms .rotate-3d-negative > div > div:nth-of-type(2) div:nth-of-type(2) {
+      animation: rotated3DpZ 2s ease-in-out infinite alternate; }
+
+.transforms .matrix-3d > div {
+  position: relative;
+  margin: 50px auto 0;
+  transform-style: preserve-3d; }
+  .transforms .matrix-3d > div div {
+    width: 20%;
+    line-height: 100px; }
+    .transforms .matrix-3d > div div:nth-of-type(1) {
+      background: #999; }
+    .transforms .matrix-3d > div div:nth-of-type(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #a3c644;
+      opacity: 0.7;
+      animation: matrixed3D 2s ease-in-out infinite alternate; }
+
+.transitions .timing-functions .wrapper {
+  border: 2px solid #464547; }
+  .transitions .timing-functions .wrapper div {
+    width: 50%;
+    height: 50px;
+    background: #a3c644;
+    border-bottom: 1px solid #464547;
+    font-size: 0.75em;
+    line-height: 50px;
+    transition-property: width;
+    transition-duration: 5s; }
+    .transitions .timing-functions .wrapper div:nth-of-type(1) {
+      transition-timing-function: linear; }
+    .transitions .timing-functions .wrapper div:nth-of-type(2) {
+      transition-timing-function: ease; }
+    .transitions .timing-functions .wrapper div:nth-of-type(3) {
+      transition-timing-function: ease-in; }
+    .transitions .timing-functions .wrapper div:nth-of-type(4) {
+      transition-timing-function: ease-out; }
+    .transitions .timing-functions .wrapper div:nth-of-type(5) {
+      transition-timing-function: ease-in-out; }
+    .transitions .timing-functions .wrapper div:nth-of-type(6) {
+      transition-timing-function: steps(4, start); }
+    .transitions .timing-functions .wrapper div:nth-of-type(7) {
+      transition-timing-function: steps(4, end); }
+    .transitions .timing-functions .wrapper div:nth-of-type(8) {
+      transition-timing-function: step-start; }
+    .transitions .timing-functions .wrapper div:nth-of-type(9) {
+      transition-timing-function: step-end; }
+    .transitions .timing-functions .wrapper div:nth-of-type(10) {
+      transition-timing-function: cubic-bezier(1, 0, 0, 1); }
+    .transitions .timing-functions .wrapper div:last-child {
+      border: none;
+      transition-timing-function: cubic-bezier(1, -1, 0.3, 2); }
+  .transitions .timing-functions .wrapper:hover div {
+    width: 100%; }
+
+.transitions .example > div {
+  display: flex;
+  height: 500px;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap; }
+  .transitions .example > div > div {
+    width: 45%;
+    height: 200px;
+    background-color: #a3c644; }
+    .transitions .example > div > div span {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 99%; }
+    .transitions .example > div > div:nth-of-type(1) {
+      transition: background-color 3s ease-in-out; }
+    .transitions .example > div > div:nth-of-type(2) {
+      transition-property: color, background-color;
+      transition-duration: 2s;
+      transition-timing-function: ease-in-out; }
+    .transitions .example > div > div:nth-of-type(3) {
+      transition-property: color, background-color;
+      transition-duration: 2s;
+      transition-timing-function: cubic-bezier(0.3, -5, 0.7, 5); }
+    .transitions .example > div > div:nth-of-type(4) {
+      transition-property: color, background-color;
+      transition-duration: 2s;
+      transition-timing-function: cubic-bezier(0, 1, 1, 0); }
+    .transitions .example > div > div:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 0; }
+    .transitions .example > div > div:hover {
+      background-color: #464547;
+      color: #a3c644; }
+
+.animations .rule div {
+  width: 90%;
+  margin: 0 auto;
+  height: 100px;
+  margin-bottom: 20px;
+  animation-name: colorChange;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  line-height: 100px; }
+  .animations .rule div:nth-of-type(1) {
+    animation-timing-function: linear; }
+  .animations .rule div:nth-of-type(2) {
+    animation-timing-function: step-end; }
+
+.animations .direction .wrapper {
+  margin-top: 100px;
+  padding: 50px;
+  border: 2px solid #464547; }
+  .animations .direction .wrapper div {
+    position: relative;
+    width: 40%;
+    height: 50px;
+    margin-bottom: 20px;
+    background: #a3c644;
+    border: 1px solid #464547;
+    line-height: 50px;
+    animation: animation-direction 3s ease-in-out infinite; }
+    .animations .direction .wrapper div:nth-of-type(2) {
+      animation-direction: reverse; }
+    .animations .direction .wrapper div:nth-of-type(3) {
+      animation-direction: alternate; }
+    .animations .direction .wrapper div:nth-of-type(4) {
+      margin-bottom: 0;
+      animation-direction: alternate-reverse; }
+
+.animations .fill-mode .wrapper {
+  margin-top: 100px;
+  padding: 50px;
+  border: 2px solid #464547; }
+  .animations .fill-mode .wrapper div {
+    position: relative;
+    left: 20%;
+    width: 40%;
+    height: 50px;
+    margin-bottom: 20px;
+    background: #a3c644;
+    border: 1px solid #464547;
+    line-height: 50px;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out; }
+    .animations .fill-mode .wrapper div:nth-of-type(2) {
+      animation-fill-mode: forwards; }
+    .animations .fill-mode .wrapper div:nth-of-type(3) {
+      animation-fill-mode: backwards; }
+    .animations .fill-mode .wrapper div:nth-of-type(4) {
+      margin-bottom: 0;
+      animation-fill-mode: both; }
+  .animations .fill-mode .wrapper:hover div {
+    animation-name: animation-fill-mode; }
+
+.animations .play-state > div {
+  position: relative; }
+  .animations .play-state > div .circle {
+    position: relative;
+    display: inline-block;
+    margin-top: 100px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 0 -50px 5px 0 rgba(255, 0, 0, 0.5), 25px -40px 5px 0 rgba(255, 127, 0, 0.5), 40px -25px 5px 0 rgba(255, 255, 0, 0.5), 50px 0 5px 0 rgba(125, 255, 0, 0.5), 40px 25px 5px 0 rgba(0, 255, 0, 0.5), 25px 40px 5px 0 rgba(0, 255, 127, 0.5), 0 50px 5px 0 rgba(0, 255, 255, 0.5), -25px 40px 5px 0 rgba(0, 127, 255, 0.5), -40px 25px 5px 0 rgba(0, 0, 255, 0.5), -50px 0 5px 0 rgba(127, 0, 255, 0.5), -40px -25px 5px 0 rgba(255, 0, 255, 0.5), -25px -40px 5px 0 rgba(255, 0, 127, 0.5);
+    animation: animation-play-state-rotate 2s linear infinite paused; }
+  .animations .play-state > div .circle-text {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto 0;
+    border: 10px solid #464547;
+    border-radius: 50%;
+    background: #a3c644 url(../img/animation-play-state-paused.png) 20px 120% no-repeat;
+    background-size: contain;
+    animation-name: animation-play-state-scale, animation-play-state-shake, animation-play-state-color;
+    animation-duration: 0.5s, 0.3s, 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused; }
+    .animations .play-state > div .circle-text:before {
+      content: 'hover me!';
+      display: block;
+      margin-top: 50px;
+      mix-blend-mode: color-dodge;
+      text-transform: uppercase; }
+    .animations .play-state > div .circle-text:hover, .animations .play-state > div .circle-text:hover + .circle {
+      animation-play-state: running;
+      background-image: none; }
+    .animations .play-state > div .circle-text:hover ~ .running-guy {
+      opacity: 1;
+      animation-play-state: running; }
+    .animations .play-state > div .circle-text:hover:before {
+      content: 'please stop!';
+      mix-blend-mode: color-burn;
+      margin-top: 60px; }
+  .animations .play-state > div .running-guy {
+    opacity: 0;
+    position: fixed;
+    z-index: 20;
+    bottom: -35%;
+    left: 0;
+    right: 0;
+    width: 20%;
+    height: 100px;
+    background: transparent url(../img/animation-play-state-running.png) 50% 100% no-repeat;
+    background-size: contain;
+    animation: animation-play-state-run 2s linear infinite paused; }

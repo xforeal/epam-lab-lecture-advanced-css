@@ -24,125 +24,7 @@
 			<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 
-		<style>
-			.circle {
-				position: relative;
-				display: inline-block;
-				margin-top: 100px !important;
-				width: 220px;
-				height: 220px;
-				border-radius: 50%;
-				box-shadow: 0 -50px 5px 0 rgba(255,0,0,0.5),
-							25px -40px 5px 0 rgba(255,127,0,0.5),
-							40px -25px 5px 0 rgba(255,255,0,0.5),
-							50px 0 5px 0 rgba(125,255,0,0.5),
-							40px 25px 5px 0 rgba(0,255,0,0.5),
-							25px 40px 5px 0 rgba(0,255,127,0.5),
-							0 50px 5px 0 rgba(0,255,255,0.5),
-							-25px 40px 5px 0 rgba(0,127,255,0.5),
-							-40px 25px 5px 0 rgba(0,0,255,0.5),
-							-50px 0 5px 0 rgba(127,0,255,0.5),
-							-40px -25px 5px 0 rgba(255,0,255,0.5),
-							-25px -40px 5px 0 rgba(255,0,127,0.5);
-				animation: animation-play-state-rotate 2s linear infinite paused;
-			}
-
-			.circle-text {
-				z-index: 10;
-				position: absolute;
-				left: 0;
-				right: 0;
-				width: 200px;
-				height: 200px;
-				margin: 100px auto 0!important;
-				border: 10px solid $darkGray !important;
-				border-radius: 50%;
-				background: #a3c644 url(img/animation-play-state-paused.png) 20px 120% no-repeat;
-				background-size: contain;
-				animation-name: animation-play-state-scale, animation-play-state-shake, animation-play-state-color;
-				animation-duration: 0.5s, 0.3s, 1s;
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
-				animation-play-state: paused;
-			}
-
-			.running-guy {
-				opacity: 0;
-				position: fixed;
-				z-index: 20;
-				bottom: -35%;
-				left: 0;
-				right: 0;
-				width: 20%;
-				height: 100px;
-				background: transparent url(img/animation-play-state-running.png) 50% 100% no-repeat;
-				background-size: contain;
-				animation: animation-play-state-run 2s linear infinite paused;
-			}
-
-			.circle-text:hover, .circle-text:hover + .circle {
-				animation-play-state: running;
-				background-image: none;
-			}
-			
-			.circle-text:hover ~ .running-guy {
-				opacity: 1;
-				animation-play-state: running;
-			}
-
-			.circle-text:before {
-				display: block;
-				margin-top: 50px;
-				content: 'hover me!';
-				mix-blend-mode: color-dodge;
-				text-transform: uppercase;
-			}
-
-			.circle-text:hover:before {
-				content: 'please stop!';
-				mix-blend-mode: color-burn;
-				margin-top: 60px;
-			}
-
-			.front {
-				transform: translateZ(2em);
-			}
-			.top {
-				transform: rotateX( 90deg) translateY(1em) translateZ(1em);
-			}
-			.right {
-				transform: rotateY( 90deg) translateX(-1em) translateZ(1em);
-			}
-			.left {
-				transform: rotateY(-90deg) translateX(1em) translateZ(1em);
-			}
-			.bottom {
-				transform: rotateX(-90deg) translateY(-1em) translateZ(1em);
-			}
-			.back {
-				transform: rotateY(0deg) translateZ(0em);
-			}
-
-			.transition:before {
-				content: '';
-				display: inline-block;
-				vertical-align: middle;
-				height: 100%;
-				width: 0;
-			}
-			.transition:hover {
-				background-color: $darkGray !important;
-				color: #a3c644 !important;
-			}
-
-			.timing-function:hover span {
-				width: 100% !important;
-			}
-
-			.animation-fill-mode:hover span {
-				animation: animation-fill-mode 3s 1s ease-in-out;
-			}
-			
+		<style>			
 			p.fragment.visible:not(.current-fragment) code.lined {
 				text-decoration: line-through;
 			}
@@ -526,7 +408,7 @@ E:column(s) { /* rules */ }
 E:nth-column(n) { /* rules */ }
 E:nth-last-column(n) { /* rules */ }
 E /foo/ F { /* rules */ }
-E! > F</code></pre>
+E! > F { /* rules */ }</code></pre>
 						</section>
 					</section>
 					<!-- /LEVEL 4 -->
@@ -537,7 +419,7 @@ E! > F</code></pre>
 							<h2>CSS Variables</h2>
 						</section>
 						<section>
-							<h2>Scheme of use</h2>
+							<h4>Scheme of use</h4>
 							<pre><code class="hljs css">/* Declare somewhere a variable */ 
 --variable-name: value;
 
@@ -547,7 +429,7 @@ rule: var(--variable-name);
 /* Doesn't matter where you declare, before/after using, it all the same works */</code></small></pre>
 						</section>
 						<section class="root">
-							<h2>Variable usage</h2>
+							<h4>Variable usage</h4>
 							<pre><code class="hljs css">:root {
 	--color: #39c2d7;
 }
@@ -558,7 +440,7 @@ div {
 							<div></div>
 						</section>
 						<section class="scope">
-							<h2>Variable scope</h2>
+							<h4>Variable scope</h4>
 							<div>
 								<pre><code class="hljs css">&lt;div class="one"&gt;
   &lt;div class="two"&gt;
@@ -581,7 +463,7 @@ div {
 								<div class="two">
 									<div class="three">3</div>
 									<div class="four">4</div>
-								<div>
+								</div>
 							</div>
 						</section>
 					</section>
@@ -680,7 +562,7 @@ border-bottom-left-radius: x y;</code></pre>
 					</section>
 					<!-- /ROUND BORDERS -->
 
-					<!-- BACKGROUND GRADIENTS -->
+					<!-- BACKGROUND ATTRIBUTES -->
 					<section class="stack background">
 						<section class="blue">
 							<h2>Background attributes</h2>
@@ -765,12 +647,12 @@ border-bottom-left-radius: x y;</code></pre>
 							</div>
 						</section>
 					</section>
-					<!-- /BACKGROUND GRADIENT -->
+					<!-- /BACKGROUND ATTRIBUTES -->
 
-					<!-- SHADOWS AND GRADIENTS -->
-					<section class="stack shadows-gradients">
+					<!-- SHADOWS -->
+					<section class="stack shadows">
 						<section class="blue">
-							<h2>Shadows and Gradients</h2>
+							<h2>Shadows</h2>
 						</section>
 						<section class="blue box-shadow">
 							<h4>Box shadow</h4>
@@ -815,8 +697,15 @@ color: transparent;
 text-shadow: 0 0 20px #39c2d7;</code></pre>
 							<h1>HOVER ME!</h1>
 						</section>
+					</section>
+					<!-- /SHADOWS -->
+
+					<!-- GRADIENTS -->
+					<section class="stack gradients">
 						<section class="blue">
-							<h4>Gradients</h4>
+							<h2>Gradients</h2>
+						</section>
+						<section class="blue">
 							<p>you can use linear or radial...</p>
 							<p>...and repeat it if you need</p>
 						</section>
@@ -912,7 +801,7 @@ background-size: 5% 100%;</code></pre>
 							<div></div>
 						</section>
 					</section>
-					<!-- /SHADOWS AND GRADIENTS -->
+					<!-- /GRADIENTS -->
 
 					<!-- CSS FILTERS -->
 					<section class="stack filters">
@@ -920,7 +809,7 @@ background-size: 5% 100%;</code></pre>
 							<h2>CSS Filters</h2>
 						</section>
 						<section class="blue">
-							<h2>Filter rule</h2>
+							<h4>Filter rule</h4>
 							<p>... 	or -webkit-filter</p>
 							<pre><code class="hljs css">filter: blur(px)
 	brightness(%)
@@ -934,7 +823,7 @@ background-size: 5% 100%;</code></pre>
 	sepia(%)
 	url(svg-url#id);</code></pre>
 						</section>
-						<section class="blue filter">
+						<section class="blue">
 							<div>
 								<div>
 									<pre><code class="hljs css">filter: blur(5px);</code></pre>
@@ -954,7 +843,7 @@ background-size: 5% 100%;</code></pre>
 								</div>
 							</div>
 						</section>
-						<section class="blue filter">
+						<section class="blue">
 							<div>
 								<div>
 									<pre><code class="hljs css">filter: hue-rotate(180deg);</code></pre>
@@ -974,10 +863,15 @@ background-size: 5% 100%;</code></pre>
 								</div>
 							</div>
 						</section>
+					</section>
+					<!-- /CSS FILTERS -->
+
+					<!-- MIX-BLEND-MODE -->
+					<section class="stack blend-mode">
 						<section class="blue">
 							<h2>Blend Mode</h2>
 						</section>
-						<section class="blue blend-mode-rule">
+						<section class="blue rule">
 							<h4>mix blend mode values</h4>
 							<pre><code class="hljs css">normal;			multiply;
 screen;			overlay;
@@ -988,7 +882,7 @@ difference;		exclusion;
 hue;			saturation;
 color;			luminosity;</code></pre>
 						</section>
-						<section class="blue blend-mode">
+						<section class="blue example">
 							<div>
 								<div>
 									<pre><code class="hljs css">mix-blend-mode: normal;</code></pre>
@@ -1016,7 +910,7 @@ color;			luminosity;</code></pre>
 								</div>
 							</div>
 						</section>
-						<section class="blue blend-mode">
+						<section class="blue example">
 							<div>
 								<div>
 									<pre><code class="hljs css">mix-blend-mode: darken;</code></pre>
@@ -1036,7 +930,7 @@ color;			luminosity;</code></pre>
 								</div>
 							</div>
 						</section>
-						<section class="blue blend-mode">
+						<section class="blue example">
 							<div>
 								<div>
 									<pre><code class="hljs css">mix-blend-mode: hard-light;</code></pre>
@@ -1056,7 +950,7 @@ color;			luminosity;</code></pre>
 								</div>
 							</div>
 						</section>
-						<section class="blue blend-mode">
+						<section class="blue example">
 							<div>
 								<div>
 									<pre><code class="hljs css">mix-blend-mode: hue;</code></pre>
@@ -1085,57 +979,67 @@ color;			luminosity;</code></pre>
 					<h1>Tranform/Animate</h1>
 				</section>
 					<!-- TRANSFORMATIONS -->
-					<section class="stack">
+					<section class="stack transforms">
 						<section class="green">
 							<h2>Transformations</h2>
 						</section>
 						<section class="green">
-							<h2>Transform rule</h2>
+							<h4>Transform rule</h4>
 							<pre><code class="hljs css">transform: translate | scale | skew | rotate | matrix</code></pre>
 						</section>
-						<section class="green">
-							<h2>Translate</h2>
+						<section class="green translate">
+							<h4>Translate</h4>
 							<pre><code class="hljs css">transform: translate(X,Y); /* or traslateX(X) | translateY(Y) */</code></pre>
-							<div style="height: 400px; position: relative;">
-								<div style="width: 40%; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: translated 2s ease-in-out infinite alternate; line-height: 200px;">translated</div>
+							<div>
+								<div>origin</div>
+								<div>translated</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Scale</h2>
+						<section class="green scale">
+							<h4>Scale</h4>
 							<pre><code class="hljs css">transform: scale(sX,sY); /* or scaleX(sx) | scaleY(sy) */</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: scaled 2s ease-in-out infinite alternate; line-height: 200px;">scaled</div>
+							<div>
+								<div>origin</div>
+								<div>scaled</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Skew</h2>
+						<section class="green skew">
+							<h4>Skew</h4>
 							<pre><code class="hljs css">transform: skew(Xdeg,Ydeg); /* or skewX(x) | skewY(y) */</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: skewedX 2s ease-in-out infinite alternate; line-height: 200px;">skewedX</div>
+							<div>
+								<div>
+									<div>origin</div>
+									<div>skewedX</div>
+								</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: skewedY 2s ease-in-out infinite alternate; line-height: 200px;">skewedY</div>
+								<div>
+									<div>origin</div>
+									<div>skewedY</div>
+								</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Rotate</h2>
+						<section class="green rotate">
+							<h4>Rotate</h4>
 							<pre><code class="hljs css">transform: rotate(deg); /* or rotateX(deg) | rotateY(deg) */</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 10%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 10%; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: rotated 2s ease-in-out infinite alternate; line-height: 200px;">rotate</div>
+							<div>
+								<div>
+									<div>origin</div>
+									<div>rotate</div>
+								</div>
 
-								<div style="position: absolute; top: 0; left: 40%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 40%; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: rotatedX 2s ease-in-out infinite alternate; line-height: 200px;">rotateX</div>
+								<div>
+									<div>origin</div>
+									<div>rotateX</div>
+								</div>
 
-								<div style="position: absolute; top: 0; left: 70%; right: 0; width: 20%; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 70%; right: 0; width: 20%;background: #a3c644; opacity: 0.7; animation: rotatedY 2s ease-in-out infinite alternate; line-height: 200px;">rotateY</div>
+								<div>
+									<div>origin</div>
+									<div>rotateY</div>
+								</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Matrix</h2>
+						<section class="green matrix">
+							<h4>Matrix</h4>
 							<pre><code class="hljs css">transform: matrix(
 	   a,  b, /* scaleX and skewY */			| a  b  0 |
 	   c,  d, /* skewY and scaleY */			| c  d  0 |
@@ -1143,162 +1047,173 @@ color;			luminosity;</code></pre>
 	   );
 
   /* only numerals, scale in ratio | skew in rads | translate in px */</code></pre>
-							<div style="margin: 50px auto 0; position: relative;">
-								<div style="width: 20%; background: $lightGray; line-height: 100px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; width: 20%; background: #a3c644; opacity: 0.7; animation: matrixed 2s ease-in-out infinite alternate; line-height: 100px;">MATRIX</div>
+							<div>
+								<div>origin</div>
+								<div>MATRIX</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Transform fulcrum</h2>
+						<section class="green fulcrum">
+							<h4>Transform fulcrum</h4>
 							<pre><code class="hljs css">transform-origin: x y z;
 		/* x as [left | center | right]*/
 		/* y as [top | center | bottom]*/
 		/* z as [length]*/</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: fulcrum 1s ease-in-out infinite alternate; line-height: 200px;">default</div>
+							<div>
+								<div>
+									<div>origin</div>
+									<div>default</div>
+								</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; transform-origin: left top; animation: fulcrum 1s ease-in-out infinite alternate; line-height: 200px;">left top</div>
+								<div>
+									<div>origin</div>
+									<div>left top</div>
+								</div>
 							</div>
 						</section>
 						<section class="green">
-							<h2>Transform in 3D</h2>
+							<h4>Transform in 3D</h4>
 							<pre><code class="hljs css">transform: translate3D | scale3D | rotate3D | matrix3D</code></pre>
 						</section>
-						<section class="green">
-							<h2>Transform plane</h2>
-							<pre><code class="hljs css">transform-style: flat(default) | preserve3D</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative;">
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 50%; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: transform-style-parent 1s ease-in-out infinite alternate; transform-style: flat;">
-									<div style="background: #7f993a; width: 80%; margin: 0 auto; animation: transform-style-child 1s ease-in-out infinite alternate; line-height: 200px;">flat</div>
+						<section class="green plane">
+							<h4>Transform plane</h4>
+							<pre><code class="hljs css">transform-style: flat(default) | preserve-3d;</code></pre>
+							<div>
+								<div>
+									<div>origin</div>
+									<div>
+										<div>flat</div>
+									</div>
 								</div>
 
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 50%; right: 0; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: transform-style-parent 1s ease-in-out infinite alternate; transform-style: preserve-3d;">
-									<div style="background: #7f993a; width: 80%; margin: 0 auto; animation: transform-style-child 1s ease-in-out infinite alternate; line-height: 200px;">preserve-3D</div>
+								<div>
+									<div>origin</div>
+									<div>
+										<div>preserve-3D</div>
+									</div>
 								</div>
 							</div>
 						</section>
 						<section class="green perspective">
-							<h2>Perspective</h2>
+							<h4>Perspective</h4>
 							<pre><code class="hljs css">perspective: [length];
 /* or apply to transform like transform: perspective(100px) rotateX(10deg); */</code></pre>
-							<div style="font-size: 2.87em; width: 200px; height: 200px; margin: 100px auto 0; transform-style: preserve-3d; perspective-origin: 55% 80%; animation: perspective 1s cubic-bezier(0.9, 0.1, 0.75, 0.25) infinite alternate;">
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="front">1</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="back">6</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="right">4</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="left">3</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="top">5</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="bottom">2</div>
+							<div class="cube">
+								<div class="front">1</div>
+								<div class="back">6</div>
+								<div class="right">4</div>
+								<div class="left">3</div>
+								<div class="top">5</div>
+								<div class="bottom">2</div>
 							</div>
 						</section>
-						<section class="green perspective">
-							<h2>Perspective</h2>
-							<div style="display: inline-block; width: 40%; margin-right: 10%; margin-top: 40px; animation: perspective-parent 1s linear infinite alternate;">
-								<pre style="width: 100%;"><code class="hljs css">/* on parent */
+						<section class="green parent-child">
+							<h4>Perspective on parent/childs</h4>
+							<div>
+								<pre><code class="hljs css">/* on parent */
 perspective: 600px;
 
 /* on child */
 transform: rotateY(60deg);
 
 </code></pre>
-								<span style="display: inline-block; width: 40%; margin-right: 10%; height: 100px; background: #a3c644; transform: rotateY(60deg);"></span>
-								<span style="display: inline-block; width: 40%; height: 100px; background: #a3c644; transform: rotateY(60deg);"></span>
-							</div>
-							<div style="display: inline-block; width: 40%; margin-top: 40px;">
-								<pre style="width: 100%;"><code class="hljs css">/* on parent */
+
+								<pre><code class="hljs css">/* on parent */
 /* nothing */
 
 /* on child */
 transform: perspective(600px)
 	   rotateY(60deg);</code></pre>
-								<span style="display: inline-block; width: 40%; margin-right: 10%; height: 100px; background: #a3c644; animation: perspective-child 1s linear infinite alternate;"></span>
-								<span style="display: inline-block; width: 40%; height: 100px; background: #a3c644; animation: perspective-child 1s linear infinite alternate;"></span>
-							</div>
-						</section>
-						<section class="green perspective">
-							<h2>Perspective origin</h2>
-							<pre><code class="hljs css">perspective-origin: x y;</code></pre>
-							<div style="font-size: 2.87em; width: 200px; height: 200px; margin: 100px auto 0; transform-style: preserve-3d; animation: move-origin 2s linear infinite; perspective: 600px;">
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="front">1</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="back">6</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="right">4</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="left">3</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="top">5</div>
-								<div style="position: absolute; width: 200px; opacity: 0.7; background: #a3c644; border: 10px solid #7f993a; color: white; text-align: center; line-height: 200px;" class="bottom">2</div>
-							</div>
-						</section>
-						<section class="green">
-							<h2>Backface</h2>
-							<pre><code class="hljs css">backface-visibility: visible(default) | hidden;</code></pre>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<pre style="width: 100%;"><code class="hljs css">backface-visibility: visible;</code></pre>
-								<div style="background: #a3c644; backface-visibility: visible; animation: rotatedY 1s linear infinite alternate; line-height: 200px;">visible</div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<pre style="width: 100%;"><code class="hljs css">backface-visibility: hidden;</code></pre>
-								<div style="height: 200px; background: #a3c644; backface-visibility: hidden; animation: rotatedY 1s linear infinite alternate; line-height: 200px;">hidden</div>
-							</div>
-						</section>
-						<section class="green">
-							<h2>Translate3D</h2>
-							<pre><code class="hljs css">transform: translate3D(X,Y,Z); /* also can use only translateZ(Z) for Z-axis */</code></pre>
-							<div style="height: 400px; position: relative; transform-style: preserve-3d;">
-								<div style="width: 40%; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; height: 200px; width: 40%; background: #a3c644; opacity: 0.7; animation: translated3D 3s ease-in-out infinite alternate; line-height: 200px;">translated</div>
-							</div>
-						</section>
-						<section class="green">
-							<h2>Scale3D</h2>
-							<pre><code class="hljs css">transform: scale3D(sX,sY,sZ); /* scaleZ(Z) */</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">
-								<div style="width: 40%; margin: 0 auto; background: $lightGray; line-height: 200px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; height: 200px; width: 40%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: scaled3D 2s ease-in-out infinite alternate; line-height: 200px;">scaled</div>
-							</div>
-						</section>
-						<section class="green">
-							<h2>Rotate3D</h2>
-							<pre><code class="hljs css">transform: rotate3D(X,Y,Z,angle);</code></pre>
-							<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">	
-								<div style="width: 60%; margin: 0 auto; background: $lightGray; line-height: 300px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0; width: 60%; margin: 0 auto; background: #a3c644; opacity: 0.7; animation: rotated3D 2s ease-in-out infinite alternate; line-height: 300px;">rotate</div>
-							</div>
-						</section>
-						<section class="green">
-							<div>
-								<div style="height: 300px; margin-top: 100px; position: relative; transform-style: preserve-3d;">
-									<div style="position: absolute; top: 0; left: 5%; right: 0; width: 40%; background: $lightGray; line-height: 300px;">origin</div>
-									<div style="position: absolute; top: 0; left: 5%; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: rotated3DnZ 2s ease-in-out infinite alternate; line-height: 300px;"	>( 0, 0, -1, 180deg)</div>
-									<div style="position: absolute; top: 0; left: 55%; right: 0; width: 40%; background: $lightGray; line-height: 300px;">origin</div>
-									<div style="position: absolute; top: 0; left: 55%; right: 0; width: 40%; background: #a3c644; opacity: 0.7; animation: rotated3DpZ 2s ease-in-out infinite alternate; line-height: 300px;">( 0, 0, 1, 180deg)</div>
+	   						</div>
+	   						<div>
+								<div>
+									<div></div>
+									<div></div>
+								</div>
+								<div>
+									<div></div>
+									<div></div>
 								</div>
 							</div>
 						</section>
-						<section class="green">
-							<h2>Matrix3D</h2>
+						<section class="green perspective origin">
+							<h4>Perspective origin</h4>
+							<pre><code class="hljs css">perspective-origin: x y;</code></pre>
+							<div class="cube">
+								<div class="front">1</div>
+								<div class="back">6</div>
+								<div class="right">4</div>
+								<div class="left">3</div>
+								<div class="top">5</div>
+								<div class="bottom">2</div>
+							</div>
+						</section>
+						<section class="green backface">
+							<h4>Backface</h4>
+							<pre><code class="hljs css">backface-visibility: visible(default) | hidden;</code></pre>
+							<div>
+								<div>visible</div>
+								<div>hidden</div>
+							</div>
+						</section>
+						<section class="green translate-3d">
+							<h4>Translate3D</h4>
+							<pre><code class="hljs css">transform: translate3D(X,Y,Z); /* also can use only translateZ(Z) for Z-axis */</code></pre>
+							<div>
+								<div>origin</div>
+								<div>translated</div>
+							</div>
+						</section>
+						<section class="green scale-3d">
+							<h4>Scale3D</h4>
+							<pre><code class="hljs css">transform: scale3D(sX,sY,sZ); /* scaleZ(Z) */</code></pre>
+							<div>
+								<div>origin</div>
+								<div>scaled</div>
+							</div>
+						</section>
+						<section class="green rotate-3d">
+							<h4>Rotate3D</h4>
+							<pre><code class="hljs css">transform: rotate3D(X,Y,Z,angle);</code></pre>
+							<div>	
+								<div>origin</div>
+								<div>rotate</div>
+							</div>
+						</section>
+						<section class="green rotate-3d-negative">
+							<div>
+								<div>
+									<div>origin</div>
+									<div>( 0, 0, -1, 180deg)</div>
+								</div>
+								<div>
+									<div>origin</div>
+									<div>( 0, 0, 1, 180deg)</div>
+								</div>
+							</div>
+						</section>
+						<section class="green matrix-3d">
+							<h4>Matrix3D</h4>
 							<pre><code class="hljs css">transform: matrix3D(
 	a1, b1, c1, d1,					| sX 0  0  0 |
 	a2, sy, c2, d2,					| 0  sY 0  0 |
 	a3, b3, sz, d3,					| 0  0  sZ 0 |
 	a4, b4, c4, d4					| tx ty tz 1 |
 );</code></pre>
-							<div style="margin: 50px auto 0; position: relative; transform-style: preserve-3d;">
-								<div style="width: 20%; background: $lightGray; line-height: 100px;">origin</div>
-								<div style="position: absolute; top: 0; left: 0; right: 0;width: 20%; background: #a3c644; opacity: 0.7; animation: matrixed3D 2s ease-in-out infinite alternate; line-height: 100px;">MATRIX</div>
+							<div>
+								<div>origin</div>
+								<div>MATRIX</div>
 							</div>
 						</section>
 					</section>
 					<!-- /TRANSFORMATIONS -->
 
 					<!-- TRANSITIONS -->
-					<section class="stack">
+					<section class="stack transitions">
 						<section class="green">
 							<h2>TRANSITIONS</h2>
 						</section>
 						<section class="green">
-							<h2>Transition rule</h2>
+							<h4>Transition rule</h4>
 							<pre><code class="hljs css">transition: transition-property /* all | single-css-animatable-property */
 	    transition-duration /* s | ms */
 	    transition-timing-function /* standart | steps | cubic-bezier */
@@ -1315,45 +1230,48 @@ transform: perspective(600px)
 			    step-start /* steps(1, start) */
 			    step-end /* steps(1, end) */
 			    cubic-bezier(x1,y1,x2,y2) /* X must be in [0, 1] */</code></pre>
-							<div class="timing-function" style="width: 90%; margin: 0 auto; border: 2px solid $darkGray;">
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s linear;">linear</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease;">ease</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in;">ease-in</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-out;">ease-out</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s ease-in-out;">ease-in-out</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,start);">steps(4,start)</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s steps(4,end);">steps(4,end)</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-start;">step-start</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s step-end;">step-end</span>
-								<span style="display: block; width: 40%; border-bottom: 1px solid $darkGray; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s cubic-bezier(1,0,0,1);">cubic-bezier(1,0,0,1)</span>
-								<span style="display: block; width: 40%; height: 25px; background: #a3c644; font-size: 0.5em; transition: width 5s cubic-bezier(1,-1,0.3,2);">cubic-bezier(1,-1,0.3,2)</span>
+						</section>
+						<section class="green timing-functions">
+							<div class="wrapper">
+								<div>linear</div>
+								<div>ease</div>
+								<div>ease-in</div>
+								<div>ease-out</div>
+								<div>ease-in-out</div>
+								<div>steps(4,start)</div>
+								<div>steps(4,end)</div>
+								<div>step-start</div>
+								<div>step-end</div>
+								<div>cubic-bezier(1,0,0,1)</div>
+								<div>cubic-bezier(1,-1,0.3,2)</div>
 							</div>
 						</section>
-						<section class="green">
-							<div class="transition" style="display: inline-block; vertical-align: top; width: 40%; height: 200px; margin-right: 10%; margin-bottom: 50px; background-color: #a3c644; transition: background 1s ease-in-out;">
-								<span style="display: inline-block; vertical-align: middle; max-width: 99%;">only background</span>
+						<section class="green example">
+							<div>
+								<div>
+									<span>only background</span>
+								</div>
+								<div>
+									<span>delay 2s</span>
+								</div>
+								<div>
+									<span>cubic-bezier(0.3, -5, 0.7, 5)</span>
+								</div>
+								<div>
+									<span>cubic-bezier(0, 1, 1, 0)</span>
+								</div>
 							</div>
-							<div class="transition" style="display: inline-block; vertical-align: top; width: 40%; height: 200px; background-color: #a3c644; transition: all 1s ease-in-out 1s;">
-								<span style="display: inline-block; vertical-align: middle; max-width: 99%;">delay 1s</span>
-							</div>
-							<div class="transition" style="display: inline-block; vertical-align: top; width: 40%; height: 200px; margin-right: 10%; background-color: #a3c644; transition: all 2s cubic-bezier(0.3,-5,0.7,5);">
-								<span style="display: inline-block; vertical-align: middle; max-width: 99%; font-size: 0.9em;">cubic-bezier(0.3, -5, 0.7, 5)</span>
-							</div>
-							<div class="transition" style="display: inline-block; vertical-align: top; width: 40%; height: 200px; background-color: #a3c644; transition: all 2s cubic-bezier(0,1,1,0);">
-								<span style="display: inline-block; vertical-align: middle; max-width: 99%; font-size: 0.9em;">cubic-bezier(0, 1, 1, 0)</span>
-							</div>
-
 						</section>
 					</section>
 					<!-- /TRANSITIONS -->
 
 					<!-- ANIMATIONS -->
-					<section class="stack">
+					<section class="stack animations">
 						<section class="green">
 							<h2>ANIMATIONS</h2>
 						</section>
 						<section class="green">
-							<h2>Animation rule</h2>
+							<h4>Animation rule</h4>
 							<pre><code class="hljs css">animation: animation-name
 	   animation-duration
 	   animation-timing-function
@@ -1377,45 +1295,45 @@ transform: perspective(600px)
 	}
 }</code></pre>
 						</section>
-						<section class="green">
+						<section class="green rule">
 							<h4>@keyframes rule</h4>
 							<pre><code class="hljs css">@keyframes colorChange {
-	from { background: #a3c644; color: $darkGray; }
+	from { background: #a3c644; color: #464547; }
 	33% { background: #7f993a; }
 	66% { color: #7f993a; }
-	to { background: $darkGray; color: #a3c644; }
+	to { background: #464547; color: #a3c644; }
 }
 
 div {
 	animation: colorChange 4s linear infinite;
 }</code></pre>
-							<div style="width: 90%; margin: 0 auto; height: 100px; margin-bottom: 20px; animation: colorChange 4s linear infinite; line-height: 100px;"> LOREM IPSUM </div>
-							<div style="width: 90%; margin: 0 auto; height: 100px; animation: colorChange 4s steps(1,end) infinite; line-height: 100px;"> LOREM IPSUM </div>
+							<div> LOREM IPSUM </div>
+							<div> LOREM IPSUM </div>
 						</section>
-						<section class="green">
+						<section class="green direction">
 							<h4>Animation direction</h4>
 							<pre><code class="hljs css">animation-direction: normal | reverse | alternate | alternate-reverse;</code></pre>
-							<div style="margin-top: 100px;">
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite;">normal</span>
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite reverse;">reverse</span>
-								<span style="display: block; position: relative; width: 40%; margin-bottom: 20px; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate;">alternate</span>
-								<span style="display: block; position: relative; width: 40%; border: 1px solid $darkGray; height: 50px; background: #a3c644; animation: animation-direction 3s ease-in-out infinite alternate-reverse;">alternate-reverse</span>
+							<div class="wrapper">
+								<div>normal</div>
+								<div>reverse</div>
+								<div>alternate</div>
+								<div>alternate-reverse</div>
 							</div>
 						</section>
-						<section class="green">
+						<section class="green fill-mode">
 							<h4>Animation fill mode</h4>
 							<pre><code class="hljs css">animation-fill-mode: none | forwards | backwards | both;</code></pre>
-							<div class="animation-fill-mode" style="width: 90%; margin: 100px auto 0; border: 2px solid $darkGray;">
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644;">none</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation-fill-mode: forwards;">forwards</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; margin-bottom: 20px; height: 50px; background: #a3c644; animation-fill-mode: backwards;">backwards</span>
-								<span style="display: block; position: relative; left: 20%; width: 40%; height: 50px; background: #a3c644; animation-fill-mode: both;">both</span>
+							<div class="wrapper">
+								<div>none</div>
+								<div>forwards</div>
+								<div>backwards</div>
+								<div>both</div>
 							</div>
 						</section>
-						<section class="green">
+						<section class="green play-state">
 							<h4>Animation play state</h4>
-							<pre><code class="hljs css">animation-fill-mode: running | paused;</code></pre>
-							<div style="position: relative;">	
+							<pre><code class="hljs css">animation-play-state: running | paused;</code></pre>
+							<div>	
 								<div class="circle-text"></div>
 								<div class="circle"></div>
 								<div class="running-guy"></div>
