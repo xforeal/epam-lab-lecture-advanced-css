@@ -23,235 +23,6 @@
 		<!--[if lt IE 9]>
 			<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
-		<style>			
-			p.fragment.visible:not(.current-fragment) code.lined {
-				text-decoration: line-through;
-			}
-
-			p.fragment code:last-child {
-				font-size: 0;
-				line-height: 25px;
-			}
-
-			p.fragment.visible:not(.current-fragment) code:last-child, p.fragment.last code:last-child {
-				font-size: 19px;
-			}
-
-
-			pre p code {
-				box-sizing: border-box;
-				display: inline-block !important;
-				width: 50%;
-				font-size: 19px;
-			}
-
-			pre p {
-				margin: 0 !important;
-				font-size: 0;
-			}
-
-			.arrow {
-				position: absolute;
-			}
-
-			.arrow:after {
-				position: absolute;
-				content: '';
-				height: 0;
-				width: 0;
-				border-style: solid;
-				border-color: transparent;
-			}
-
-			.arrow.main {
-				text-align: left;
-				z-index: 20;
-				left: 0;
-				right: 0;
-				top: 50%;
-				height: 5px;
-				background: #b22746;
-			}
-
-			.arrow span {
-				display: block;
-				position: absolute;
-			}
-
-			.arrow.main span {
-				top: -40px;
-				left: 0;
-			}
-
-			.arrow.cross span {
-				top: 0;
-				left: 45px;
-				white-space: nowrap;
-				transform: rotate(90deg);
-				transform-origin: 0 0;
-			}
-
-			.arrow.main:after {
-				top: -7px;
-				right: -50px;
-				border-width: 10px 30px;
-				border-left-color: #b22746;
-			}
-
-			.arrow.cross {
-				z-index: 10;
-				left: 0;
-				right: 0;
-				top: 0;
-				width: 5px;
-				height: 400px;
-				margin: 0 auto;
-				background: #1a9cb0;
-			}
-
-			.arrow.cross:after {
-				bottom: -50px;
-				left: -7px;
-				border-width: 30px 10px;
-				border-top-color: #1a9cb0;
-			}
-
-			.flex div {
-				display: inline-block;
-				background: white;
-				margin: 5px 10px;
-				padding: 5px 10px;
-				border: 1px solid $darkGray;
-			}
-
-			.flex div:first-child {
-				background: #a3c644;
-			}
-
-			.flex div:last-child {
-				background: $blue;
-			}
-
-			.wrapper-flex {
-				display: flex;
-				margin: 0 auto !important;
-				width: 100%;
-				flex-flow: row wrap;
-				font-weight: bold;
-				text-align: center;
-				transition: width 0.3s linear;
-			}
-
-			.wrapper-flex > * {
-				padding: 10px;
-				flex: 1 100%;
-			}
-
-			.header {
-				background: #8e244d;
-				order: 1;
-			}
-
-			.footer {
-				color: white;
-				background: $darkGray;
-				order: 1;
-				font-size: 0.7em !important;
-			}
-
-			.main {
-				text-align: left;
-				background: #1a9cb0;
-			}
-
-			.aside {
-				font-size: 0.7em !important;
-			}
-
-			.aside-1 {
-				background: #7f993a;
-			}
-
-			.aside-2 {
-				background: #a3c644;
-			}
-
-
-			.navigation {
-				list-style: none;
-				margin: 0;
-				padding: 0 !important;
-				display: flex;
-				flex-flow: column wrap;
-				padding: 0;
-			}
-
-			.navigation a {
-				text-align: center;
-				padding: 10px;
-				border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-				font-size: 0.5em;
-				padding: 10px;
-				color: white;
-				text-decoration: none;
-				display: block;
-			}
-
-			.navigation li:before {
-				display: none !important;
-			}
-
-			.navigation a:hover {
-				background: #b22746;
-			}
-			
-			.wrapper-flex.middle .aside, .wrapper-flex.large .aside {
-				flex: 1 auto;
-			}
-
-			.wrapper-flex.middle .navigation, .wrapper-flex.large .navigation {
-				flex-flow: row wrap;
-				justify-content: space-around;
-			}
-
-			.wrapper-flex.middle .navigation a, .wrapper-flex.large .navigation a {
-				border: none !important;
-			}
-
-			.wrapper-flex.middle .header, .wrapper-flex.large .header {
-				order: -1;
-			}
-
-			.wrapper-flex.large .main {
-				flex: 3 0px;
-			}
-
-			.wrapper-flex.large .aside-1 {
-				order: 1;
-			}
-
-			.wrapper-flex.large .main {
-				order: 2;
-			}
-
-			.wrapper-flex.large .aside-2 {
-				order: 3;
-			}
-
-			.wrapper-flex.large .footer {
-				order: 4;
-			}
-
-			.wrapper-flex.large .navigation {
-				justify-content: flex-end;
-			}
-
-			.wrapper-flex.large .navigation li:before {
-				display: none !important;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -866,7 +637,7 @@ background-size: 5% 100%;</code></pre>
 					</section>
 					<!-- /CSS FILTERS -->
 
-					<!-- MIX-BLEND-MODE -->
+					<!-- BLEND-MODE -->
 					<section class="stack blend-mode">
 						<section class="blue">
 							<h2>Blend Mode</h2>
@@ -971,7 +742,7 @@ color;			luminosity;</code></pre>
 							</div>
 						</section>
 					</section>
-					<!-- /CSS FILTERS -->
+					<!-- /BLEND-MODE -->
 				<!-- /SECTION 2 -->
 				
 				<!-- SECTION 3 -->
@@ -1348,23 +1119,23 @@ div {
 					<h1>Layout</h1>
 				</section>
 					<!-- FLEX -->
-					<section class="stack">
+					<section class="stack flex">
 						<section class="red">
 							<h2>Flex</h2>
 						</section>
-						<section class="red">
+						<section class="red rule">
 							<h4>Flex-box rule</h4>		
-							<pre style="box-shadow: none; width: 80%; margin: 0 auto;"><p class="fragment"><code class="hljs css lined">display: box;</code><code class="hljs css">/* 2009 */</code></p>
+							<pre><p class="fragment"><code class="hljs css lined">display: box;</code><code class="hljs css">/* 2009 */</code></p>
 <p class="fragment"><code class="hljs css lined">display: flexbox;</code><code class="hljs css">/* 2011 */</code></p>
 <p class="fragment last"><code class="hljs css">display: flex | inline-flex;</code><code class="hljs css">/* current */</code></p></pre>
 						</section>
-						<section class="red">
+						<section class="red inline-flex">
 							<h4>flex vs inline-flex</h4>
-							<div class="flex" style="display: flex; border: 2px solid $darkGray; background: #b22746; margin-bottom: 50px; padding: 10px 0;">
+							<div class="box">
 								<div>Lorem</div><div>ipsum</div><div>dolor</div><div>sit amet,</div>
 								<div>nec ei</div><div>probo</div><div>sanctus</div><div>interesset</div>
 							</div>
-							<div class="flex" style="display: inline-flex; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
+							<div class="box">
 								<div>Lorem</div><div>ipsum</div><div>dolor</div><div>sit amet,</div>
 								<div>nec ei</div><div>probo</div><div>sanctus</div><div>interesset</div>	
 							</div>
@@ -1372,9 +1143,9 @@ div {
 						<section class="red">
 							<h4>Flex wrapper<small>(parent)</small> options</h4>
 						</section>
-						<section class="red">
+						<section class="red axis">
 							<h4>Content flow</h4>
-							<div style="position: relative; height: 400px;">
+							<div>
 								<div class="arrow main">
 									<span>Main axis</span>
 								</div>
@@ -1383,7 +1154,7 @@ div {
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red direction">
 							<pre><code class="hljs css">			/* Main axis — horizontal */
 flex-direction: row(default);		/* left-to-right */
 flex-direction: row-reverse;		/* right-to-left */
@@ -1391,130 +1162,142 @@ flex-direction: row-reverse;		/* right-to-left */
 			/*  Main axis — vertical */
 flex-direction: column;			/* top-to-bottom */
 flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
-							<div style="display: inline-block; width: 40%; vertical-align: top; margin-right: 10%;">
-								<p>horizontal main axis</p>
-								<div class="flex" style="display: inline-flex; border: 2px solid $darkGray; background: #b22746; margin-bottom: 38px; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+							<div>
+								<div>
+									<p>horizontal main axis</p>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+									</div>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+									</div>
 								</div>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: row-reverse; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
-								</div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<p>vertical main axis</p>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column; border: 2px solid $darkGray; background: #b22746; margin-right: 50px; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
-								</div>
-								<div class="flex" style="display: inline-flex; vertical-align: top; flex-direction: column-reverse; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
+								<div>
+									<p>vertical main axis</p>
+									<div>
+										<div class="box">
+											<div>1</div><div>2</div><div>3</div>
+										</div>
+										<div class="box">
+											<div>1</div><div>2</div><div>3</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red wrap">
 							<h4>wrapping</h4>
 							<pre><code class="hljs css">flex-wrap: nowrap(default) | wrap | wrap-reverse</code></pre>
-							<div style="width: 40%; margin: 0 auto;">
-								<small>default, w/0 wrapping</small>
-								<div class="flex" style="display: inline-flex; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+							<div>
+								<small>default, w/o wrapping</small>
+								<div class="box">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<small>standart wrappping ttb</small>
-								<div class="flex" style="display: inline-flex; flex-wrap: wrap; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+							<div>
+								<div>
+									<small>standart wrappping ttb</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<small>reverse wrappping btt</small>
-								<div class="flex" style="display: inline-flex; flex-wrap: wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+								<div>
+									<small>reverse wrappping btt</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+									</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red flow">
 							<h4>Flex flow shorthand rule</h4>
 							<pre><code class="hljs css">flex-flow: flex-direction flex-wrap;</code></pre>
-							<div style="width: 40%; margin: 0 auto;">
+							<div>
 								<small>row-reverse wrap-reverse</small>
-								<div class="flex" style="display: inline-flex; flex-flow: row-reverse wrap-reverse; width: 100%; margin: 0 auto; vertical-align: top; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="box">
 									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red justify-content">
 							<h4>Align on main axis</h4>
 							<pre><code class="hljs css">justify-content: flex-start(default)
 		 flex-end 
 		 center
 		 space-between
 		 space-around;</code></pre>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<small>flex-start(default)</small>
-								<div class="flex" style="display: flex; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
+		 					<div>
+								<div>
+									<small>flex-start(default)</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div>
+									</div>
+								</div>
+								<div>
+									<small>flex-end</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div>
+									</div>
 								</div>
 							</div>
-							<div style="display: inline-block; width: 40%;">
-								<small>flex-end</small>
-								<div class="flex" style="display: flex; justify-content: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
-								</div>
-							</div>
-							<div style="width: 40%; margin: 0 auto;">
+							<div>
 								<small>center</small>
-								<div class="flex" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
+								<div class="box">
 									<div>1</div><div>2</div><div>3</div>
 								</div>
 							</div>
-							<div style="display: inline-block; width: 40%; margin-right: 10%;">
-								<small>space-between</small>
-								<div class="flex" style="display: flex; justify-content: space-between; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
+							<div>
+								<div>
+									<small>space-between</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; width: 40%;">
-								<small>space-around</small>
-								<div class="flex" style="display: flex; justify-content: space-around; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div>
+								<div>
+									<small>space-around</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div>
+									</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red align-items">
 							<h4>Align on cross axis</h4>
 							<pre><code class="hljs css">align-items: flex-start
 	     flex-end 
 	     center
 	     baseline
 	     stretch(default);</code></pre>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-start; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div style="line-height: 3;">2</div>
+							<div>
+								<div>
+									<small>flex-start</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div style="line-height: 3;">2</div>
+								<div>
+									<small>flex-end</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>center</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
-									<div>1</div><div style="line-height: 3;">2</div>
+								<div>
+									<small>center</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>baseline</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: baseline; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div style="line-height: 3;">2</div>
+								<div>
+									<small>baseline</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; height: 200px; justify-content: center; align-items: stretch; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div style="line-height: 3;">2</div>
+								<div>
+									<small>stretch(default)</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
 							</div>
 						</section>
@@ -1528,165 +1311,171 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 	       space-between
 	       space-around;</code></pre>
 						</section>
-						<section class="red">
-							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
-								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-start; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+						<section class="red align-content">
+							<div>
+								<div>
+									<small>flex-start</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
-								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: flex-end; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+								<div>
+									<small>flex-end</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 25%;">
-								<small>center</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: center; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+								<div>
+									<small>center</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
-								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: stretch; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+								<div>
+									<small>stretch(default)</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 25%; margin-right: 10%;">
-								<small>space-between</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-between; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+								<div>
+									<small>space-between</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 25%;">
-								<small>space-around</small>
-								<div class="flex align-items" style="display: flex; height: 200px; flex-wrap: wrap; justify-content: center; align-content: space-around; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+								<div>
+									<small>space-around</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
 							</div>
 						</section>
 						<section class="red">
 							<h4>Flex item<small>(child)</small> options</h4>
 						</section>
-						<section class="red">
+						<section class="red order">
 							<h4>Order</h4>
-							<pre style="width: 40%; margin: 0 auto;"><code class="hljs css">order: number;</code></pre>
-							<div style="display: inline-block; vertical-align: top; width: 40%; margin-right: 10%;">
-								<small>normal ordered</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+							<pre><code class="hljs css">order: number;</code></pre>
+							<div>
+								<div>
+									<small>normal ordered</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 40%;">
-								<small>custom ordered</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="order: 3">1</div><div style="order: -1">2</div><div style="order: -1">3</div><div style="order: 3">4</div><div style="order: -2">5</div><div style="order: 2">6</div>
+								<div>
+									<small>custom ordered</small>
+									<div class="box">
+										<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+									</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red align-self">
 							<h4>Align for single item on cross axis</h4>
-							<pre><code class="hljs css">align-items: auto(default)
+							<pre><code class="hljs css">align-self: auto(default)
 	     flex-start
 	     flex-end 
 	     center
 	     baseline
 	     stretch;</code></pre>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>flex-start</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="align-self: flex-start;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
+	     					<div>
+								<div>
+									<small>flex-start</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>flex-end</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="align-self: flex-end;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
+								<div>
+									<small>flex-end</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>center</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; margin-bottom: 10px; padding: 10px 0;">
-									<div style="align-self: center;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
+								<div>
+									<small>center</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>baseline</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="align-self: baseline;">1</div><div style="line-height: 3; align-self: baseline;">2</div>
+								<div>
+									<small>baseline</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top;">
-								<small>stretch(default)</small>
-								<div class="flex align-items" style="display: flex; justify-content: center; height: 200px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="align-self: stretch;">1</div><div style="line-height: 3; align-self: flex-start;">2</div>
+								<div>
+									<small>stretch(default)</small>
+									<div class="box">
+										<div>1</div><div>2</div>
+									</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
-							<h4>basis and grow/shrink</h4>
-							<div class="fragment">
+						<section class="red basis-grow-shrink">
+							<h4>item basis and grow/shrink factor</h4>
+							<div class="fragment flex-basis">
 								<pre><code class="hljs css">flex-basis: length;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="flex-basis: 200px">200px</div><div style="flex-basis: 20px">20px</div><div style="flex-basis: 150px">150px</div>
+								<div class="box">
+									<div>200px</div><div>20px</div><div>150px</div>
 								</div>
 							</div>
-							<div class="fragment">
+							<div class="fragment flex-grow">
 								<pre><code class="hljs css">flex-grow: n;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="flex-grow: 2">2</div><div style="flex-grow: 1">1</div><div style="flex-grow: 3">3</div>
+								<div class="box">
+									<div>2</div><div>1</div><div>3</div>
 								</div>
 							</div>
-							<div class="fragment">
+							<div class="fragment flex-shrink">
 								<pre><code class="hljs css">flex-shrink: n;</code></pre>
-								<div class="flex" style="display: flex; height: 100px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-									<div style="flex-shrink: 2; flex-basis: 1000px;">2</div><div style="flex-shrink: 1; flex-basis: 1000px;">1</div><div style="flex-shrink: 3; flex-basis: 1000px;">3</div>
+								<div class="box">
+									<div>2</div><div>1</div><div>3</div>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red basis-grow-shrink-short">
 							<h4>shorthand rule for grow,shrink and basis</h4>
 							<pre><code class="hljs css">flex: flex-grow flex-shrink flex-basis; /* default - flex: 0 0 auto; */</code></pre>
-							<div class="flex" style="display: flex; height: 70px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0; margin-bottom: 20px;">
-								<div style="flex: 2 1 100px">2 | 1 | 100px</div><div style="flex: 1 2 300px">1 | 2 | 300px</div><div style="flex: 2 1 100px">2 | 1 | 100px</div>
+							<div class="box">
+								<div>2 | 1 | 100px</div><div>1 | 2 | 300px</div><div>2 | 1 | 100px</div>
 							</div>
-							<div class="flex" style="display: flex; height: 70px; border: 2px solid $darkGray; background: #b22746; padding: 10px 0;">
-								<div style="flex: 2 1 500px">2 | 1 | 500px</div><div style="flex: 1 2 400px">1 | 2 | 400px</div><div style="flex: 2 1 300px">2 | 1 | 300px</div>
+							<div class="box">
+								<div>2 | 1 | 500px</div><div>1 | 2 | 400px</div><div>2 | 1 | 300px</div>
 							</div>
 							<div class="fragment">
-								<div style="display: inline-block; text-align: left; vertical-align: top; width: 40%; margin-right: 10%;">
-									<p style="margin: 20px 0 10px;">grow factor</p>
-									<div style="margin: 0 0 20px; font-size: 0.5em;">
+								<div>
+									<p>grow factor</p>
+									<div>
 										<span><b>free space:</b> parent-width — &sum; flex-basis</span>
 									</div>
-									<div style="margin: 0 0 20px; font-size: 0.5em;">
+									<div>
 										<b>grow-proportion:</b>
-										<div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
-											<span style="display: block; border-bottom: 2px solid $darkGray; text-align: center;">flex-grow</span>
-											<span style="display: block;">&sum; flex-grow</span>
+										<div>
+											<span>flex-grow</span>
+											<span>&sum; flex-grow</span>
 										</div>
 									</div>
-									<div style="font-size: 0.5em;">
+									<div>
 										<p><b>item width on grow:</b></p>
-										<span style="text-decoration: underline;">flex-basis + grow-proportion*free-space</span>
+										<span>flex-basis + grow-proportion*free-space</span>
 									</div>
 								</div>
-								<div style="display: inline-block; text-align: left; vertical-align: top; width: 40%;">
-									<p style="margin: 20px 0 10px;">shrink factor</p>
-									<div style="margin: 0 0 20px; font-size: 0.5em;">
+								<div>
+									<p>shrink factor</p>
+									<div>
 										<span><b>free space:</b> parent-width — &sum; flex-basis</span>
 									</div>
-									<div style="margin: 0 0 20px; font-size: 0.5em;">
+									<div>
 										<b>shrink-proportion:</b>
-										<div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
-											<span style="display: block; border-bottom: 2px solid $darkGray; text-align: center;">flex-shrink*flex-basis</span>
-											<span style="display: block;">&sum; flex-shrink*flex-basis</span>
+										<div>
+											<span>flex-shrink*flex-basis</span>
+											<span>&sum; flex-shrink*flex-basis</span>
 										</div>
 									</div>
-									<div style="font-size: 0.5em;">
+									<div>
 										<p><b>item width on shrink:</b></p>
-										<span style="text-decoration: underline;">flex-basis + shrink-proportion*free-space</span>
+										<span>flex-basis + shrink-proportion*free-space</span>
 									</div>
 								</div>
 							</div>
@@ -1694,58 +1483,15 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 						<section class="red">
 							<h4>simple flex demo</h4>
 						</section>
-						<section class="red">
+						<section class="red demo">
 							<h4>adaptive multicolumn layout w/ navbar</h4>
-							<div id="button-set" style="margin-bottom: 20px;">
-								<p style="margin: 0;"><small>change size</small></p>
-								<span style="display: inline-block; padding: 5px 10px; background: #b22746; color: white; font-size: 0.5em; cursor: pointer;" data-width="360px" data-size="small">small</span>
-								<span style="display: inline-block; padding: 5px 10px; background: #b22746; color: white; font-size: 0.5em; cursor: pointer;" data-width="640px" data-size="middle">middle</span>
-								<span style="display: inline-block; padding: 5px 10px; background: #b22746; color: white; font-size: 0.5em; cursor: pointer;" data-width="100%" data-size="large">large</span>
-								<script>
-									var buttonSet = document.getElementById('button-set');
-									buttonSet.addEventListener('click', function(e) {
-										var target = e.target;
-										if (target.tagName === 'SPAN') {
-											var wrapper = document.getElementById('wrapper');
-											var width = target.dataset.width;
-											var size = target.dataset.size;
-
-											if (wrapper.className == 'wrapper-flex' && size == 'large') {
-												wrapper.style.width = '640px';
-												setTimeout(function() {
-													wrapper.classList.add('middle');
-													wrapper.style.width = width;
-													setTimeout(function() {
-														wrapper.classList.remove('middle');
-														wrapper.classList.add(size);
-													}, 150);
-												}, 150);
-											} else {
-												if (wrapper.className == 'wrapper-flex large' && size == 'small') {
-													wrapper.style.width = '640px';
-													setTimeout(function() {
-														wrapper.classList.remove('large');
-														wrapper.classList.add('middle');
-														wrapper.style.width = width;
-														setTimeout(function() {
-															wrapper.classList.remove('middle');
-														}, 150);
-													}, 150);
-												} else {
-													wrapper.style.width = width;
-													setTimeout(function() {
-														wrapper.classList.remove('middle', 'large');
-														if (size != 'small') {
-															wrapper.classList.add(size);
-														}
-													}, 150);
-												}
-											}
-										}
-									})
-								</script>
+							<div id="button-set">
+								<p><small>change size</small></p>
+								<span data-width="360px" data-size="small">small</span>
+								<span data-width="640px" data-size="middle">middle</span>
+								<span class="current" data-width="100%" data-size="large">large</span>
 							</div>
-							<div class="wrapper-flex large" id="wrapper">
+							<div class="wrapper large" id="wrapper">
 								<header class="header">
 									<nav>
 										<ul class="navigation">
@@ -1757,10 +1503,10 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 									</nav>
 								</header>
 								<article class="main">
-									<p style="margin: 0;">LOREM IPSUM</p>  
+									<p>MAIN LOREM IPSUM</p>  
 								</article>
-								<aside class="aside aside-1">LOREM</aside>
-								<aside class="aside aside-2">IPSUM</aside>
+								<aside class="aside aside-1">ASIDE LOREM</aside>
+								<aside class="aside aside-2">ASIDE IPSUM</aside>
 								<footer class="footer">Footer</footer>
 							</div>
 						</section>
@@ -1768,48 +1514,50 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 					<!-- /FLEX -->
 
 					<!-- COLUMNS -->
-					<section class="stack">
+					<section class="stack columns">
 						<section class="red">
 							<h2>Columns</h2>
 						</section>
-						<section class="red">
+						<section class="red rule">
 							<h4>Multi-columns rule</h4>
 							<pre><code class="hljs css">columns: column-width column-count;</code></pre>
-							<div style="display: inline-block; width: 40%; margin-right: 10%; vertical-align: top;">
-								<pre><code class="hljs css">column-count: 2;</code></pre>
-								<small style="text-align: left; -webkit-column-count: 2; -moz-column-count: 2; column-count: 2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa.</small>
-							</div>
-							<div style="display: inline-block; width: 40%; vertical-align: top;">
-								<pre><code class="hljs css">columns-width: 100px;</code></pre>
-								<small style="text-align: left; -webkit-column-width: 100px; -moz-column-width: 100px; column-width: 100px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa.</small>
+							<div>
+								<div>
+									<pre><code class="hljs css">column-count: 2;</code></pre>
+									<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa.</small>
+								</div>
+								<div>
+									<pre><code class="hljs css">columns-width: 100px;</code></pre>
+									<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa.</small>
+								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red gap">
 							<h4>Columns gap</h4>
 							<pre><code class="hljs css">column-gap: length | normal; /* normal = 1em */</code></pre>
-							<div style="width: 80%; margin: 0 auto;">
-								<pre style="width: 40%; margin: 0 auto 20px;"><code class="hljs css">column-gap: 200px;</code></pre>
-								<small style="text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 200px; -moz-column-gap: 200px; column-gap: 200px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
+							<div>
+								<pre><code class="hljs css">column-gap: 200px;</code></pre>
+								<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red separator">
 							<h4>Columns separator</h4>
 							<pre><code class="hljs css">column-rule: column-rule-width column-rule-style column-rule-color;</code></pre>
-							<div style="width: 80%; margin: 0 auto;">
-								<pre style="width: 50%; margin: 0 auto 20px;"><code class="hljs css">column-rule: 4px solid $darkGray;</code></pre>
-								<small style="text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid $darkGray; -moz-column-gap: 100px; -moz-column-rule: 4px solid $darkGray; column-gap: 100px; column-rule: 4px solid $darkGray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
+							<div>
+								<pre><code class="hljs css">column-rule: 4px solid #464547;</code></pre>
+								<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh. Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.</small>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red span">
 							<h4>Spanning columns</h4>
 							<pre><code class="hljs css">column-span: none | all;</code></pre>
-							<div style="width: 80%; margin: 0 auto;">
-								<pre style="width: 40%; margin: 0 auto 20px;"><code class="hljs css">h4 {
+							<div>
+								<pre><code class="hljs css">h4 {
     column-span: all;
 }</code></pre>
-								<div style="padding: 5px; text-align: left; -webkit-columns: 2 auto; -moz-columns: 2 auto; columns: 2 auto; -webkit-column-gap: 100px; -webkit-column-rule: 4px solid $darkGray; -moz-column-gap: 100px; -moz-column-rule: 4px solid $darkGray; column-gap: 100px; column-rule: 4px solid $darkGray; font-size: 0.5em;">
+								<div>
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.
-									<h4 style="padding: 10px; margin: 0; text-align: center; -webkit-column-span: all; -moz-column-span: all; column-span: all;">yeah ... dat borin' lorem ipsum agn ... nafin' new</h4>
+									<h4>yeah ... dat borin' lorem ipsum agn ... nafin' new</h4>
 									Ut sodales nulla ut nisi ultrices dignissim. Praesent vitae dignissim velit. Ut ac scelerisque massa. Phasellus vitae purus eget nisi gravida interdum. Morbi ultrices tortor in lectus cursus, et sodales arcu feugiat. Vestibulum vel tempor quam. Phasellus at commodo mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec congue velit, vitae blandit risus. Vivamus scelerisque in dui in tincidunt. Aliquam sed dui erat. Praesent urna nunc, tempor id tellus sed, suscipit iaculis sem.
 								</div>
 							</div>
@@ -1817,62 +1565,64 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 						<section class="red">
 							<h4>breaks sentences</h4>
 						</section>
-						<section class="red">
-							<pre style="margin-bottom: 30px;"><code class="hljs css">break-after(break-before): auto | always | avoid
+						<section class="red break">
+							<pre><code class="hljs css">break-after(break-before): auto | always | avoid
 			   left | right | page | column
 			   avoid-page | avoid-column;</code></pre>
 							<div class="fragment">
 								<pre><code class="hljs css">break-insde: auto | avoid | avoid-page | avoid-column;</code></pre>
-								<div style="width: 80%; margin: 0 auto;">
-									<ul style="padding: 10px; margin-bottom: 20px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: $lightGray; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Mauris eu risus.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Vestibulum auctor dapibus neque.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Consectetuer adipiscing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Eu risus.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Vestibulum auctor dapibus neque.</li> 
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Lorem ipsum dolor sit amet</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Aliquam tincidunt mauris eu risus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px;">Vestibulum auctor dapibus neque.</li>
+								<div>
+									<ul>
+											<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+											<li>Mauris eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
+											<li>Consectetuer adipiscing elit.</li>
+											<li>Eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li> 
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Aliquam tincidunt mauris eu risus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
 									</ul>
 
-									<ul style="padding: 10px; -webkit-columns: 150px; -moz-columns: 150px; columns: 150px; -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; font-size: 0.3em; background: $lightGray; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Mauris eu risus.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Vestibulum auctor dapibus neque.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Consectetuer adipiscing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Eu risus.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Vestibulum auctor dapibus neque.</li> 
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Lorem ipsum dolor sit amet</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Aliquam tincidunt mauris eu risus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-											<li style="background: white; margin-bottom: 10px; padding: 20px; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">Vestibulum auctor dapibus neque.</li>
+									<ul>
+											<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+											<li>Mauris eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
+											<li>Consectetuer adipiscing elit.</li>
+											<li>Eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li> 
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Aliquam tincidunt mauris eu risus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
 									</ul>
 								</div>
 							</div>
 						</section>
-						<section class="red">
+						<section class="red fill">
 							<h4>filling the space</h4>
 							<pre><code class="hljs css">column-fill: auto | balance;</code></pre>
-							<div style="display: inline-block; vertical-align: top; width: 40%; margin-right: 10%;">
-								<p>balance</p>
-								<div style="text-align: left; -webkit-columns: 3 auto; -moz-columns: 3 auto; columns: 3 auto;  -webkit-column-fill: balance; -moz-column-fill: balance; column-fill: balance; font-size: 0.7em;">
-									<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.</p>
+							<div>
+								<div>
+									<p>balance</p>
+									<div>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.
+									</div>
 								</div>
-							</div>
-							<div style="display: inline-block; vertical-align: top; width: 40%;">
-								<p>auto</p>
-								<div style="text-align: left; -webkit-columns: 3 auto; -moz-columns: 3 auto; columns: 3 auto; -webkit-column-fill: auto; -moz-column-fill: auto; column-fill: auto; font-size: 0.7em;">
-									<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.</p>
+								<div>
+									<p>auto</p>
+									<div>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque turpis eu dui porttitor auctor. Cras gravida augue est, eget euismod nisi finibus eget. Pellentesque at ipsum vitae metus consequat iaculis id id nibh.
+									</div>
 								</div>
 							</div>
 						</section>
 					</section>
 					<!-- /COLUMNS -->
 				<!-- /SECTION 4 -->
-				<section>
+				<section class="end">
 					<h1>THE END</h1>
-					<h2 style="color: $lightGray; font-size: 1.65em;">thank you!</h2>
-					<h4 style="color: #7F993A; font-size: 0.8em">...and your questions start here <span style="font-size: 2em">&#9786;</span></h4>
+					<h2>thank you!</h2>
+					<h4>...and your questions start here <span>&#9786;</span></h4>
 				</section>
 			<!-- /SLIDES -->
 			</div>
@@ -1881,14 +1631,11 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script>
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'slide',
 
-				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -1898,6 +1645,7 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
 			function uiChange(e) {
 				var progress = document.querySelector('.progress');
 				var controls = document.querySelector('.controls')
@@ -1919,11 +1667,63 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 					}
 				}
 			}
+
 			Reveal.addEventListener('slidechanged', function(e) {
 				uiChange(e);
 			});
+
 			Reveal.addEventListener('ready', function(e) {
 				uiChange(e);
+			});
+
+			var buttonSet = document.getElementById('button-set');
+
+			buttonSet.addEventListener('click', function(e) {
+				var target = e.target;
+				if (target.tagName === 'SPAN') {
+					var prev = document.querySelector('.current');
+					if (prev) {
+						prev.classList.remove('current');
+					}
+
+					target.classList.add('current');
+
+					var wrapper = document.getElementById('wrapper');
+					var width = target.dataset.width;
+					var size = target.dataset.size;
+
+					if (wrapper.className == 'wrapper' && size == 'large') {
+						wrapper.style.width = '640px';
+						setTimeout(function() {
+							wrapper.classList.add('middle');
+							wrapper.style.width = width;
+							setTimeout(function() {
+								wrapper.classList.remove('middle');
+								wrapper.classList.add(size);
+							}, 150);
+						}, 150);
+					} else {
+						if (wrapper.className == 'wrapper large' && size == 'small') {
+							wrapper.style.width = '640px';
+							setTimeout(function() {
+								wrapper.classList.remove('large');
+								wrapper.classList.add('middle');
+								wrapper.style.width = width;
+								setTimeout(function() {
+									wrapper.classList.remove('middle');
+								}, 150);
+							}, 150);
+						} else {
+							wrapper.style.width = width;
+							setTimeout(function() {
+								wrapper.classList.remove('middle', 'large');
+								if (size != 'small') {
+									wrapper.classList.add(size);
+								}
+							}, 150);
+						}
+					}
+				}
 			});
 		</script>
 	</body>
