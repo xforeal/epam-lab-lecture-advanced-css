@@ -121,4 +121,228 @@
 			}
 		}
 	}
+
+	.ui-elements {
+		div {
+			display: flex;
+			justify-content: space-around;
+
+			ul {
+				padding: 0;
+				text-align: center;
+
+				li {
+					line-height: 1;
+					margin-bottom: 10px;
+
+					span {
+						display: block;
+						vertical-align: top;
+						cursor: pointer;
+
+						&.link {
+							display: inline-block;
+							vertical-align: bottom;
+							color: $darkGray;
+							font-size: 18px;
+							line-height: 24px;
+							text-decoration: underline;
+
+							&:hover {
+								color: $lightGray;
+							}
+
+							&:active {
+								color: $darkGray;
+								transition-duration: 0s;
+							}
+						}
+
+						&.btn {
+							color: $white;
+							padding: 12px 60px;
+							font-size: 18px;
+							line-height: 24px;
+
+							&.blue {
+								background: $blue;
+
+								&:hover {
+									background: $darkBlue ;
+								}
+
+								&:active {
+									background: $darkGray;
+								}
+							}
+
+							&.green {
+								background: $green;
+
+								&:hover {
+									background: $darkGreen ;
+								}
+
+								&:active {
+									background: $darkGray;
+								}
+							}
+
+
+							&.red {
+								background: $red;
+
+								&:hover {
+									background: $darkRed ;
+								}
+
+								&:active {
+									background: $darkGray;
+								}
+							}
+
+							&.border {		
+								padding: 10px 58px;
+								color: $darkGray;
+								background-color: transparent;
+								border: 2px solid $darkGray;
+
+								&:hover {
+									border-color: $lightGray;
+								}
+
+								&:active {
+									color: $white;
+									border-color: transparent;
+									background: $darkGray;
+									padding: 11px 58px 9px;
+								}
+							}
+
+							&:active {
+								padding: 13px 60px 11px;
+								transition-duration: 0s;
+							}
+						}
+					}
+
+					input {
+						background: transparent;
+						font-size: 18px;
+						line-height: 24px;
+						padding: 10px 20px;
+						border: 2px solid $lightGray;
+						outline: none;
+
+						&:focus {	
+							border: 2px solid $darkGray;
+						}
+					}
+				}
+
+				&.transition {
+					li {
+						* {
+							transition-property: background, border, color;
+							transition-duration: 0.3s;
+							transition-timing-function: ease-in-out;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.jump {
+		ul {
+			display: flex;
+			padding: 0;
+			height: 500px;
+			justify-content: space-between;
+			align-content: space-between;
+			flex-flow: row wrap;
+
+			li {
+				position: relative;
+				top: 0;
+				display: block;
+				width: 30%;
+				background-size: cover;
+				transition: top 0.3s ease-in-out;
+
+				div {
+					position: relative;
+					height: 200px;
+					z-index: 3;
+				}
+
+				&:nth-child(even) {
+					div {
+						background: url(../img/cat.jpg) 50% 50% no-repeat;
+					}
+
+					&:after {
+						background: $green;
+					}
+
+					&:before {
+						background: $darkGreen;
+					}
+				}
+
+				&:nth-child(odd) {
+					div {
+						background: url(../img/fishes.jpg) 50% 50% no-repeat;
+					}
+
+					&:after {
+						background: $blue;
+					}
+
+					&:before {
+						background: $darkBlue;
+					}
+				}
+				
+
+				&:before, &:after {
+					content: '';
+					display: block;
+					position: absolute;
+					height: 8px;
+					transition: bottom 0.3s ease-in-out;			
+				}
+
+				&:before {
+					left: 8px;
+					right: 8px;
+					bottom: -4px;
+					z-index: 2;
+				}
+
+				&:after {
+					left: 16px;
+					right: 16px;
+					bottom: -8px;
+					z-index: 1;
+				}
+
+				&:hover {
+					top: -8px;
+
+					&:before {
+						bottom: -8px;
+					}
+
+					&:after {
+						bottom: -16px;
+					}
+				}
+			}
+		}
+	}
 }

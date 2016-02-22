@@ -1199,6 +1199,138 @@
       background-color: #464547;
       color: #a3c644; }
 
+.transitions .ui-elements div {
+  display: flex;
+  justify-content: space-around; }
+  .transitions .ui-elements div ul {
+    padding: 0;
+    text-align: center; }
+    .transitions .ui-elements div ul li {
+      line-height: 1;
+      margin-bottom: 10px; }
+      .transitions .ui-elements div ul li span {
+        display: block;
+        vertical-align: top;
+        cursor: pointer; }
+        .transitions .ui-elements div ul li span.link {
+          display: inline-block;
+          vertical-align: bottom;
+          color: #464547;
+          font-size: 18px;
+          line-height: 24px;
+          text-decoration: underline; }
+          .transitions .ui-elements div ul li span.link:hover {
+            color: #999; }
+          .transitions .ui-elements div ul li span.link:active {
+            color: #464547;
+            transition-duration: 0s; }
+        .transitions .ui-elements div ul li span.btn {
+          color: #fff;
+          padding: 12px 60px;
+          font-size: 18px;
+          line-height: 24px; }
+          .transitions .ui-elements div ul li span.btn.blue {
+            background: #39c2d7; }
+            .transitions .ui-elements div ul li span.btn.blue:hover {
+              background: #1a9cb0; }
+            .transitions .ui-elements div ul li span.btn.blue:active {
+              background: #464547; }
+          .transitions .ui-elements div ul li span.btn.green {
+            background: #a3c644; }
+            .transitions .ui-elements div ul li span.btn.green:hover {
+              background: #7f993a; }
+            .transitions .ui-elements div ul li span.btn.green:active {
+              background: #464547; }
+          .transitions .ui-elements div ul li span.btn.red {
+            background: #b22746; }
+            .transitions .ui-elements div ul li span.btn.red:hover {
+              background: #8e244d; }
+            .transitions .ui-elements div ul li span.btn.red:active {
+              background: #464547; }
+          .transitions .ui-elements div ul li span.btn.border {
+            padding: 10px 58px;
+            color: #464547;
+            background-color: transparent;
+            border: 2px solid #464547; }
+            .transitions .ui-elements div ul li span.btn.border:hover {
+              border-color: #999; }
+            .transitions .ui-elements div ul li span.btn.border:active {
+              color: #fff;
+              border-color: transparent;
+              background: #464547;
+              padding: 11px 58px 9px; }
+          .transitions .ui-elements div ul li span.btn:active {
+            padding: 13px 60px 11px;
+            transition-duration: 0s; }
+      .transitions .ui-elements div ul li input {
+        background: transparent;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 10px 20px;
+        border: 2px solid #999;
+        outline: none; }
+        .transitions .ui-elements div ul li input:focus {
+          border: 2px solid #464547; }
+    .transitions .ui-elements div ul.transition li * {
+      transition-property: background, border, color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out; }
+    .transitions .ui-elements div ul:last-child {
+      margin-bottom: 0; }
+
+.transitions .jump ul {
+  display: flex;
+  padding: 0;
+  height: 500px;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-flow: row wrap; }
+  .transitions .jump ul li {
+    position: relative;
+    top: 0;
+    display: block;
+    width: 30%;
+    background-size: cover;
+    transition: top 0.3s ease-in-out; }
+    .transitions .jump ul li div {
+      position: relative;
+      height: 200px;
+      z-index: 3; }
+    .transitions .jump ul li:nth-child(even) div {
+      background: url(../img/cat.jpg) 50% 50% no-repeat; }
+    .transitions .jump ul li:nth-child(even):after {
+      background: #a3c644; }
+    .transitions .jump ul li:nth-child(even):before {
+      background: #7f993a; }
+    .transitions .jump ul li:nth-child(odd) div {
+      background: url(../img/fishes.jpg) 50% 50% no-repeat; }
+    .transitions .jump ul li:nth-child(odd):after {
+      background: #39c2d7; }
+    .transitions .jump ul li:nth-child(odd):before {
+      background: #1a9cb0; }
+    .transitions .jump ul li:before, .transitions .jump ul li:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 8px;
+      transition: bottom 0.3s ease-in-out; }
+    .transitions .jump ul li:before {
+      left: 8px;
+      right: 8px;
+      bottom: -4px;
+      z-index: 2; }
+    .transitions .jump ul li:after {
+      left: 16px;
+      right: 16px;
+      bottom: -8px;
+      z-index: 1; }
+    .transitions .jump ul li:hover {
+      top: -8px; }
+      .transitions .jump ul li:hover:before {
+        bottom: -8px; }
+      .transitions .jump ul li:hover:after {
+        bottom: -16px; }
+
 .animations .rule div {
   width: 90%;
   margin: 0 auto;
@@ -1679,7 +1811,7 @@
     margin: 0;
     padding: 0;
     padding: 0; }
-    .flex .demo .wrapper .navigation a {
+    .flex .demo .wrapper .navigation span {
       display: block;
       text-align: center;
       padding: 10px;
@@ -1688,8 +1820,8 @@
       font-size: 0.5em;
       padding: 10px;
       color: white;
-      text-decoration: none; }
-      .flex .demo .wrapper .navigation a:hover {
+      cursor: pointer; }
+      .flex .demo .wrapper .navigation span:hover {
         background: #b22746; }
     .flex .demo .wrapper .navigation li:before {
       display: none; }
@@ -1698,7 +1830,7 @@
   .flex .demo .wrapper.middle .navigation, .flex .demo .wrapper.large .navigation {
     flex-flow: row wrap;
     justify-content: space-around; }
-    .flex .demo .wrapper.middle .navigation a, .flex .demo .wrapper.large .navigation a {
+    .flex .demo .wrapper.middle .navigation span, .flex .demo .wrapper.large .navigation span {
       border: none; }
   .flex .demo .wrapper.middle .header, .flex .demo .wrapper.large .header {
     order: -1; }

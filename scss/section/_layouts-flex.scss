@@ -727,7 +727,7 @@
 				padding: 0;
 				padding: 0;
 
-				a {
+				span {
 					display: block;
 					text-align: center;
 					padding: 10px;
@@ -736,7 +736,7 @@
 					font-size: 0.5em;
 					padding: 10px;
 					color: white;
-					text-decoration: none;
+					cursor: pointer;
 
 					&:hover {
 						background: $red;
@@ -759,7 +759,7 @@
 					flex-flow: row wrap;
 					justify-content: space-around;
 
-					a {
+					span {
 						border: none;
 					}
 				}
