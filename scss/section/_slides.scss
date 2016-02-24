@@ -1,4 +1,21 @@
+.title-page {
+	.slides {
+		&:after {
+			content: '25 Feb, 2016';
+			position: absolute;
+			right: 50px;
+			bottom: 50px;
+			color: $white;
+		}
+	}
+}
+
 .title {
+	h1 {
+		font-size: 4em;
+		text-shadow: 0 0 5px $darkGray;
+	}
+
 	div {
 		max-width: 210px;
 		margin: 0 auto -118px;

@@ -334,6 +334,9 @@ body {
 .reveal .controls.red .navigate-down.enabled {
   border-top-color: #8e244d; }
 
+.reveal .controls.hide {
+  display: none !important; }
+
 /*********************************************
  * PROGRESS BAR
  *********************************************/
@@ -365,6 +368,9 @@ body {
 
 .reveal .progress.red span {
   background: #8E244D; }
+
+.reveal .progress.hide {
+  display: none !important; }
 
 .reveal section img.plain {
   background: none; }

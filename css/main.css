@@ -262,6 +262,17 @@
     left: -20%;
     transform: rotateY(180deg); } }
 
+.title-page .slides:after {
+  content: '25 Feb, 2016';
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  color: #fff; }
+
+.title h1 {
+  font-size: 4em;
+  text-shadow: 0 0 5px #464547; }
+
 .title div {
   max-width: 210px;
   margin: 0 auto -118px; }
