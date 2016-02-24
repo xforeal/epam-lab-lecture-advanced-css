@@ -7,12 +7,13 @@
 		<title>Advanced CSS</title>
 
 		<meta name="description" content="HTML5 vs HTML/HTML 4.01/XHTML Presentation">
-		<meta name="author" content="Andrii Mokhovyk">
+		<meta name="author" content="Vladyslav Riaboshapka">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/epam.css" id="theme">
@@ -31,11 +32,9 @@
 			<div class="slides">
 
 				<!-- TITLE -->
-				<section data-background="#39c2d7" class="has-dark-background-custom title">
+				<section data-background="img/title.jpg" data-state="title-page" class="has-dark-background-custom title">
 					<h1>ADVANCED CSS</h1>
-					<p>
-						<small>Created by Vladyslav Riaboshapka</small>
-					</p>
+					<p>Vladyslav Riaboshapka</p>
 					<div>
 						<img class="plain" src="img/epam_logo_white.png" alt="EPAM">
 					</div>
@@ -44,22 +43,22 @@
 				<section>
 					<h2>Agenda</h2>
 					<div>
-						<ul class="fragment grow agenda">
+						<ul class="fragment agenda">
 							<li>CSS Selectors</li>
 							<li>CSS Variables</li>
 							<li>CSS Units</li>
 						</ul>
- 						<ul class="fragment grow agenda">
+ 						<ul class="fragment agenda">
 							<li>Round borders</li>
 							<li>Background attributes in CSS3</li>
 							<li>Shadows and Gradients</li>
 							<li>CSS Filters</li>
 						</ul>
-						<ul class="fragment grow agenda">
+						<ul class="fragment agenda">
 							<li>Transformation with CSS in 2D...and 3D!</li>
 							<li>Transition/Animation</li>
 						</ul>
-						<ul class="fragment grow agenda">
+						<ul class="fragment agenda">
 							<li>Layouts. Flex and columns</li>
 							<li>Your questions...</li>
 						</ul>
@@ -80,9 +79,11 @@
 							<pre><code class="hljs css">E { /* rules */ }
 E.class { /* rules */ }
 E#id { /* rules */ }
+
 E:link { /* rules */ }
 E:visited { /* rules */ }
 E:active { /* rules */ }
+
 E F { /* rules */ }</code></pre>
 						</section>
 					</section>
@@ -94,13 +95,13 @@ E F { /* rules */ }</code></pre>
 							<h2>CSS Selectors Level 2</h2>
 						</section>
 						<section>
-							<pre><code class="hljs css">E { /* rules */ }
-* { /* rules */ }
+							<pre><code class="hljs css">* { /* rules */ }
 E[foo] { /* rules */ }
 E[foo=bar] { /* rules */ }
 E[foo~="bar"] { /* rules */ }
 E[foo|="en"] { /* rules */ }
 E:lang() { /* rules */ }
+
 E:hover { /* rules */ }
 E:focus { /* rules */ }
 E:first-child { /* rules */ }
@@ -119,21 +120,28 @@ E + F { /* rules */ }</code></pre>
 							<pre><code class="hljs css">E[foo^="bar"] { /* rules */ }
 E[foo$="bar"] { /* rules */ }
 E[foo*="bar"] { /* rules */ }
+
 E:enabled { /* rules */ }
 E:disabled { /* rules */ }
 E:checked { /* rules */ }
-E:root { /* rules */ }
 E:empty { /* rules */ }
-E:nth-child(n) { /* rules */ }
+
+E ~ F { /* rules */ }
+
+:root { /* rules */ }</code></pre>
+						</section>
+
+						<section>
+							<pre><code class="hljs css">E:nth-child(n) { /* rules */ }
 E:last-child { /* rules */ }
 E:nth-last-child(n) { /* rules */ }
 E:only-child { /* rules */ }
+
 E:first-of-type { /* rules */ }
 E:nth-of-type(n) { /* rules */ }
 E:last-of-type { /* rules */ }
 E:nth-last-of-type(n) { /* rules */ }
-E:only-of-type { /* rules */ }
-E ~ F { /* rules */ }</code></pre>
+E:only-of-type { /* rules */ }</code></pre>
 						</section>
 					</section>
 					<!-- /LEVEL 3 -->
@@ -146,11 +154,14 @@ E ~ F { /* rules */ }</code></pre>
 						<section>
 							<pre><code class="hljs css">E:not(s) { /* rules */ }
 E:matches(s) { /* rules */ }
+
 E:default { /* rules */ }
+
 E:in-range { /* rules */ }
 E:out-of-range { /* rules */ }
 E:required { /* rules */ }
 E:optional { /* rules */ }
+
 E:read-only { /* rules */ }
 E:read-write { /* rules */ }</code></pre>
 						</section>
@@ -165,20 +176,28 @@ E:read-write { /* rules */ }</code></pre>
 						<section>
 							<pre><code class="hljs css">E[foo="bar" i] { /* rules */ }
 E:dir(ltr) { /* rules */ }
+
 E:any-link { /* rules */ }
 E:local-link { /* rules */ }
 E:local-link(0) { /* rules */ }
+
 E:current { /* rules */ }
 E:current(s) { /* rules */ }
 E:past { /* rules */ }
-E:future { /* rules */ }
-E:indeterminate { /* rules */ }
+E:future { /* rules */ }</code></pre>
+						</section>
+						<section>
+							<pre><code class="hljs css">E:indeterminate { /* rules */ }
+
 E:nth-match(n of s) { /* rules */ }
 E:nth-last-match(n of s) { /* rules */ }
+
 E:column(s) { /* rules */ }
 E:nth-column(n) { /* rules */ }
 E:nth-last-column(n) { /* rules */ }
+
 E /foo/ F { /* rules */ }
+
 E! > F { /* rules */ }</code></pre>
 						</section>
 					</section>
@@ -251,18 +270,22 @@ div {
 ex	/* relative to height of the "x" in lowercase */
 ch	/* relative to width of the "0" */
 rem	/* relative to the font-size of root element */
+
 vw	/* relative to 1% of the width of the viewport */
 vh	/* relative to 1% of the height of the viewport */
 vmin	/* relative to 1% of viewport's* smaller dimension */
 vmax	/* relative to 1% of viewport's* larger dimension */
+
 %	/* relative to the same property of the parent element */</code></pre>
 						</section>
 						<section>
 							<h4>Absolute Lengths</h4>
 							<pre><code class="hljs css">cm	/* centimeters */
 mm	/* millimeters */
+
 in	/* inches (1in = 96px = 2.54cm) */
 px	/* pixels (1px = 1/96th of 1in) */
+
 pt	/* points (1pt = 1/72 of 1in) */
 pc	/* picas (1pc = 12 pt) */</code></pre>
 						</section>
@@ -286,11 +309,14 @@ pc	/* picas (1pc = 12 pt) */</code></pre>
 							<h2>Round Borders</h2>
 						</section>
 						<section class="blue rule">
-							<h4>border-radius – let the corners be round!</h4>
-							<pre><code class="hljs css">border-radius: all; 
-border-radius: tl&br tr&bl;
-border-radius: tl tr&bl br;
-border-radius: tl tr bl br;</code></pre>
+							<h4>border-radius rule</h4>
+							<pre><code class="hljs css">border-radius: all;
+
+border-radius: tl-br tr-bl;
+
+border-radius: tl tr-bl br;
+
+border-radius: tl tr br bl;</code></pre>
 							<div>
 								<span>tl</span>
 								<span>tr</span>
@@ -322,9 +348,11 @@ border-radius: tl tr bl br;</code></pre>
 							</div>
 						</section>
 						<section class="blue single">
-							<pre><code class="hljs css">border-top-left-radius: x y;
-border-top-right-radius: x y;
-border-bottom-left-radius: x y;
+							<h4>different strength of rounding</h4>
+							<pre><code class="hljs css">border-radius: x/y;
+
+border-top-left-radius: x y;
+...
 border-bottom-left-radius: x y;</code></pre>
 							<div>
 								<span>border-top-left-radius: 70% 40%;</span>
@@ -401,7 +429,10 @@ border-bottom-left-radius: x y;</code></pre>
 						</section>
 						<section class="blue size">
 							<h4>background-size</h4>
-							<pre><code class="hljs css">background-size: px | % | auto | contain | cover;</code></pre>
+							<pre><code class="hljs css">background-size: px | % | auto | contain | cover;
+
+/* or as short rule of background */
+background: ... position/size ...;</code></pre>
 							<div>
 								<div>
 									<div></div>
@@ -1693,8 +1724,13 @@ flex-direction: column-reverse;		/* bottom-to-top */</code></pre>
 							progress.className = 'progress red';
 							controls.className = 'controls red';
 						} else {
-							progress.className = 'progress';
-							controls.className = 'controls';
+							if (e.currentSlide.className.match('title')) {
+								progress.className = 'progress hide';
+								controls.className = 'controls hide';
+							} else {
+								progress.className = 'progress';
+								controls.className = 'controls';
+							}
 						}
 					}
 				}
