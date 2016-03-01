@@ -10,6 +10,23 @@
 	}
 }
 
+.slides {
+	.info {
+		ul {
+			text-align: center;
+			
+			p {
+				margin-bottom: 0;
+				font-size: 0.5em;
+			}
+
+			a {
+				display: block;
+			}
+		}
+	}
+}
+
 .title {
 	h1 {
 		font-size: 4em;
@@ -22,6 +39,14 @@
 
 		img {
 			width: 100%;
+		}
+	}
+}
+
+.agenda {
+	div {
+		ul {
+			padding-left: 20%;
 		}
 	}
 }

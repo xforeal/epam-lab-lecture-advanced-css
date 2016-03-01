@@ -269,6 +269,14 @@
   bottom: 50px;
   color: #fff; }
 
+.slides .info ul {
+  text-align: center; }
+  .slides .info ul p {
+    margin-bottom: 0;
+    font-size: 0.5em; }
+  .slides .info ul a {
+    display: block; }
+
 .title h1 {
   font-size: 4em;
   text-shadow: 0 0 5px #464547; }
@@ -278,6 +286,9 @@
   margin: 0 auto -118px; }
   .title div img {
     width: 100%; }
+
+.agenda div ul {
+  padding-left: 20%; }
 
 .end h2 {
   color: #999;
