@@ -100,7 +100,7 @@ body {
 .reveal ol,
 .reveal dl,
 .reveal ul {
-  padding-left: 20%;
+  padding-left: 0;
   text-align: left; }
 
 .reveal ol {
