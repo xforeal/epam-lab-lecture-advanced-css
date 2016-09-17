@@ -263,7 +263,7 @@
     transform: rotateY(180deg); } }
 
 .title-page .slides:after {
-  content: '25 Feb, 2016';
+  content: '19 Sep, 2016';
   position: absolute;
   right: 50px;
   bottom: 50px;
@@ -353,7 +353,7 @@
 .units .example .em-rem-per span:nth-child(2) {
   font-size: 4.75rem; }
 
-.units .example .em-rem-per span:nth-child(4) {
+.units .example .em-rem-per span:nth-child(3) {
   font-size: 200%; }
 
 .units .example .pc-pt span:nth-child(1) {
@@ -1202,6 +1202,7 @@
     .transitions .example > div > div:nth-of-type(2) {
       transition-property: color, background-color;
       transition-duration: 2s;
+      transition-delay: 2s;
       transition-timing-function: ease-in-out; }
     .transitions .example > div > div:nth-of-type(3) {
       transition-property: color, background-color;
@@ -1232,7 +1233,6 @@
       margin-bottom: 10px; }
       .transitions .ui-elements div ul li span {
         display: block;
-        vertical-align: top;
         cursor: pointer; }
         .transitions .ui-elements div ul li span.link {
           display: inline-block;
@@ -1295,8 +1295,8 @@
           border: 2px solid #464547; }
     .transitions .ui-elements div ul.transition li * {
       transition-property: background, border, color;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out; }
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in; }
     .transitions .ui-elements div ul:last-child {
       margin-bottom: 0; }
 
@@ -1313,7 +1313,9 @@
     display: block;
     width: 30%;
     background-size: cover;
-    transition: top 0.3s ease-in-out; }
+    transition: top 0.2s ease-out, -webkit-filter 0.2s ease-out, filter 0.2s ease-out;
+    -webkit-filter: grayscale(1) blur(2px);
+    filter: grayscale(1) blur(2px); }
     .transitions .jump ul li div {
       position: relative;
       height: 200px;
@@ -1335,7 +1337,7 @@
       display: block;
       position: absolute;
       height: 8px;
-      transition: bottom 0.3s ease-in-out; }
+      transition: bottom 0.2s ease-out; }
     .transitions .jump ul li:before {
       left: 8px;
       right: 8px;
@@ -1347,7 +1349,9 @@
       bottom: -8px;
       z-index: 1; }
     .transitions .jump ul li:hover {
-      top: -8px; }
+      top: -8px;
+      -webkit-filter: grayscale(0) blur(0);
+      filter: grayscale(0) blur(0); }
       .transitions .jump ul li:hover:before {
         bottom: -8px; }
       .transitions .jump ul li:hover:after {
@@ -1980,7 +1984,8 @@
       -webkit-columns: 3 auto;
       -moz-columns: 3 auto;
       columns: 3 auto;
-      font-size: 0.7em; }
+      font-size: 0.7em;
+      height: 500px; }
     .columns .fill > div > div:nth-of-type(1) div {
       -webkit-column-fill: balance;
       -moz-column-fill: balance;
