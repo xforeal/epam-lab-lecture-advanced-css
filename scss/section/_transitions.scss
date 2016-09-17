@@ -91,6 +91,7 @@
 				&:nth-of-type(2) {
 					transition-property: color, background-color;
 					transition-duration: 2s;
+					transition-delay: 2s;
 					transition-timing-function: ease-in-out;
 				}
 
@@ -137,7 +138,6 @@
 
 					span {
 						display: block;
-						vertical-align: top;
 						cursor: pointer;
 
 						&.link {
@@ -244,8 +244,8 @@
 					li {
 						* {
 							transition-property: background, border, color;
-							transition-duration: 0.3s;
-							transition-timing-function: ease-in-out;
+							transition-duration: 0.2s;
+							transition-timing-function: ease-in;
 						}
 					}
 				}
@@ -272,7 +272,9 @@
 				display: block;
 				width: 30%;
 				background-size: cover;
-				transition: top 0.3s ease-in-out;
+				transition: top 0.2s ease-out, -webkit-filter 0.2s ease-out, filter 0.2s ease-out;
+				-webkit-filter: grayscale(1) blur(2px);
+				filter: grayscale(1) blur(2px);
 
 				div {
 					position: relative;
@@ -314,7 +316,7 @@
 					display: block;
 					position: absolute;
 					height: 8px;
-					transition: bottom 0.3s ease-in-out;			
+					transition: bottom 0.2s ease-out;			
 				}
 
 				&:before {
@@ -333,6 +335,8 @@
 
 				&:hover {
 					top: -8px;
+					-webkit-filter: grayscale(0) blur(0);
+					filter: grayscale(0) blur(0);
 
 					&:before {
 						bottom: -8px;
