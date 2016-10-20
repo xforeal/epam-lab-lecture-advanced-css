@@ -22,8 +22,8 @@ Presentation to lecture about how the different features of CSS works.
 
 ### Lates version of the presentation online
 
-[Online version](http://epam-front-end-school-lectures.github.io/advanced-css "Online version")
+[Online version](https://github.com/wbdrd/epam-lab-lecture-advanced-css "Online version")
 
 ### Download presentation
-- [actual stable presentation build](https://github.com/epam-front-end-school-lectures/advanced-css/archive/v.2016.1.zip "actual stable build")
-- [version with useful links](https://github.com/epam-front-end-school-lectures/advanced-css/archive/v.2016.1-links.zip "version with useful links")
+- [actual stable presentation build](https://github.com/wbdrd/epam-lab-lecture-advanced-css/archive/v.2016.2.zip "actual stable build")
+- [version with useful links](https://github.com/wbdrd/epam-lab-lecture-advanced-css/archive/v.2016.2-links.zip "version with useful links")
