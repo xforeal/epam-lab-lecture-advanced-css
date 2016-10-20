@@ -22,7 +22,7 @@ Presentation to lecture about how the different features of CSS works.
 
 ### Lates version of the presentation online
 
-[Online version](https://github.com/wbdrd/epam-lab-lecture-advanced-css "Online version")
+[Online version](https://wbdrd.github.io/epam-lab-lecture-advanced-css/ "Online version")
 
 ### Download presentation
 - [actual stable presentation build](https://github.com/wbdrd/epam-lab-lecture-advanced-css/archive/v.2016.2.zip "actual stable build")
